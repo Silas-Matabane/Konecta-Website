@@ -28,19 +28,19 @@ function ImpactCard({ study, index }) {
           className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black/90 to-transparent" />
-        <div className="absolute top-4 left-4 px-3 py-1 rounded-md bg-konecta-orange/15 text-konecta-orange text-[0.6rem] font-syne font-bold tracking-wider uppercase backdrop-blur-sm">
+        <div className="absolute top-4 left-4 px-3 py-1 rounded-md bg-konecta-orange/15 text-konecta-orange text-[0.6rem] font-heading font-bold tracking-wider uppercase backdrop-blur-sm">
           {study.tag}
         </div>
       </div>
 
       {/* Body */}
       <div className="p-8">
-        <div className="font-syne font-extrabold text-gradient-orange inline-block" style={{ fontSize: 'clamp(2rem, 3vw, 3rem)' }}>
+        <div className="font-heading font-extrabold text-gradient-orange inline-block" style={{ fontSize: 'clamp(2rem, 3vw, 3rem)' }}>
           {study.metric}
         </div>
-        <div className="text-xs text-white/40 mb-4 uppercase tracking-wider">{study.metricLabel}</div>
-        <h3 className="font-syne font-bold text-lg text-konecta-white mb-3">{study.title}</h3>
-        <p className="text-sm text-white/50 leading-relaxed">{study.description}</p>
+        <div className="text-xs text-white/80 mb-4 uppercase tracking-wider">{study.metricLabel}</div>
+        <h3 className="font-heading font-bold text-lg text-konecta-white mb-3">{study.title}</h3>
+        <p className="text-sm text-white/75 leading-relaxed">{study.description}</p>
       </div>
     </div>
   );
@@ -51,7 +51,7 @@ export default function ImpactSection() {
 
   return (
     <section ref={ref} className="relative bg-[#0D0D0D] px-6 lg:px-14 py-section overflow-hidden" id="impact">
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-konecta-blue/[0.03] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-konecta-slate/[0.03] blur-[120px] rounded-full pointer-events-none" />
 
       <div className={`relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16 items-end transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div>
@@ -59,7 +59,7 @@ export default function ImpactSection() {
           <h2 className="section-title mt-4">Delivering Measurable<br /><span className="text-gradient-orange">Results.</span></h2>
         </div>
         <div className="lg:text-right">
-          <p className="text-base text-white/50 leading-relaxed mb-4">
+          <p className="text-base text-white/75 leading-relaxed mb-4">
             Konecta&apos;s work is measured by real outcomes. Our projects deliver tangible improvements in connectivity, operational efficiency, digital engagement, and revenue generation.
           </p>
           <Link to="/impact" className="btn-secondary">All Projects</Link>

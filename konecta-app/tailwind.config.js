@@ -8,22 +8,23 @@ export default {
     extend: {
       colors: {
         konecta: {
-          black: '#0A0A0A',
+          black: '#1E252C',
           white: '#F5F2EC',
-          orange: '#E85A1B',
-          'orange-light': '#FF7A3D',
-          gold: '#C9A84C',
-          blue: '#0078D4',
-          'blue-light': '#4DAAFF',
-          'dark-gray': '#111111',
-          'mid-gray': '#1A1A1A',
-          muted: '#777',
+          orange: '#F48120',
+          'orange-light': '#FFA04D',
+          gold: '#FBB040',
+          slate: '#5D6770',
+          silver: '#A4AAAD',
+          'dark-gray': '#161C22',
+          'mid-gray': '#1A2029',
+          muted: '#A4AAAD',
           border: 'rgba(255,255,255,0.08)',
         },
       },
       fontFamily: {
-        syne: ['Syne', 'sans-serif'],
-        dm: ['DM Sans', 'sans-serif'],
+        logo: ['Blur', 'Century Gothic', 'CenturyGothic', 'sans-serif'],
+        heading: ['Inter', 'sans-serif'],
+        body: ['Catamaran', 'sans-serif'],
       },
       fontSize: {
         'display': 'clamp(3rem, 5.5vw, 6rem)',
@@ -93,8 +94,8 @@ export default {
           '50%': { backgroundPosition: '100% 50%' },
         },
         'borderGlow': {
-          '0%, 100%': { borderColor: 'rgba(232, 90, 27, 0.15)' },
-          '50%': { borderColor: 'rgba(232, 90, 27, 0.5)' },
+          '0%, 100%': { borderColor: 'rgba(244, 129, 32, 0.15)' },
+          '50%': { borderColor: 'rgba(244, 129, 32, 0.5)' },
         },
         'scaleIn': {
           from: { opacity: '0', transform: 'scale(0.9)' },

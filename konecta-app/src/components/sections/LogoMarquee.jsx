@@ -18,7 +18,7 @@ function MarqueeRow({ items, reverse = false }) {
             key={`${p.name}-${i}`}
             className="flex-shrink-0 px-8 py-4 rounded-xl glass-card hover:border-konecta-orange/30 transition-all duration-300"
           >
-            <div className={`font-syne font-bold text-sm whitespace-nowrap tracking-wide ${p.isMicrosoft ? 'text-konecta-blue-light/70' : 'text-konecta-white/50'}`}>
+            <div className={`font-heading font-bold text-sm whitespace-nowrap tracking-wide ${p.isMicrosoft ? 'text-konecta-silver/85' : 'text-konecta-white/75'}`}>
               {p.name}
             </div>
           </div>
@@ -32,7 +32,7 @@ export default function LogoMarquee() {
   return (
     <section className="py-16 bg-konecta-black">
       <div className="px-6 lg:px-14 mb-10 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/30">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/75">
           In Partnership With Africa&apos;s Leading Operators &amp; Global Tech Leaders
         </p>
       </div>

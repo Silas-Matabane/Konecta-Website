@@ -17,12 +17,12 @@ function QuoteCard({ t, index }) {
         </p>
       </div>
       <div className="flex items-center gap-4 mt-8 pt-6 border-t border-white/[0.06]">
-        <div className="w-10 h-10 rounded-full flex items-center justify-center font-syne font-bold text-sm text-konecta-orange" style={{ background: 'rgba(232,90,27,0.1)', border: '1px solid rgba(232,90,27,0.2)' }}>
+        <div className="w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm text-konecta-orange" style={{ background: 'rgba(232,90,27,0.1)', border: '1px solid rgba(232,90,27,0.2)' }}>
           {t.name.charAt(0)}
         </div>
         <div>
-          <div className="font-syne font-bold text-sm text-konecta-white">{t.name}</div>
-          <div className="text-xs text-white/40 mt-0.5">{t.role}</div>
+          <div className="font-heading font-bold text-sm text-konecta-white">{t.name}</div>
+          <div className="text-xs text-white/80 mt-0.5">{t.role}</div>
         </div>
       </div>
     </div>

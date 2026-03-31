@@ -1,4 +1,4 @@
-import { TICKER_ITEMS } from '@data/constants';
+﻿import { TICKER_ITEMS } from '@data/constants';
 
 export default function Ticker() {
   const items = [...TICKER_ITEMS, ...TICKER_ITEMS];
@@ -9,7 +9,7 @@ export default function Ticker() {
         {items.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="font-syne text-xs font-bold uppercase tracking-widest text-konecta-white inline-flex items-center gap-3"
+            className="font-heading text-xs font-bold uppercase tracking-widest text-konecta-white inline-flex items-center gap-3"
           >
             {item}
             <span className="w-1 h-1 bg-white/45 rounded-full" />

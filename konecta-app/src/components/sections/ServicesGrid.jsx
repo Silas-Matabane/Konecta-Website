@@ -43,7 +43,7 @@ export default function ServicesGrid() {
                 : 'bg-transparent border-white/[0.06] text-konecta-muted hover:border-white/[0.15] hover:text-konecta-white'
             }`}
           >
-            <div className="font-syne font-bold text-xl lg:text-2xl">{svc.number}</div>
+            <div className="font-heading font-bold text-xl lg:text-2xl">{svc.number}</div>
             <div className="text-[0.65rem] uppercase tracking-wider mt-1 whitespace-nowrap">{svc.title.split('&')[0].trim()}</div>
           </button>
         ))}
@@ -54,15 +54,15 @@ export default function ServicesGrid() {
         {/* Left — description in glass card */}
         <div key={active.id} className="glass-card p-8 lg:p-10 animate-fade-in">
           <div className="text-4xl mb-5">{active.icon}</div>
-          <h3 className="font-syne font-extrabold text-konecta-white leading-tight mb-4" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)' }}>
+          <h3 className="font-heading font-extrabold text-konecta-white leading-tight mb-4" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)' }}>
             {active.title}
           </h3>
-          <p className="text-base text-white/60 leading-relaxed mb-6">
+          <p className="text-base text-white/80 leading-relaxed mb-6">
             {active.description}
           </p>
           <div className="flex flex-wrap gap-2 mb-8">
             {active.tags.map((tag) => (
-              <span key={tag} className="px-4 py-2 rounded-lg text-xs text-white/50 uppercase tracking-wider" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <span key={tag} className="px-4 py-2 rounded-lg text-xs text-white/75 uppercase tracking-wider" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
                 {tag}
               </span>
             ))}

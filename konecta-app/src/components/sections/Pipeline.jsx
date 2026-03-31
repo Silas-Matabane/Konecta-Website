@@ -15,20 +15,20 @@ function StageCard({ stage, index }) {
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Stage number */}
-      <div className="font-syne font-extrabold text-6xl text-konecta-orange/[0.07] absolute top-4 right-6 leading-none group-hover:text-konecta-orange/15 transition-colors">
+      <div className="font-heading font-extrabold text-6xl text-konecta-orange/[0.07] absolute top-4 right-6 leading-none group-hover:text-konecta-orange/15 transition-colors">
         {String(index + 1).padStart(2, '0')}
       </div>
 
       <div className="text-3xl mb-5">{stage.icon}</div>
-      <h3 className="font-syne font-bold text-lg text-konecta-white mb-3">
+      <h3 className="font-heading font-bold text-lg text-konecta-white mb-3">
         {stage.title.replace(/^\d+\.\s*/, '')}
       </h3>
-      <p className="text-sm text-white/50 leading-relaxed mb-5">
+      <p className="text-sm text-white/75 leading-relaxed mb-5">
         {stage.description}
       </p>
       <div className="flex flex-wrap gap-2">
         {stage.tags.map((tag) => (
-          <span key={tag} className="px-3 py-1 rounded-md text-[0.65rem] text-white/40 uppercase tracking-wider" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
+          <span key={tag} className="px-3 py-1 rounded-md text-[0.65rem] text-white/80 uppercase tracking-wider" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
             {tag}
           </span>
         ))}
@@ -48,7 +48,7 @@ export default function Pipeline() {
   return (
     <section ref={ref} className="relative bg-[#0D0D0D] px-6 lg:px-14 py-section overflow-hidden" id="platform">
       {/* Ambient glow */}
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-konecta-blue/[0.04] blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-konecta-slate/[0.04] blur-[150px] rounded-full pointer-events-none" />
 
       {/* Header */}
       <div className={`relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16 items-end transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -58,7 +58,7 @@ export default function Pipeline() {
             From Connectivity to<br /><span className="text-gradient-orange">Intelligence</span>
           </h2>
         </div>
-        <p className="text-base text-white/50 leading-relaxed lg:text-right">
+        <p className="text-base text-white/75 leading-relaxed lg:text-right">
           Most organisations treat connectivity as basic infrastructure. Konecta treats it as the foundation of a digital intelligence platform. Our model integrates four layers: network infrastructure, software platforms, data analytics, and value-added services — converting connectivity into insight, operational efficiency, and sustainable revenue.
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function Pipeline() {
       {/* Bottom CTA */}
       <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-10 border-t border-[rgba(255,255,255,0.06)]">
         <div>
-          <h3 className="font-syne font-bold text-xl text-konecta-white">From Infrastructure to Revenue Intelligence</h3>
+          <h3 className="font-heading font-bold text-xl text-konecta-white">From Infrastructure to Revenue Intelligence</h3>
           <p className="text-sm text-konecta-muted mt-1">Traditional infrastructure providers focus on deployment. Konecta focuses on outcomes.</p>
         </div>
         <Link to="/contact" className="btn-primary">Build Your Platform</Link>

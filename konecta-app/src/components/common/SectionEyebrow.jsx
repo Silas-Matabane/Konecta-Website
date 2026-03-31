@@ -1,6 +1,6 @@
-export default function SectionEyebrow({ text, color = 'orange' }) {
-  const lineColor = color === 'blue' ? 'bg-[#0078D4]' : 'bg-konecta-orange';
-  const textColor = color === 'blue' ? 'text-konecta-blue-light' : 'text-konecta-orange';
+﻿export default function SectionEyebrow({ text, color = 'orange' }) {
+  const lineColor = color === 'blue' ? 'bg-[#5D6770]' : 'bg-konecta-orange';
+  const textColor = color === 'blue' ? 'text-konecta-silver' : 'text-konecta-orange';
 
   return (
     <div className="section-eyebrow">

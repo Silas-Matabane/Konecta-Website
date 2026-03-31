@@ -7,12 +7,12 @@ export default function PartnersSection() {
 
   return (
     <section ref={ref} className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden">
-      <div className="absolute bottom-1/4 right-0 w-[300px] h-[300px] bg-konecta-blue/[0.03] blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-[300px] h-[300px] bg-konecta-slate/[0.03] blur-[100px] rounded-full pointer-events-none" />
 
       <div className={`relative z-10 text-center mb-16 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <SectionEyebrow text="Partners & Clients" />
         <h2 className="section-title mt-4 mx-auto"><span className="text-gradient-orange">In Good Company</span></h2>
-        <p className="text-base text-white/50 max-w-xl mx-auto leading-relaxed mt-4">
+        <p className="text-base text-white/75 max-w-xl mx-auto leading-relaxed mt-4">
           We collaborate with global technology leaders and African enterprises who share our vision for transformative digital impact.
         </p>
       </div>
@@ -27,10 +27,10 @@ export default function PartnersSection() {
               className={`glass-card p-6 text-center group hover:border-konecta-orange/20 transition-all duration-500 ${cardInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className={`font-syne font-bold text-sm ${p.isMicrosoft ? 'text-konecta-blue-light/70' : 'text-konecta-white/60'} group-hover:text-konecta-orange transition-colors`}>
+              <div className={`font-heading font-bold text-sm ${p.isMicrosoft ? 'text-konecta-silver/85' : 'text-konecta-white/80'} group-hover:text-konecta-orange transition-colors`}>
                 {p.name}
               </div>
-              <div className="text-[0.6rem] text-white/30 mt-1">{p.type}</div>
+              <div className="text-[0.6rem] text-white/75 mt-1">{p.type}</div>
             </div>
           );
         })}

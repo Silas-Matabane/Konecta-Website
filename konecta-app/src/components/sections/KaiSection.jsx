@@ -34,7 +34,7 @@ export default function KaiSection() {
           <h2 className="section-title mt-4">Enterprise AI.<br />Built for <span className="text-gradient-orange">Africa.</span></h2>
         </div>
         <div className={`flex items-end transition-all duration-700 delay-200 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-base text-white/50 leading-relaxed max-w-lg">
+          <p className="text-base text-white/75 leading-relaxed max-w-lg">
             Artificial intelligence will redefine how organisations operate across every sector. Konecta&apos;s AI Infrastructure &amp; Factory practice enables African enterprises and public sector organisations to deploy production-grade AI capabilities — ensuring AI adoption moves beyond experimentation into real operational deployment.
           </p>
         </div>
@@ -51,11 +51,11 @@ export default function KaiSection() {
               className={`glass-card-orange p-8 lg:p-10 group transition-all duration-700 ${cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="font-syne text-5xl font-extrabold text-konecta-orange/10 mb-6 group-hover:text-konecta-orange/25 transition-colors">
+              <div className="font-heading text-5xl font-extrabold text-konecta-orange/10 mb-6 group-hover:text-konecta-orange/25 transition-colors">
                 {feat.number}
               </div>
-              <h3 className="font-syne font-bold text-lg text-konecta-white mb-3">{feat.title}</h3>
-              <p className="text-sm text-white/50 leading-relaxed">{feat.description}</p>
+              <h3 className="font-heading font-bold text-lg text-konecta-white mb-3">{feat.title}</h3>
+              <p className="text-sm text-white/75 leading-relaxed">{feat.description}</p>
             </div>
           );
         })}

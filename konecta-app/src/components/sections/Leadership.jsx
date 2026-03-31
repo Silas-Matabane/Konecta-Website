@@ -23,8 +23,8 @@ export default function Leadership() {
             </div>
             {/* Floating glass accent */}
             <div className="absolute -bottom-4 -right-4 w-28 h-28 rounded-xl glass-card-orange flex items-center justify-center">
-              <span className="font-syne font-extrabold text-2xl text-konecta-orange">15+</span>
-              <span className="text-[0.5rem] text-white/40 uppercase tracking-wider ml-1">Yrs</span>
+              <span className="font-heading font-extrabold text-2xl text-konecta-orange">15+</span>
+              <span className="text-[0.5rem] text-white/80 uppercase tracking-wider ml-1">Yrs</span>
             </div>
           </div>
         </div>
@@ -40,12 +40,12 @@ export default function Leadership() {
             <p className="text-lg text-konecta-white/90 italic leading-relaxed">
               &ldquo;Konecta has evolved into a technology company focused on building the intelligent infrastructure that powers Africa&apos;s digital future.&rdquo;
             </p>
-            <footer className="text-sm text-konecta-orange mt-4 font-syne font-bold">
+            <footer className="text-sm text-konecta-orange mt-4 font-heading font-bold">
               — Yandisa Sokhanyile, Founder &amp; CEO, Konecta Group
             </footer>
           </blockquote>
 
-          <p className="text-base text-white/50 leading-relaxed mb-8">
+          <p className="text-base text-white/75 leading-relaxed mb-8">
             Konecta&apos;s leadership team combines decades of experience across telecommunications, enterprise technology, and public sector innovation. Through strong partnerships with global technology leaders and direct engagement with African governments and operators, the team brings a unique perspective on how digital infrastructure can accelerate economic development.
           </p>
 

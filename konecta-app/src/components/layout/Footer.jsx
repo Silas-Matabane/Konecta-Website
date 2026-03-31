@@ -14,7 +14,7 @@ function OfficeClock({ city, tz, label }) {
   return (
     <div className="glass-card p-6 text-center">
       <div className="font-mono text-2xl lg:text-3xl text-gradient-orange tracking-wider">{time}</div>
-      <div className="text-xs text-white/40 mt-2 uppercase tracking-wider">
+      <div className="text-xs text-white/80 mt-2 uppercase tracking-wider">
         {city}{label ? ` · ${label}` : ''}
       </div>
     </div>
@@ -41,10 +41,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <div className="font-syne text-2xl font-extrabold tracking-tight mb-4">
+            <div className="font-logo text-2xl font-extrabold tracking-tight mb-4">
               KONEC<span className="text-konecta-orange">T</span>A
             </div>
-            <p className="text-sm text-white/40 leading-relaxed mb-6 max-w-[280px]">
+            <p className="text-sm text-white/80 leading-relaxed mb-6 max-w-[280px]">
               Africa&apos;s leading telecoms and technology consultancy. We build networks, develop platforms, and enable digital transformation across the continent.
             </p>
             <div className="flex flex-col gap-2">
@@ -58,11 +58,11 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <div className="font-syne text-xs font-bold uppercase tracking-widest text-konecta-white mb-6">Services</div>
+            <div className="font-heading text-xs font-bold uppercase tracking-widest text-konecta-white mb-6">Services</div>
             <ul className="flex flex-col gap-3 list-none">
               {['Network Build & WiFi-as-a-Service', 'Big Data & Analytics Platforms', 'Value-Added Services', 'Microsoft Azure & AI', 'Managed IT Services', 'Telecoms Consulting'].map((item) => (
                 <li key={item}>
-                  <Link to="/services" className="text-sm text-white/40 no-underline hover:text-konecta-white transition-colors">{item}</Link>
+                  <Link to="/services" className="text-sm text-white/80 no-underline hover:text-konecta-white transition-colors">{item}</Link>
                 </li>
               ))}
             </ul>
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Events + Company */}
           <div>
-            <div className="font-syne text-xs font-bold uppercase tracking-widest text-konecta-white mb-6">Events</div>
+            <div className="font-heading text-xs font-bold uppercase tracking-widest text-konecta-white mb-6">Events</div>
             <ul className="flex flex-col gap-3 list-none mb-10">
               {[
                 { label: 'CIO Konect Summit', to: '/events' },
@@ -79,11 +79,11 @@ export default function Footer() {
                 { label: 'Sponsor an Event', to: '/contact' },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link to={item.to} className="text-sm text-white/40 no-underline hover:text-konecta-white transition-colors">{item.label}</Link>
+                  <Link to={item.to} className="text-sm text-white/80 no-underline hover:text-konecta-white transition-colors">{item.label}</Link>
                 </li>
               ))}
             </ul>
-            <div className="font-syne text-xs font-bold uppercase tracking-widest text-konecta-white mb-6">Company</div>
+            <div className="font-heading text-xs font-bold uppercase tracking-widest text-konecta-white mb-6">Company</div>
             <ul className="flex flex-col gap-3 list-none">
               {[
                 { label: 'About Konecta', to: '/about' },
@@ -91,7 +91,7 @@ export default function Footer() {
                 { label: 'Insights & News', to: '/insights' },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link to={item.to} className="text-sm text-white/40 no-underline hover:text-konecta-white transition-colors">{item.label}</Link>
+                  <Link to={item.to} className="text-sm text-white/80 no-underline hover:text-konecta-white transition-colors">{item.label}</Link>
                 </li>
               ))}
             </ul>
@@ -99,17 +99,17 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <div className="font-syne text-xs font-bold uppercase tracking-widest text-konecta-white mb-6">Get in Touch</div>
+            <div className="font-heading text-xs font-bold uppercase tracking-widest text-konecta-white mb-6">Get in Touch</div>
             <ul className="flex flex-col gap-3 list-none mb-8">
-              <li><a href={`mailto:${COMPANY.email}`} className="text-sm text-white/40 no-underline hover:text-konecta-white transition-colors">{COMPANY.email}</a></li>
-              <li><span className="text-sm text-white/40">{COMPANY.location}</span></li>
+              <li><a href={`mailto:${COMPANY.email}`} className="text-sm text-white/80 no-underline hover:text-konecta-white transition-colors">{COMPANY.email}</a></li>
+              <li><span className="text-sm text-white/80">{COMPANY.location}</span></li>
             </ul>
             <div className="flex gap-3">
               {SOCIAL_LINKS.map((s) => (
                 <a
                   key={s.platform}
                   href={s.href}
-                  className="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-sm text-white/40 no-underline hover:border-konecta-orange hover:text-konecta-orange transition-all"
+                  className="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-sm text-white/80 no-underline hover:border-konecta-orange hover:text-konecta-orange transition-all"
                   aria-label={s.platform}
                 >
                   {s.label}
@@ -122,10 +122,10 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="relative z-10 px-6 lg:px-14 py-6 border-t border-[rgba(255,255,255,0.06)] flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div className="text-xs text-white/30 text-center sm:text-left">
+        <div className="text-xs text-white/75 text-center sm:text-left">
           &copy; {COMPANY.year} {COMPANY.fullName} · {COMPANY.registrationNote}
         </div>
-        <div className="text-xs text-white/30 flex gap-4">
+        <div className="text-xs text-white/75 flex gap-4">
           <span className="hover:text-konecta-white transition-colors cursor-pointer">Privacy Policy</span>
           <span className="hover:text-konecta-white transition-colors cursor-pointer">Terms of Service</span>
           <span className="hover:text-konecta-white transition-colors cursor-pointer">POPIA</span>

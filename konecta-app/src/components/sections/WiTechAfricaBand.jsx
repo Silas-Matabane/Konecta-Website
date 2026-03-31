@@ -11,10 +11,10 @@ function WiStat({ value, label }) {
 
   return (
     <div ref={ref} className="glass-card p-6 text-center">
-      <div className="font-syne font-extrabold text-gradient-orange" style={{ fontSize: 'clamp(2rem, 3vw, 3.5rem)' }}>
+      <div className="font-heading font-extrabold text-gradient-orange" style={{ fontSize: 'clamp(2rem, 3vw, 3.5rem)' }}>
         {num ? count : value}{suffix}
       </div>
-      <div className="text-xs text-white/40 mt-2 uppercase tracking-wider">{label}</div>
+      <div className="text-xs text-white/80 mt-2 uppercase tracking-wider">{label}</div>
     </div>
   );
 }
@@ -31,10 +31,10 @@ export default function WiTechAfricaBand() {
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <div className={`transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="section-eyebrow text-konecta-orange justify-center">WiTechAfrica Initiative</div>
-          <h2 className="font-syne font-extrabold text-konecta-white leading-[1.05] mt-4" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+          <h2 className="font-heading font-extrabold text-konecta-white leading-[1.05] mt-4" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
             Convening Africa&apos;s<br /><span className="text-gradient-orange">Technology Conversation</span>
           </h2>
-          <p className="text-base text-white/50 leading-relaxed mt-6 max-w-2xl mx-auto">
+          <p className="text-base text-white/75 leading-relaxed mt-6 max-w-2xl mx-auto">
             The WiTechAfrica Summit brings together Africa&apos;s top telecoms operators, technology leaders, policymakers, and innovators to shape the continent&apos;s digital future.
           </p>
         </div>

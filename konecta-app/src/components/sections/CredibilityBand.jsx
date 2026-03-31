@@ -1,4 +1,4 @@
-import MicrosoftLogo from '@components/common/MicrosoftLogo';
+﻿import MicrosoftLogo from '@components/common/MicrosoftLogo';
 import { CREDIBILITY_ITEMS } from '@data/constants';
 
 export default function CredibilityBand() {
@@ -12,7 +12,7 @@ export default function CredibilityBand() {
                 {item.isMicrosoft ? <MicrosoftLogo size={20} /> : item.icon}
               </div>
               <div>
-                <div className={`font-syne font-bold text-xs ${item.isMicrosoft ? 'text-konecta-blue-light' : 'text-konecta-white'}`}>
+                <div className={`font-heading font-bold text-xs ${item.isMicrosoft ? 'text-konecta-silver' : 'text-konecta-white'}`}>
                   {item.title}
                 </div>
                 <div className="text-[0.65rem] text-konecta-muted">{item.desc}</div>

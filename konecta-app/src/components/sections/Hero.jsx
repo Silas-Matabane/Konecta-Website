@@ -9,7 +9,7 @@ function StatCounter({ end, suffix = '', label, icon }) {
   return (
     <div ref={ref} className="glass-card p-6 lg:p-8 text-center group">
       <div className="text-2xl mb-3 opacity-60 group-hover:opacity-100 transition-opacity">{icon}</div>
-      <div className="font-syne font-extrabold text-konecta-white leading-none" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.5rem)' }}>
+      <div className="font-heading font-extrabold text-konecta-white leading-none" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.5rem)' }}>
         <span className="text-gradient-orange">{count}{suffix}</span>
       </div>
       <div className="text-xs text-konecta-muted mt-2 uppercase tracking-wider">{label}</div>
@@ -35,13 +35,13 @@ export default function Hero() {
 
       {/* Floating glow orbs */}
       <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-konecta-orange/10 rounded-full blur-[120px] animate-float pointer-events-none" />
-      <div className="absolute bottom-1/3 left-1/5 w-[300px] h-[300px] bg-konecta-blue/8 rounded-full blur-[100px] animate-float-slow pointer-events-none" />
+      <div className="absolute bottom-1/3 left-1/5 w-[300px] h-[300px] bg-konecta-slate/8 rounded-full blur-[100px] animate-float-slow pointer-events-none" />
 
       {/* Main content */}
       <div className="relative z-10 px-6 lg:px-14 pt-32 pb-10">
         {/* Eyebrow with glass pill */}
         <div className={`inline-flex items-center gap-3 mb-8 px-5 py-2.5 rounded-full transition-all duration-700 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-             style={{ background: 'rgba(232, 90, 27, 0.08)', border: '1px solid rgba(232, 90, 27, 0.2)', backdropFilter: 'blur(20px)' }}>
+             style={{ background: 'rgba(244, 129, 32, 0.08)', border: '1px solid rgba(244, 129, 32, 0.2)', backdropFilter: 'blur(20px)' }}>
           <div className="w-2 h-2 rounded-full bg-konecta-orange animate-pulse-dot" />
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-konecta-orange">
             Africa&apos;s Leading Telecoms &amp; Digital Infrastructure Consultancy
@@ -50,7 +50,7 @@ export default function Hero() {
 
         {/* Hero headline */}
         <h1
-          className={`font-syne font-extrabold text-konecta-white leading-[0.95] tracking-tight max-w-5xl transition-all duration-1000 delay-200 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`font-heading font-extrabold text-konecta-white leading-[0.95] tracking-tight max-w-5xl transition-all duration-1000 delay-200 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           style={{ fontSize: 'clamp(3rem, 7vw, 6.5rem)' }}
         >
           We Build<br />
@@ -59,7 +59,7 @@ export default function Hero() {
         </h1>
 
         {/* Sub-copy */}
-        <p className={`text-base lg:text-lg text-white/60 mt-8 max-w-xl leading-relaxed transition-all duration-1000 delay-400 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <p className={`text-base lg:text-lg text-white/80 mt-8 max-w-xl leading-relaxed transition-all duration-1000 delay-400 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           Africa&apos;s digital economy is expanding rapidly, yet the infrastructure required to support intelligent digital services remains uneven. Konecta helps organisations close this gap — designing and deploying telecommunications infrastructure while developing the intelligent data platforms that run on top of it.
         </p>
 

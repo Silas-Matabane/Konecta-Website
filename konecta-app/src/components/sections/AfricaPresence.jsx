@@ -8,8 +8,8 @@ function MarketStat({ end, suffix, label }) {
   const count = useCountUp(end, inView, 2000);
   return (
     <div ref={ref} className="glass-card p-6 text-center">
-      <div className="font-syne font-extrabold text-4xl text-gradient-orange">{count}{suffix}</div>
-      <div className="text-xs text-white/40 mt-1 uppercase tracking-wider">{label}</div>
+      <div className="font-heading font-extrabold text-4xl text-gradient-orange">{count}{suffix}</div>
+      <div className="text-xs text-white/80 mt-1 uppercase tracking-wider">{label}</div>
     </div>
   );
 }
@@ -27,7 +27,7 @@ export default function AfricaPresence() {
         <h2 className="section-title mt-4 mx-auto">
           Headquartered in Johannesburg.<br /><span className="text-gradient-orange">Active Across Africa.</span>
         </h2>
-        <p className="text-base text-white/50 mt-6 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base text-white/75 mt-6 max-w-2xl mx-auto leading-relaxed">
           From Johannesburg, Konecta delivers telecoms infrastructure, Microsoft technology deployments, and consultancy across Southern, Eastern, and West Africa.
         </p>
       </div>
@@ -45,10 +45,10 @@ export default function AfricaPresence() {
         {COUNTRIES.map((c) => (
           <div
             key={c.name}
-            className={`px-6 py-3 rounded-xl text-sm font-syne font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-xl text-sm font-heading font-medium transition-all duration-300 ${
               c.active
                 ? 'glass-card-orange text-konecta-white hover:border-konecta-orange/40'
-                : 'glass-card text-white/40'
+                : 'glass-card text-white/80'
             }`}
           >
             <span className={`inline-block w-2 h-2 rounded-full mr-2 ${c.active ? 'bg-konecta-orange' : 'bg-white/20'}`} />

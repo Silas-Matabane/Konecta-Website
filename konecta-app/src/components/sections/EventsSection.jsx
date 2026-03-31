@@ -30,24 +30,24 @@ function EventCard({ event, index }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black via-konecta-black/50 to-transparent" />
         <div className="absolute bottom-6 left-6 right-6">
-          <div className={`font-syne font-extrabold ${isFlagship ? 'text-3xl' : 'text-xl'} text-konecta-white tracking-tight`}>
+          <div className={`font-heading font-extrabold ${isFlagship ? 'text-3xl' : 'text-xl'} text-konecta-white tracking-tight`}>
             {event.name}
           </div>
-          <div className="text-xs text-white/50 mt-1 tracking-widest uppercase">{event.tagline}</div>
+          <div className="text-xs text-white/75 mt-1 tracking-widest uppercase">{event.tagline}</div>
         </div>
       </div>
 
       {/* Body */}
       <div className="p-8 lg:p-10">
-        <div className="inline-block px-3 py-1 rounded-md bg-konecta-orange/10 text-konecta-orange text-[0.6rem] font-syne font-bold tracking-wider uppercase mb-4">
+        <div className="inline-block px-3 py-1 rounded-md bg-konecta-orange/10 text-konecta-orange text-[0.6rem] font-heading font-bold tracking-wider uppercase mb-4">
           {event.badge}
         </div>
-        <p className="text-sm text-white/50 leading-relaxed mb-6">{event.description}</p>
+        <p className="text-sm text-white/75 leading-relaxed mb-6">{event.description}</p>
 
         {event.meta && (
           <div className="flex flex-wrap gap-6 mb-6">
             {event.meta.map((m) => (
-              <span key={m.text} className="text-sm text-white/40">
+              <span key={m.text} className="text-sm text-white/80">
                 {m.icon} <strong className="text-konecta-white">{m.text}</strong>
               </span>
             ))}
@@ -77,7 +77,7 @@ export default function EventsSection() {
           </h2>
         </div>
         <div className="lg:text-right">
-          <p className="text-base text-white/50 leading-relaxed mb-4">
+          <p className="text-base text-white/75 leading-relaxed mb-4">
             Technology transformation does not happen in isolation. Konecta convenes some of Africa&apos;s most influential technology platforms, bringing together CIOs, telecom operators, policymakers, and technology innovators to shape the future of digital infrastructure across the continent.
           </p>
           <Link to="/events" className="btn-secondary">All Events</Link>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { COMPANY } from '@data/constants';
 import useInView from '@hooks/useInView';
 
@@ -16,7 +16,7 @@ export default function CTASection() {
 
       <div className="relative px-6 lg:px-14 py-section z-10">
         <div className={`max-w-3xl transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="font-syne font-extrabold leading-[1.05] tracking-tight text-konecta-white" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+          <h2 className="font-heading font-extrabold leading-[1.05] tracking-tight text-konecta-white" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
             Build the Infrastructure That<br />Powers Your Digital Future
           </h2>
           <p className="text-lg text-white/80 mt-6 max-w-xl leading-relaxed">

@@ -28,13 +28,13 @@ function ArticleCard({ article, index }) {
       </div>
       {/* Body */}
       <div className="p-6">
-        <div className={`text-[0.65rem] font-syne font-bold tracking-widest uppercase mb-3 ${article.featured ? 'text-konecta-orange' : 'text-white/40'}`}>
+        <div className={`text-[0.65rem] font-heading font-bold tracking-widest uppercase mb-3 ${article.featured ? 'text-konecta-orange' : 'text-white/80'}`}>
           {article.category}
         </div>
-        <h3 className="font-syne font-bold text-lg text-konecta-white leading-snug mb-4 card-hover-underline">
+        <h3 className="font-heading font-bold text-lg text-konecta-white leading-snug mb-4 card-hover-underline">
           {article.title}
         </h3>
-        <div className="flex gap-4 text-xs text-white/40">
+        <div className="flex gap-4 text-xs text-white/80">
           <span>{article.readTime}</span>
           <span>{article.date}</span>
         </div>
@@ -48,7 +48,7 @@ export default function InsightsSection() {
 
   return (
     <section ref={ref} className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden" id="insights">
-      <div className="absolute bottom-1/3 left-0 w-[300px] h-[300px] bg-konecta-blue/[0.03] blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/3 left-0 w-[300px] h-[300px] bg-konecta-slate/[0.03] blur-[100px] rounded-full pointer-events-none" />
 
       {/* Split header */}
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
