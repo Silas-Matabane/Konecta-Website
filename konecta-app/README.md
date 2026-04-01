@@ -20,8 +20,8 @@ The official corporate website for **Konecta Group (Pty) Ltd**, Africa's leading
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-org/konecta-website.git
-cd konecta-website/konecta-app
+git clone https://github.com/Silas-Matabane/Konecta-Website.git
+cd Konecta-Website/konecta-app
 ```
 
 ### 2. Install dependencies

@@ -2,53 +2,54 @@
 
 Africa's Premier Telecoms & Technology Consultancy — corporate website.
 
-## Project Structure
+## Quick Start
+
+The main application lives in the `konecta-app/` directory. You'll need **Node.js v18+** installed.
+
+```bash
+git clone https://github.com/Silas-Matabane/Konecta-Website.git
+cd Konecta-Website/konecta-app
+npm install
+npm run dev
+```
+
+The app will open at [http://localhost:3000](http://localhost:3000).
+
+See [konecta-app/README.md](konecta-app/README.md) for the full project documentation, structure, and available scripts.
+
+## Repository Structure
 
 ```
-├── index.html           Main HTML page
-├── css/
-│   └── styles.css       All styles (variables, components, responsive)
-├── js/
-│   └── main.js          JavaScript (smooth scroll, interactions)
-├── assets/
-│   └── images/          Image assets (see README inside for naming)
-└── README.md            This file
+├── konecta-app/         React application (Vite + Tailwind CSS)
+├── index.html           Legacy static HTML page
+├── css/                 Legacy styles
+├── js/                  Legacy scripts
+├── assets/              Shared image assets
+└── docs/                Documentation
 ```
 
 ## Tech Stack
 
-- **HTML5** — semantic markup
-- **CSS3** — custom properties, grid, flexbox, keyframe animations
-- **Vanilla JS** — no frameworks or build tools
-- **Fonts** — Google Fonts (Syne + DM Sans)
+- **React 19** — UI framework
+- **Vite 6** — Build tool and dev server
+- **React Router 7** — Client-side routing
+- **Tailwind CSS 3** — Utility-first styling
 
-## Running Locally
+## Available Scripts
 
-Open `index.html` in a browser. No build step required.
+Run these from the `konecta-app/` directory:
 
-For live reload during development, use any static server:
+| Command           | Description                              |
+| ----------------- | ---------------------------------------- |
+| `npm run dev`     | Start dev server with hot reload         |
+| `npm run build`   | Build for production (output in `dist/`) |
+| `npm run preview` | Preview the production build locally     |
+| `npm run lint`    | Run ESLint                               |
 
-```bash
-# Python
-python -m http.server 8000
+## Legacy Static Site
 
-# Node.js (npx)
-npx serve .
-```
+The root-level `index.html`, `css/`, and `js/` directories contain the original static HTML version of the site. These are kept for reference but are no longer actively maintained.
 
-## Design Tokens
+## License
 
-Defined as CSS custom properties in `:root` within `css/styles.css`:
-
-| Token            | Value     |
-| ---------------- | --------- |
-| `--black`        | `#0A0A0A` |
-| `--white`        | `#F5F2EC` |
-| `--orange`       | `#E85A1B` |
-| `--orange-light` | `#FF7A3D` |
-| `--gold`         | `#C9A84C` |
-| `--blue`         | `#0078D4` |
-
-## Responsive
-
-Single breakpoint at `960px` for mobile/tablet layouts.
+Proprietary — Konecta Group (Pty) Ltd. All rights reserved.
