@@ -48,17 +48,10 @@ export default function WifiPlatformPage() {
     country: "",
     locations: "",
     goals: [],
-    preferredDate: "",
-    preferredTime: "",
   });
   const [isIndividual, setIsIndividual] = useState(false);
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const [errorMsg, setErrorMsg] = useState("");
-
-  /* Minimum selectable date = tomorrow */
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  const minDate = tomorrow.toISOString().split("T")[0];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -500,37 +493,7 @@ export default function WifiPlatformPage() {
               </div>
             </div>
 
-            {/* Row 5 — Preferred Demo Date & Time */}
-            <div className="wfp-form-row">
-              <div className="wfp-form-group">
-                <label htmlFor="preferredDate">Preferred Demo Date</label>
-                <input
-                  id="preferredDate"
-                  name="preferredDate"
-                  type="date"
-                  min={minDate}
-                  value={formData.preferredDate}
-                  onChange={handleChange}
-                  className={inputClass}
-                />
-              </div>
-              <div className="wfp-form-group">
-                <label htmlFor="preferredTime">Preferred Demo Time</label>
-                <input
-                  id="preferredTime"
-                  name="preferredTime"
-                  type="time"
-                  min="08:00"
-                  max="17:00"
-                  step="1800"
-                  value={formData.preferredTime}
-                  onChange={handleChange}
-                  className={inputClass}
-                />
-              </div>
-            </div>
-
-            {/* Row 6 — Goals */}
+            {/* Row 5 — Goals */}
             <div className="wfp-form-group wfp-form-group--full">
               <label>Primary Goals (select all that apply)</label>
               <div className="wfp-goals-grid">

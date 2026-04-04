@@ -88,31 +88,9 @@ app.post("/api/demo-request", rateLimit, async (req, res) => {
     country,
     locations,
     goals,
-    preferredDate,
-    preferredTime,
   } = req.body;
 
   const goalsText = Array.isArray(goals) ? goals.join(", ") : sanitize(goals);
-
-  /* Format date nicely if provided */
-  let formattedDate = "—";
-  if (preferredDate) {
-    const d = new Date(preferredDate + "T00:00:00");
-    formattedDate = d.toLocaleDateString("en-ZA", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  }
-
-  /* Format time nicely if provided */
-  let formattedTime = "—";
-  if (preferredTime) {
-    const [h, m] = preferredTime.split(":");
-    const hour = parseInt(h, 10);
-    formattedTime = `${hour > 12 ? hour - 12 : hour}:${m} ${hour >= 12 ? "PM" : "AM"}`;
-  }
 
   const htmlBody = `
     <h2 style="color:#F48120;">New WiFi Platform Demo Request</h2>
@@ -126,8 +104,6 @@ app.post("/api/demo-request", rateLimit, async (req, res) => {
       <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Country / Region</td><td style="padding:8px;border-bottom:1px solid #eee;">${sanitize(country)}</td></tr>
       <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Locations / Sites</td><td style="padding:8px;border-bottom:1px solid #eee;">${sanitize(locations) || "—"}</td></tr>
       <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Primary Goals</td><td style="padding:8px;border-bottom:1px solid #eee;">${goalsText || "—"}</td></tr>
-      <tr style="background:#FFF8F0;"><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Preferred Demo Date</td><td style="padding:8px;border-bottom:1px solid #eee;">${formattedDate}</td></tr>
-      <tr style="background:#FFF8F0;"><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Preferred Demo Time</td><td style="padding:8px;border-bottom:1px solid #eee;">${formattedTime}</td></tr>
     </table>
   `;
 
@@ -136,7 +112,7 @@ app.post("/api/demo-request", rateLimit, async (req, res) => {
       from: `"Konecta Website" <${process.env.SMTP_USER}>`,
       to:
         process.env.RECIPIENT_EMAIL ||
-        "support@konecta.co.za, sales@konecta.co.za",
+        "support@konecta.co.za, sales@konecta.co.za, smartwifi@konecta.co.za",
       replyTo: sanitize(email),
       subject: `WiFi Demo Request — ${sanitize(firstName)} ${sanitize(surname)} (${sanitize(companyName)})`,
       html: htmlBody,
