@@ -1,6 +1,11 @@
 /* ===== WIFI PLATFORM PAGE — Scoped Styles ===== */
 /* All classes prefixed with .wfp- to avoid collisions with Tailwind / global styles */
 
+/* ── ANCHOR-OFFSET (navbar 72 px + sub-nav 48 px) ── */
+.wfp-section {
+  scroll-margin-top: 120px;
+}
+
 /* ── SUB-NAV ── */
 .wfp-subnav {
   position: sticky;
@@ -137,10 +142,10 @@
 }
 
 .wfp-hero-sub {
-  font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 1.7;
-  color: rgba(245, 242, 236, 0.6);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(245, 242, 236, 0.85);
   max-width: 560px;
   margin: 28px 0 48px;
   position: relative;
@@ -195,10 +200,10 @@
 
 .wfp-proof-lbl {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(245, 242, 236, 0.7);
   margin-top: 4px;
 }
 
@@ -241,10 +246,10 @@
 }
 
 .wfp-section-body {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(245, 242, 236, 0.6);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(245, 242, 236, 0.85);
   max-width: 580px;
 }
 
@@ -293,15 +298,15 @@
 .wfp-step-title {
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 8px;
   color: var(--white);
 }
 
 .wfp-step-desc {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+  font-size: 1rem;
+  color: rgba(245, 242, 236, 0.8);
+  line-height: 1.7;
 }
 
 .wfp-step-connector {
@@ -356,24 +361,24 @@
 .wfp-sector-name {
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 6px;
   color: var(--white);
 }
 
 .wfp-sector-tag {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(245, 242, 236, 0.6);
   margin-bottom: 14px;
 }
 
 .wfp-sector-desc {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+  font-size: 1rem;
+  color: rgba(245, 242, 236, 0.8);
+  line-height: 1.7;
   margin-bottom: 16px;
 }
 
@@ -384,8 +389,8 @@
 }
 
 .wfp-sector-outcome {
-  font-size: 0.8rem;
-  color: rgba(245, 242, 236, 0.7);
+  font-size: 0.9rem;
+  color: rgba(245, 242, 236, 0.8);
   display: flex;
   gap: 8px;
   align-items: flex-start;
@@ -433,13 +438,13 @@
 .wfp-client-name {
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--white);
 }
 
 .wfp-client-type {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: 0.85rem;
+  color: rgba(245, 242, 236, 0.7);
   margin-top: 2px;
 }
 
@@ -448,9 +453,9 @@
 }
 
 .wfp-client-desc {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+  font-size: 1rem;
+  color: rgba(245, 242, 236, 0.8);
+  line-height: 1.7;
   margin-bottom: 16px;
 }
 
@@ -458,9 +463,9 @@
   display: flex;
   gap: 4px;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   letter-spacing: 0.08em;
-  color: rgba(245, 242, 236, 0.4);
+  color: rgba(245, 242, 236, 0.6);
   flex-wrap: wrap;
 }
 
@@ -503,15 +508,15 @@
 .wfp-feature-title {
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   margin-bottom: 3px;
   color: var(--white);
 }
 
 .wfp-feature-desc {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  font-size: 0.95rem;
+  color: rgba(245, 242, 236, 0.8);
+  line-height: 1.6;
 }
 
 .wfp-platform-visual {
@@ -551,8 +556,8 @@
 }
 
 .wfp-mini-metric-lbl {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: 0.85rem;
+  color: rgba(245, 242, 236, 0.7);
 }
 
 .wfp-mini-metric-status {
@@ -569,8 +574,8 @@
 }
 
 .wfp-mini-bar-label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: 0.85rem;
+  color: rgba(245, 242, 236, 0.7);
   margin-bottom: 8px;
 }
 
@@ -594,8 +599,8 @@
 }
 
 .wfp-bar-range span {
-  font-size: 0.72rem;
-  color: var(--text-muted);
+  font-size: 0.8rem;
+  color: rgba(245, 242, 236, 0.65);
 }
 
 .wfp-bar-range .wfp-bar-value {
@@ -696,7 +701,11 @@
     grid-template-columns: 1fr;
   }
   .wfp-hero-proof {
-    gap: 28px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .wfp-hero-proof > div {
+    min-width: 120px;
   }
   .wfp-hero-ctas {
     flex-direction: column;
@@ -704,5 +713,11 @@
   .wfp-hero-ctas .btn-primary,
   .wfp-hero-ctas .wfp-btn-outline {
     text-align: center;
+  }
+  .wfp-section {
+    padding: 60px 5%;
+  }
+  .wfp-cta-section {
+    padding: 80px 5%;
   }
 }

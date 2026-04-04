@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
-import { COMPANY, SOCIAL_LINKS } from "@data/constants";
+import {
+  COMPANY,
+  SOCIAL_LINKS,
+  OFFICES,
+  FOOTER_SERVICES,
+  FOOTER_EVENTS,
+  FOOTER_COMPANY,
+  BADGES,
+} from "@data/constants";
 import useClock from "@hooks/useClock";
-
-const OFFICES = [
-  { city: "Johannesburg", tz: "Africa/Johannesburg", label: "HQ" },
-  { city: "Cape Town", tz: "Africa/Johannesburg", label: "" },
-  { city: "Nairobi", tz: "Africa/Nairobi", label: "" },
-  { city: "London", tz: "Europe/London", label: "" },
-];
 
 function OfficeClock({ city, tz, label }) {
   const time = useClock(tz);
@@ -53,11 +54,7 @@ export default function Footer() {
               transformation across the continent.
             </p>
             <div className="flex flex-col gap-2">
-              {[
-                "Level 1 B-BBEE Certified",
-                "100% Women-Owned",
-                "Pan-African TMT Specialist",
-              ].map((badge) => (
+              {BADGES.map((badge) => (
                 <span
                   key={badge}
                   className="text-[0.65rem] font-bold uppercase tracking-widest text-konecta-gold border border-konecta-gold/20 rounded-lg px-3 py-1.5 w-fit backdrop-blur-sm bg-konecta-gold/[0.03]"
@@ -74,14 +71,7 @@ export default function Footer() {
               Services
             </div>
             <ul className="flex flex-col gap-3 list-none">
-              {[
-                "Network Build & WiFi-as-a-Service",
-                "Big Data & Analytics Platforms",
-                "Value-Added Services",
-                "Microsoft Azure & AI",
-                "Managed IT Services",
-                "Telecoms Consulting",
-              ].map((item) => (
+              {FOOTER_SERVICES.map((item) => (
                 <li key={item}>
                   <Link
                     to="/services"
@@ -100,12 +90,7 @@ export default function Footer() {
               Events
             </div>
             <ul className="flex flex-col gap-3 list-none mb-10">
-              {[
-                { label: "CIO Konect Summit", to: "/events" },
-                { label: "Municipal Indaba", to: "/events" },
-                { label: "WiTechAfrica Forum", to: "/events" },
-                { label: "Sponsor an Event", to: "/contact" },
-              ].map((item) => (
+              {FOOTER_EVENTS.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.to}
@@ -120,11 +105,7 @@ export default function Footer() {
               Company
             </div>
             <ul className="flex flex-col gap-3 list-none">
-              {[
-                { label: "About Konecta", to: "/about" },
-                { label: "Impact Projects", to: "/impact" },
-                { label: "Insights & News", to: "/insights" },
-              ].map((item) => (
+              {FOOTER_COMPANY.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.to}

@@ -3,12 +3,6 @@ import SectionEyebrow from "@components/common/SectionEyebrow";
 import useInView from "@hooks/useInView";
 import { events } from "@data/events";
 
-const EVENT_IMAGES = [
-  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
-  "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
-  "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80",
-];
-
 function EventCard({ event, index }) {
   const [ref, inView] = useInView({ threshold: 0.2 });
   const isFlagship = event.type === "flagship";
@@ -26,8 +20,9 @@ function EventCard({ event, index }) {
         className={`relative ${isFlagship ? "min-h-[280px]" : "min-h-[200px]"} overflow-hidden`}
       >
         <img
-          src={EVENT_IMAGES[index] || EVENT_IMAGES[0]}
+          src={event.image}
           alt={event.name}
+          loading="lazy"
           className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black via-konecta-black/50 to-transparent" />

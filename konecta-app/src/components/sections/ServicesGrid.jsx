@@ -4,15 +4,6 @@ import SectionEyebrow from "@components/common/SectionEyebrow";
 import useInView from "@hooks/useInView";
 import { services } from "@data/services";
 
-const SERVICE_IMAGES = [
-  "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80", // Network
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80", // Data analytics
-  "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80", // Platform
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80", // Business
-  "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80", // Tech
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80", // Team tech
-];
-
 export default function ServicesGrid() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [sectionRef, inView] = useInView({ threshold: 0.1 });
@@ -97,11 +88,12 @@ export default function ServicesGrid() {
         </div>
 
         {/* Right — demo image with glass overlay */}
-        <div className="image-glass-overlay rounded-2xl overflow-hidden min-h-[400px]">
+        <div className="image-glass-overlay rounded-2xl overflow-hidden min-h-[250px] sm:min-h-[400px]">
           <img
-            src={SERVICE_IMAGES[activeIdx] || SERVICE_IMAGES[0]}
+            src={active.image}
             alt={active.title}
-            className="w-full h-full object-cover min-h-[400px]"
+            loading="lazy"
+            className="w-full h-full object-cover min-h-[250px] sm:min-h-[400px]"
           />
         </div>
       </div>

@@ -1,26 +1,27 @@
 import { Link } from "react-router-dom";
 import useInView from "@hooks/useInView";
+import { kaiFeatures } from "@data/services";
 
-const KAI_FEATURES = [
-  {
-    number: "01",
-    title: "Production-Grade AI Deployment",
-    description:
-      "Konecta enables African enterprises and public sector organisations to deploy production-grade AI capabilities through strategic partnerships with global technology partners.",
-  },
-  {
-    number: "02",
-    title: "Network Infrastructure & Data Environments",
-    description:
-      "We provide the network infrastructure, data environments, and market integration required to capture and process large-scale data — along with enterprise AI infrastructure, cloud platforms, and cybersecurity architecture.",
-  },
-  {
-    number: "03",
-    title: "Fully Integrated AI Ecosystem",
-    description:
-      "Together, we deliver a fully integrated AI ecosystem — enabling organisations to deploy machine learning models, automate complex processes, and extract insight from vast data environments.",
-  },
-];
+function KaiFeatureCard({ feat, index }) {
+  const [cardRef, cardInView] = useInView({ threshold: 0.2 });
+  return (
+    <div
+      ref={cardRef}
+      className={`glass-card-orange p-8 lg:p-10 group transition-all duration-700 ${cardInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      style={{ transitionDelay: `${index * 150}ms` }}
+    >
+      <div className="font-heading text-5xl font-extrabold text-konecta-orange/10 mb-6 group-hover:text-konecta-orange/25 transition-colors">
+        {feat.number}
+      </div>
+      <h3 className="font-heading font-bold text-lg text-konecta-white mb-3">
+        {feat.title}
+      </h3>
+      <p className="text-base text-white/75 leading-relaxed">
+        {feat.description}
+      </p>
+    </div>
+  );
+}
 
 export default function KaiSection() {
   const [ref, inView] = useInView({ threshold: 0.1 });
@@ -61,40 +62,21 @@ export default function KaiSection() {
         </div>
       </div>
 
-      {/* Feature grid — glass cards */}
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-        {KAI_FEATURES.map((feat, i) => {
-          const [cardRef, cardInView] = useInView({ threshold: 0.2 });
-          return (
-            <div
-              ref={cardRef}
-              key={feat.title}
-              className={`glass-card-orange p-8 lg:p-10 group transition-all duration-700 ${cardInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ transitionDelay: `${i * 150}ms` }}
-            >
-              <div className="font-heading text-5xl font-extrabold text-konecta-orange/10 mb-6 group-hover:text-konecta-orange/25 transition-colors">
-                {feat.number}
-              </div>
-              <h3 className="font-heading font-bold text-lg text-konecta-white mb-3">
-                {feat.title}
-              </h3>
-              <p className="text-base text-white/75 leading-relaxed">
-                {feat.description}
-              </p>
-            </div>
-          );
-        })}
+        {kaiFeatures.map((feat, i) => (
+          <KaiFeatureCard key={feat.title} feat={feat} index={i} />
+        ))}
       </div>
 
       {/* Bottom CTA */}
       <div
-        className={`mt-12 flex items-center justify-between pt-8 border-t border-[rgba(255,255,255,0.06)] transition-all duration-700 delay-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        className={`mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 border-t border-[rgba(255,255,255,0.06)] transition-all duration-700 delay-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         <p className="text-base text-konecta-muted">
           Explore how our AI Infrastructure & Factory practice transforms
           enterprise operations.
         </p>
-        <Link to="/contact" className="btn-primary">
+        <Link to="/contact" className="btn-primary flex-shrink-0">
           Explore AI Solutions
         </Link>
       </div>

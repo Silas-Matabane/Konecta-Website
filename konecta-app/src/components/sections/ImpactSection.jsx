@@ -3,12 +3,6 @@ import SectionEyebrow from "@components/common/SectionEyebrow";
 import useInView from "@hooks/useInView";
 import { impactStudies } from "@data/insights";
 
-const IMPACT_IMAGES = [
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
-  "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80",
-];
-
 function ImpactCard({ study, index }) {
   const [ref, inView] = useInView({ threshold: 0.2 });
 
@@ -25,8 +19,9 @@ function ImpactCard({ study, index }) {
         className={`relative overflow-hidden ${study.large ? "min-h-[240px]" : "min-h-[180px]"}`}
       >
         <img
-          src={IMPACT_IMAGES[index] || IMPACT_IMAGES[0]}
+          src={study.image}
           alt={study.title}
+          loading="lazy"
           className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black/90 to-transparent" />
