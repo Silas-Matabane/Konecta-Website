@@ -4,8 +4,8 @@
 
 /* ===== FONT FACES ===== */
 @font-face {
-  font-family: 'Blur';
-  src: url('/fonts/blur-medium/Blur Medium/Blur Medium.otf') format('opentype');
+  font-family: "Blur";
+  src: url("/fonts/blur-medium/Blur Medium/Blur Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -13,16 +13,16 @@
 
 /* ===== CSS CUSTOM PROPERTIES (Design Tokens) ===== */
 :root {
-  --black: #1E252C;
-  --white: #F5F2EC;
-  --orange: #F48120;
-  --orange-light: #FFA04D;
-  --gold: #FBB040;
-  --slate: #5D6770;
-  --silver: #A4AAAD;
-  --dark-gray: #161C22;
-  --mid-gray: #1A2029;
-  --text-muted: #A4AAAD;
+  --black: #1e252c;
+  --white: #f5f2ec;
+  --orange: #f48120;
+  --orange-light: #ffa04d;
+  --gold: #fbb040;
+  --slate: #5d6770;
+  --silver: #a4aaad;
+  --dark-gray: #161c22;
+  --mid-gray: #1a2029;
+  --text-muted: #a4aaad;
   --border: rgba(255, 255, 255, 0.08);
   --glass-bg: rgba(255, 255, 255, 0.04);
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -36,7 +36,7 @@
   }
 
   body {
-    font-family: 'Catamaran', sans-serif;
+    font-family: "Catamaran", sans-serif;
     background: var(--black);
     color: var(--white);
     overflow-x: hidden;
@@ -44,8 +44,18 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Inter", sans-serif;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.75;
   }
 
   ::selection {
@@ -69,10 +79,18 @@
     border-radius: 4px;
   }
   .btn-primary::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: 0; left: -100%; width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
     transition: left 0.6s ease;
   }
   .btn-primary:hover::before {
@@ -81,7 +99,9 @@
   .btn-primary:hover {
     background: var(--orange-light);
     transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(244, 129, 32, 0.4), 0 0 60px rgba(244, 129, 32, 0.15);
+    box-shadow:
+      0 12px 40px rgba(244, 129, 32, 0.4),
+      0 0 60px rgba(244, 129, 32, 0.15);
   }
 
   .btn-secondary {
@@ -163,10 +183,18 @@
     grid-template-columns: 1fr 1fr;
     gap: 2px;
   }
-  .ms-logo > div:nth-child(1) { background: #F25022; }
-  .ms-logo > div:nth-child(2) { background: #7FBA00; }
-  .ms-logo > div:nth-child(3) { background: #00A4EF; }
-  .ms-logo > div:nth-child(4) { background: #FFB900; }
+  .ms-logo > div:nth-child(1) {
+    background: #f25022;
+  }
+  .ms-logo > div:nth-child(2) {
+    background: #7fba00;
+  }
+  .ms-logo > div:nth-child(3) {
+    background: #00a4ef;
+  }
+  .ms-logo > div:nth-child(4) {
+    background: #ffb900;
+  }
 
   /* ===== GLASSMORPHISM SYSTEM ===== */
   .glass-card {
@@ -239,18 +267,42 @@
   /* Gradient mesh background */
   .gradient-mesh {
     background:
-      radial-gradient(ellipse at 20% 50%, rgba(244, 129, 32, 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, rgba(93, 103, 112, 0.06) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 80%, rgba(251, 176, 64, 0.04) 0%, transparent 50%),
+      radial-gradient(
+        ellipse at 20% 50%,
+        rgba(244, 129, 32, 0.08) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 80% 20%,
+        rgba(93, 103, 112, 0.06) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 50% 80%,
+        rgba(251, 176, 64, 0.04) 0%,
+        transparent 50%
+      ),
       var(--black);
   }
 
   .gradient-mesh-hero {
     background:
-      radial-gradient(ellipse at 10% 90%, rgba(244, 129, 32, 0.12) 0%, transparent 40%),
-      radial-gradient(ellipse at 80% 10%, rgba(93, 103, 112, 0.08) 0%, transparent 40%),
-      radial-gradient(ellipse at 50% 50%, rgba(251, 176, 64, 0.04) 0%, transparent 50%),
-      linear-gradient(180deg, var(--black) 0%, #161C22 100%);
+      radial-gradient(
+        ellipse at 10% 90%,
+        rgba(244, 129, 32, 0.12) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        ellipse at 80% 10%,
+        rgba(93, 103, 112, 0.08) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        ellipse at 50% 50%,
+        rgba(251, 176, 64, 0.04) 0%,
+        transparent 50%
+      ),
+      linear-gradient(180deg, var(--black) 0%, #161c22 100%);
   }
 
   /* Animated gradient border */
@@ -260,15 +312,23 @@
     overflow: hidden;
   }
   .gradient-border::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     border-radius: 16px;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(244, 129, 32, 0.4), rgba(93, 103, 112, 0.3), rgba(251, 176, 64, 0.3), rgba(244, 129, 32, 0.4));
+    background: linear-gradient(
+      135deg,
+      rgba(244, 129, 32, 0.4),
+      rgba(93, 103, 112, 0.3),
+      rgba(251, 176, 64, 0.3),
+      rgba(244, 129, 32, 0.4)
+    );
     background-size: 300% 300%;
     animation: gradientShift 8s ease infinite;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
@@ -276,7 +336,12 @@
 
   /* Shimmer loading effect */
   .shimmer {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
     background-size: 200% 100%;
     animation: shimmer 2.5s linear infinite;
   }
@@ -286,7 +351,7 @@
     @apply relative overflow-hidden;
   }
   .card-hover-underline::after {
-    content: '';
+    content: "";
     @apply absolute bottom-0 left-0 right-0 h-0.5;
     background: linear-gradient(90deg, var(--orange), var(--gold));
     transform: scaleX(0);
@@ -310,10 +375,14 @@
 
   /* Glow effect behind elements */
   .glow-orange {
-    box-shadow: 0 0 80px rgba(244, 129, 32, 0.2), 0 0 160px rgba(244, 129, 32, 0.1);
+    box-shadow:
+      0 0 80px rgba(244, 129, 32, 0.2),
+      0 0 160px rgba(244, 129, 32, 0.1);
   }
   .glow-blue {
-    box-shadow: 0 0 80px rgba(93, 103, 112, 0.2), 0 0 160px rgba(93, 103, 112, 0.1);
+    box-shadow:
+      0 0 80px rgba(93, 103, 112, 0.2),
+      0 0 160px rgba(93, 103, 112, 0.1);
   }
 
   /* Image with glass overlay */
@@ -332,10 +401,14 @@
     transform: scale(1.05);
   }
   .image-glass-overlay::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(30, 37, 44, 0.8) 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 40%,
+      rgba(30, 37, 44, 0.8) 100%
+    );
     pointer-events: none;
     border-radius: 16px;
   }
@@ -343,23 +416,41 @@
 
 /* ===== ANIMATIONS ===== */
 @keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
 }
 
 @keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes shimmer {
-  from { background-position: -200% 0; }
-  to { background-position: 200% 0; }
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
 }
 
 .animate-ticker {
@@ -404,7 +495,7 @@
 
 /* Noise texture overlay */
 .noise-overlay::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");

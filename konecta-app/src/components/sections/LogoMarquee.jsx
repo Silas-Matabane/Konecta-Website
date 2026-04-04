@@ -1,4 +1,4 @@
-import { partners } from '@data/partners';
+import { partners } from "@data/partners";
 
 const row1 = partners.slice(0, 6);
 const row2 = partners.slice(6);
@@ -12,13 +12,17 @@ function MarqueeRow({ items, reverse = false }) {
       <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-konecta-black to-transparent z-10" />
       <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-konecta-black to-transparent z-10" />
 
-      <div className={`flex gap-6 items-center ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
+      <div
+        className={`flex gap-6 items-center ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}
+      >
         {doubled.map((p, i) => (
           <div
             key={`${p.name}-${i}`}
             className="flex-shrink-0 px-8 py-4 rounded-xl glass-card hover:border-konecta-orange/30 transition-all duration-300"
           >
-            <div className={`font-heading font-bold text-sm whitespace-nowrap tracking-wide ${p.isMicrosoft ? 'text-konecta-silver/85' : 'text-konecta-white/75'}`}>
+            <div
+              className={`font-heading font-bold text-sm whitespace-nowrap tracking-wide ${p.isMicrosoft ? "text-konecta-silver/85" : "text-konecta-white/75"}`}
+            >
               {p.name}
             </div>
           </div>
@@ -33,7 +37,8 @@ export default function LogoMarquee() {
     <section className="py-16 bg-konecta-black">
       <div className="px-6 lg:px-14 mb-10 text-center">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/75">
-          In Partnership With Africa&apos;s Leading Operators &amp; Global Tech Leaders
+          In Partnership With Africa&apos;s Leading Operators &amp; Global Tech
+          Leaders
         </p>
       </div>
       <div className="flex flex-col gap-4">
