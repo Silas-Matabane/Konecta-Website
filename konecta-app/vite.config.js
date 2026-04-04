@@ -1,9 +1,76 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: "autoUpdate",
+      includeAssets: ["favicon.ico", "fonts/**/*"],
+      manifest: {
+        name: "Konecta — Africa's Premier Telecoms & Technology Consultancy",
+        short_name: "Konecta",
+        description:
+          "We build networks, power data, and enable value-added services across Africa.",
+        theme_color: "#1E252C",
+        background_color: "#1E252C",
+        display: "standalone",
+        start_url: "/",
+        icons: [
+          {
+            src: "/pwa-192x192.svg",
+            sizes: "192x192",
+            type: "image/svg+xml",
+          },
+          {
+            src: "/pwa-512x512.svg",
+            sizes: "512x512",
+            type: "image/svg+xml",
+          },
+          {
+            src: "/pwa-512x512.svg",
+            sizes: "512x512",
+            type: "image/svg+xml",
+            purpose: "maskable",
+          },
+        ],
+      },
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,woff,woff2,otf}"],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "google-fonts-cache",
+              expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "gstatic-fonts-cache",
+              expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/images\.unsplash\.com\/.*/i,
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "unsplash-images-cache",
+              expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+        ],
+      },
+    }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

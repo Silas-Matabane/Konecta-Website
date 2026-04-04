@@ -27,7 +27,10 @@ function OfficeClock({ city, tz, label }) {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#050505] overflow-hidden">
+    <footer
+      aria-label="Site footer"
+      className="relative bg-[#050505] overflow-hidden"
+    >
       {/* Ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-konecta-orange/[0.03] blur-[120px] rounded-full pointer-events-none" />
 

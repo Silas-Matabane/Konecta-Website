@@ -9,6 +9,59 @@ export const COMPANY = {
   year: new Date().getFullYear(),
 };
 
+export const PAGE_SEO = {
+  home: {
+    title: null,
+    description:
+      "Konecta — Africa's premier telecoms & technology consultancy. We build networks, power data, and enable value-added services across the continent.",
+  },
+  platform: {
+    title: "Our Platform",
+    description:
+      "Konecta's end-to-end value chain transforms connectivity into intelligent platforms that generate big data, analytics, and revenue.",
+  },
+  services: {
+    title: "Our Services",
+    description:
+      "Six pillars of telecoms and technology excellence — from network deployment to AI adoption, driving measurable outcomes across Africa.",
+  },
+  microsoft: {
+    title: "Microsoft Partnership",
+    description:
+      "As an authorised Microsoft Partner, Konecta delivers Azure, Microsoft 365, Copilot AI, and Dynamics 365 to African enterprises.",
+  },
+  events: {
+    title: "Industry Events",
+    description:
+      "Konecta convenes Africa's most important technology conversations through three flagship events for CIOs, municipal leaders, and telecoms innovators.",
+  },
+  impact: {
+    title: "Impact & Case Studies",
+    description:
+      "Real projects, measurable results. See how Konecta delivers transformative outcomes for Africa's leading organisations.",
+  },
+  insights: {
+    title: "Insights & Thought Leadership",
+    description:
+      "Expert analysis on telecoms, AI adoption, Microsoft technologies, and digital strategy across Africa.",
+  },
+  about: {
+    title: "About Konecta",
+    description:
+      "Africa's premier telecoms and technology consultancy — Level 1 B-BBEE certified, 100% women-owned, and a trusted Microsoft Partner.",
+  },
+  contact: {
+    title: "Contact Us",
+    description:
+      "Get in touch with Konecta. Offices in Johannesburg, Cape Town, Dubai, and Mumbai. Let's build Africa's digital future together.",
+  },
+  wifiPlatform: {
+    title: "WiFi Platform",
+    description:
+      "Konecta's enterprise-grade WiFi platform delivering connectivity, captive portals, and analytics across Africa.",
+  },
+};
+
 export const OFFICES = [
   { city: "Johannesburg", tz: "Africa/Johannesburg", label: "Headquarters" },
   { city: "Cape Town", tz: "Africa/Johannesburg", label: "Regional Office" },

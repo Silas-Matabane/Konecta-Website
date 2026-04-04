@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   heroStats,
@@ -8,20 +9,127 @@ import {
   dashboardMetrics,
   dashboardBars,
 } from "@data/wifiPlatform";
+import SEO from "@components/common/SEO";
+import { PAGE_SEO } from "@data/constants";
 import "../css/wifi-platform.css";
 
+const DEMO_API = import.meta.env.VITE_DEMO_API || "http://localhost:3001";
+
+const INDUSTRY_OPTIONS = [
+  "Hospitality",
+  "Retail",
+  "Healthcare",
+  "Education",
+  "Transport",
+  "Corporate",
+  "Government",
+  "ISP / Telecoms",
+  "Events / Venues",
+  "Other",
+];
+
+const GOAL_OPTIONS = [
+  { value: "analytics", label: "Guest Analytics & Insights" },
+  { value: "marketing", label: "Marketing & Engagement" },
+  { value: "monetisation", label: "WiFi Monetisation" },
+  { value: "compliance", label: "POPIA / GDPR Compliance" },
+  { value: "captive-portal", label: "Branded Captive Portal" },
+  { value: "other", label: "Other" },
+];
+
 export default function WifiPlatformPage() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    surname: "",
+    email: "",
+    phone: "",
+    companyName: "",
+    industry: "",
+    country: "",
+    locations: "",
+    goals: [],
+    preferredDate: "",
+    preferredTime: "",
+  });
+  const [isIndividual, setIsIndividual] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [errorMsg, setErrorMsg] = useState("");
+
+  /* Minimum selectable date = tomorrow */
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const minDate = tomorrow.toISOString().split("T")[0];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleGoalToggle = (goalValue) => {
+    setFormData((prev) => {
+      const goals = prev.goals.includes(goalValue)
+        ? prev.goals.filter((g) => g !== goalValue)
+        : [...prev.goals, goalValue];
+      return { ...prev, goals };
+    });
+  };
+
+  const handleIndividualToggle = (e) => {
+    const checked = e.target.checked;
+    setIsIndividual(checked);
+    setFormData((prev) => ({
+      ...prev,
+      companyName: checked ? "Individual" : "",
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch(`${DEMO_API}/api/demo-request`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMsg(
+          data.errors?.join(" ") || data.error || "Something went wrong.",
+        );
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+    } catch {
+      setErrorMsg("Network error. Please try again later.");
+      setStatus("error");
+    }
+  };
+
+  const inputClass = "wfp-form-input";
+
   return (
     <>
+      <SEO
+        title={PAGE_SEO.wifiPlatform.title}
+        description={PAGE_SEO.wifiPlatform.description}
+        path="/wifi-platform"
+      />
       {/* ── SUB-NAV ── */}
       <div className="wfp-subnav">
         <a href="#wfp-how">How It Works</a>
         <a href="#wfp-sectors">Sectors</a>
         <a href="#wfp-clients">Live Clients</a>
         <a href="#wfp-platform">Platform</a>
-        <Link to="/contact" className="wfp-subnav-cta">
+        <a href="#wfp-demo" className="wfp-subnav-cta">
           Book a Demo
-        </Link>
+        </a>
       </div>
 
       {/* ── HERO ── */}
@@ -41,9 +149,9 @@ export default function WifiPlatformPage() {
           branded experience, a behaviour insight, and a revenue opportunity.
         </p>
         <div className="wfp-hero-ctas">
-          <Link to="/contact" className="btn-primary">
-            Book a 20-Min Demo
-          </Link>
+          <a href="#wfp-demo" className="btn-primary">
+            Book A Demo
+          </a>
           <a
             href="https://dash.konecta.co.za/portal/portal.php"
             className="wfp-btn-outline"
@@ -235,8 +343,8 @@ export default function WifiPlatformPage() {
 
       <div className="wfp-divider" />
 
-      {/* ── CTA ── */}
-      <section className="wfp-section wfp-cta-section">
+      {/* ── DEMO BOOKING FORM ── */}
+      <section className="wfp-section wfp-cta-section" id="wfp-demo">
         <div className="wfp-section-eyebrow">Get Started</div>
         <h2 className="wfp-section-title">
           Your WiFi is already there.
@@ -247,23 +355,218 @@ export default function WifiPlatformPage() {
           20 minutes. Live platform. Your questions. No deck, no sales script —
           just an honest look at what Konecta can do for your organisation.
         </p>
-        <div className="wfp-cta-buttons">
-          <Link to="/contact" className="btn-primary">
-            Book a 20-Min Demo
-          </Link>
-          <a
-            href="https://dash.konecta.co.za/portal/portal.php"
-            className="wfp-btn-outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            See the Live Platform
-          </a>
-        </div>
-        <p className="wfp-cta-note">
-          No commitment required · POPIA compliant · Deploys on existing
-          infrastructure
-        </p>
+
+        {status === "success" ? (
+          <div className="wfp-form-success">
+            <div className="wfp-form-success-icon">✓</div>
+            <h3>Demo Request Received!</h3>
+            <p>
+              Thanks, {formData.firstName}. We&apos;ll be in touch at{" "}
+              <strong>{formData.email}</strong> within 24 hours to schedule your
+              demo.
+            </p>
+          </div>
+        ) : (
+          <form className="wfp-demo-form" onSubmit={handleSubmit} noValidate>
+            {/* Row 1 — Name */}
+            <div className="wfp-form-row">
+              <div className="wfp-form-group">
+                <label htmlFor="firstName">First Name *</label>
+                <input
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  required
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="First name"
+                />
+              </div>
+              <div className="wfp-form-group">
+                <label htmlFor="surname">Surname *</label>
+                <input
+                  id="surname"
+                  name="surname"
+                  type="text"
+                  required
+                  value={formData.surname}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="Surname"
+                />
+              </div>
+            </div>
+
+            {/* Row 2 — Contact */}
+            <div className="wfp-form-row">
+              <div className="wfp-form-group">
+                <label htmlFor="email">Email Address *</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="you@company.com"
+                />
+              </div>
+              <div className="wfp-form-group">
+                <label htmlFor="phone">Phone Number</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="+27 xx xxx xxxx"
+                />
+              </div>
+            </div>
+
+            {/* Row 3 — Company */}
+            <div className="wfp-form-row">
+              <div className="wfp-form-group">
+                <label htmlFor="companyName">Company Name *</label>
+                <input
+                  id="companyName"
+                  name="companyName"
+                  type="text"
+                  required
+                  value={formData.companyName}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="Company name"
+                  disabled={isIndividual}
+                />
+                <label className="wfp-form-checkbox">
+                  <input
+                    type="checkbox"
+                    checked={isIndividual}
+                    onChange={handleIndividualToggle}
+                  />
+                  <span>I&apos;m an individual</span>
+                </label>
+              </div>
+              <div className="wfp-form-group">
+                <label htmlFor="industry">Industry *</label>
+                <select
+                  id="industry"
+                  name="industry"
+                  required
+                  value={formData.industry}
+                  onChange={handleChange}
+                  className={inputClass}
+                >
+                  <option value="">Select your industry...</option>
+                  {INDUSTRY_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Row 4 — Location */}
+            <div className="wfp-form-row">
+              <div className="wfp-form-group">
+                <label htmlFor="country">Country / Region *</label>
+                <input
+                  id="country"
+                  name="country"
+                  type="text"
+                  required
+                  value={formData.country}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="e.g. South Africa"
+                />
+              </div>
+              <div className="wfp-form-group">
+                <label htmlFor="locations">Number of Locations / Sites</label>
+                <input
+                  id="locations"
+                  name="locations"
+                  type="text"
+                  value={formData.locations}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="e.g. 3, 25, 100+"
+                />
+              </div>
+            </div>
+
+            {/* Row 5 — Preferred Demo Date & Time */}
+            <div className="wfp-form-row">
+              <div className="wfp-form-group">
+                <label htmlFor="preferredDate">Preferred Demo Date</label>
+                <input
+                  id="preferredDate"
+                  name="preferredDate"
+                  type="date"
+                  min={minDate}
+                  value={formData.preferredDate}
+                  onChange={handleChange}
+                  className={inputClass}
+                />
+              </div>
+              <div className="wfp-form-group">
+                <label htmlFor="preferredTime">Preferred Demo Time</label>
+                <input
+                  id="preferredTime"
+                  name="preferredTime"
+                  type="time"
+                  min="08:00"
+                  max="17:00"
+                  step="1800"
+                  value={formData.preferredTime}
+                  onChange={handleChange}
+                  className={inputClass}
+                />
+              </div>
+            </div>
+
+            {/* Row 6 — Goals */}
+            <div className="wfp-form-group wfp-form-group--full">
+              <label>Primary Goals (select all that apply)</label>
+              <div className="wfp-goals-grid">
+                {GOAL_OPTIONS.map((goal) => (
+                  <label
+                    key={goal.value}
+                    className="wfp-form-checkbox wfp-goal-chip"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={formData.goals.includes(goal.value)}
+                      onChange={() => handleGoalToggle(goal.value)}
+                    />
+                    <span>{goal.label}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {status === "error" && (
+              <div className="wfp-form-error">{errorMsg}</div>
+            )}
+
+            <button
+              type="submit"
+              className="btn-primary wfp-form-submit"
+              disabled={status === "sending"}
+            >
+              {status === "sending" ? "Sending…" : "Book A Demo"}
+            </button>
+            <p className="wfp-cta-note">
+              No commitment required · POPIA compliant · Deploys on existing
+              infrastructure
+            </p>
+          </form>
+        )}
       </section>
     </>
   );

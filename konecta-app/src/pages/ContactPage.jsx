@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SectionEyebrow from "@components/common/SectionEyebrow";
-import { COMPANY, OFFICES, CONTACT_SUBJECTS } from "@data/constants";
+import SEO from "@components/common/SEO";
+import { COMPANY, OFFICES, CONTACT_SUBJECTS, PAGE_SEO } from "@data/constants";
 import useClock from "@hooks/useClock";
 import useInView from "@hooks/useInView";
 
@@ -42,6 +43,8 @@ export default function ContactPage() {
     "w-full bg-[rgba(255,255,255,0.03)] backdrop-blur-sm border border-[rgba(255,255,255,0.08)] rounded-xl px-4 py-3 text-sm text-konecta-white outline-none focus:border-konecta-orange/60 focus:bg-[rgba(255,255,255,0.05)] transition-all placeholder:text-white/25";
 
   return (
+    <>
+    <SEO title={PAGE_SEO.contact.title} description={PAGE_SEO.contact.description} path="/contact" />
     <section
       ref={ref}
       className="relative px-6 lg:px-14 pt-40 pb-section overflow-hidden"
@@ -208,5 +211,6 @@ export default function ContactPage() {
         </form>
       </div>
     </section>
+    </>
   );
 }

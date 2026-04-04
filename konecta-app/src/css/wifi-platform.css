@@ -721,3 +721,213 @@
     padding: 80px 5%;
   }
 }
+
+/* ── DEMO BOOKING FORM ── */
+.wfp-demo-form {
+  max-width: 680px;
+  margin: 48px auto 0;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wfp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.wfp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wfp-form-group--full {
+  grid-column: 1 / -1;
+}
+
+.wfp-form-group label {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(245, 242, 236, 0.8);
+}
+
+.wfp-form-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  color: var(--white);
+  outline: none;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.wfp-form-input::placeholder {
+  color: rgba(245, 242, 236, 0.25);
+}
+
+.wfp-form-input:focus {
+  border-color: rgba(244, 129, 32, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.wfp-form-input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Select arrow colour fix for dark bg */
+.wfp-form-input option {
+  background: #1e252c;
+  color: var(--white);
+}
+
+/* Date & time picker styling */
+.wfp-form-input[type="date"],
+.wfp-form-input[type="time"] {
+  color-scheme: dark;
+}
+
+.wfp-form-input[type="date"]::-webkit-calendar-picker-indicator,
+.wfp-form-input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7);
+  cursor: pointer;
+}
+
+.wfp-form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: rgba(245, 242, 236, 0.6);
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.wfp-form-checkbox input[type="checkbox"] {
+  accent-color: var(--orange);
+  width: 14px;
+  height: 14px;
+}
+
+.wfp-form-submit {
+  align-self: center;
+  margin-top: 8px;
+  min-width: 240px;
+}
+
+.wfp-form-submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.wfp-form-error {
+  text-align: center;
+  color: #ef4444;
+  font-size: 0.85rem;
+  padding: 10px 16px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+}
+
+.wfp-form-success {
+  max-width: 520px;
+  margin: 48px auto 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 129, 32, 0.2);
+  border-radius: 20px;
+  padding: 48px 36px;
+}
+
+.wfp-form-success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(244, 129, 32, 0.12);
+  color: var(--orange);
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.wfp-form-success h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.wfp-form-success p {
+  font-size: 0.95rem;
+  color: rgba(245, 242, 236, 0.65);
+  line-height: 1.6;
+}
+
+.wfp-form-success strong {
+  color: var(--orange);
+}
+
+/* ── GOALS MULTI-SELECT GRID ── */
+.wfp-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.wfp-goal-chip {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.wfp-goal-chip:has(input:checked) {
+  border-color: rgba(244, 129, 32, 0.5);
+  background: rgba(244, 129, 32, 0.06);
+}
+
+/* ── FORM RESPONSIVE ── */
+@media (max-width: 640px) {
+  .wfp-demo-form {
+    padding: 28px 20px;
+  }
+  .wfp-form-row {
+    grid-template-columns: 1fr;
+  }
+  .wfp-form-success {
+    padding: 36px 20px;
+  }
+  .wfp-goals-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

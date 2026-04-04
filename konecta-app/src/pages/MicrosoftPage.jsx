@@ -1,10 +1,17 @@
-﻿import MicrosoftPartnership from '@components/sections/MicrosoftPartnership';
-import CTASection from '@components/common/CTASection';
-import PageHeader from '@components/common/PageHeader';
+﻿import MicrosoftPartnership from "@components/sections/MicrosoftPartnership";
+import CTASection from "@components/common/CTASection";
+import PageHeader from "@components/common/PageHeader";
+import SEO from "@components/common/SEO";
+import { PAGE_SEO } from "@data/constants";
 
 export default function MicrosoftPage() {
   return (
     <>
+      <SEO
+        title={PAGE_SEO.microsoft.title}
+        description={PAGE_SEO.microsoft.description}
+        path="/microsoft"
+      />
       <PageHeader
         eyebrow="Microsoft Partner"
         eyebrowColor="text-konecta-silver"

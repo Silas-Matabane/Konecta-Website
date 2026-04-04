@@ -1,13 +1,20 @@
-﻿import Leadership from '@components/sections/Leadership';
-import AfricaPresence from '@components/sections/AfricaPresence';
-import WiTechAfricaBand from '@components/sections/WiTechAfricaBand';
-import PartnersSection from '@components/sections/PartnersSection';
-import CTASection from '@components/common/CTASection';
-import PageHeader from '@components/common/PageHeader';
+﻿import Leadership from "@components/sections/Leadership";
+import AfricaPresence from "@components/sections/AfricaPresence";
+import WiTechAfricaBand from "@components/sections/WiTechAfricaBand";
+import PartnersSection from "@components/sections/PartnersSection";
+import CTASection from "@components/common/CTASection";
+import PageHeader from "@components/common/PageHeader";
+import SEO from "@components/common/SEO";
+import { PAGE_SEO } from "@data/constants";
 
 export default function AboutPage() {
   return (
     <>
+      <SEO
+        title={PAGE_SEO.about.title}
+        description={PAGE_SEO.about.description}
+        path="/about"
+      />
       <PageHeader
         eyebrow="About Us"
         title="About Konecta"
