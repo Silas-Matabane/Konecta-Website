@@ -15,7 +15,7 @@ function StageCard({ stage, index }) {
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Stage number */}
-      <div className="font-heading font-extrabold text-6xl text-konecta-orange/[0.07] absolute top-4 right-6 leading-none group-hover:text-konecta-orange/15 transition-colors">
+      <div className="font-heading font-extrabold text-6xl text-konecta-orange/50 absolute top-4 right-6 leading-none group-hover:text-konecta-orange/70 transition-colors">
         {String(index + 1).padStart(2, "0")}
       </div>
 

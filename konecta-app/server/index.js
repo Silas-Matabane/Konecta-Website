@@ -127,6 +127,45 @@ app.post("/api/demo-request", rateLimit, async (req, res) => {
   }
 });
 
+/* ── POST /api/contact ── */
+app.post("/api/contact", rateLimit, async (req, res) => {
+  const { name, email, company, subject, message } = req.body;
+  const errs = [];
+  if (!name?.trim()) errs.push("Name is required.");
+  if (!email?.trim() || !EMAIL_RE.test(email?.trim()))
+    errs.push("A valid email address is required.");
+  if (!message?.trim()) errs.push("Message is required.");
+  if (errs.length) return res.status(400).json({ errors: errs });
+
+  const htmlBody = `
+    <h2 style="color:#F48120;">New Contact Form Submission</h2>
+    <table style="border-collapse:collapse;width:100%;max-width:600px;">
+      <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Name</td><td style="padding:8px;border-bottom:1px solid #eee;">${sanitize(name)}</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Email</td><td style="padding:8px;border-bottom:1px solid #eee;">${sanitize(email)}</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Company</td><td style="padding:8px;border-bottom:1px solid #eee;">${sanitize(company) || "—"}</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Subject</td><td style="padding:8px;border-bottom:1px solid #eee;">${sanitize(subject) || "—"}</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Message</td><td style="padding:8px;border-bottom:1px solid #eee;">${sanitize(message)}</td></tr>
+    </table>
+  `;
+
+  try {
+    await transporter.sendMail({
+      from: `"Konecta Website" <${process.env.SMTP_USER}>`,
+      to: "support@konecta.co.za, marketing@konecta.co.za",
+      replyTo: sanitize(email),
+      subject: `Contact Form — ${sanitize(name)}${company ? ` (${sanitize(company)})` : ""}`,
+      html: htmlBody,
+    });
+
+    return res.json({ success: true });
+  } catch (err) {
+    console.error("Contact email error:", err.message);
+    return res
+      .status(500)
+      .json({ error: "Failed to send your message. Please try again later." });
+  }
+});
+
 /* ── Health check ── */
 app.get("/api/health", (_req, res) => res.json({ status: "ok" }));
 

@@ -80,9 +80,10 @@ export const FOOTER_SERVICES = [
 ];
 
 export const FOOTER_EVENTS = [
-  { label: "CIO Konect Summit", to: "/events" },
-  { label: "Municipal Indaba", to: "/events" },
-  { label: "WiTechAfrica Forum", to: "/events" },
+  { label: "CIO Konect Summit", to: "/events/cio-konect-summit-2026" },
+  { label: "Municipal Indaba", to: "/events/municipal-indaba-2026" },
+  { label: "WiTechnology Forum", to: "/events/witechnology-forum-2026" },
+  { label: "All Events", to: "/events" },
   { label: "Sponsor an Event", to: "/contact" },
 ];
 
@@ -171,7 +172,7 @@ export const TICKER_ITEMS = [
   "Microsoft Partner — Azure · Copilot · Dynamics",
   "CIO Konect Annual Summit",
   "Municipal Indaba",
-  "WiTechAfrica Forum",
+  "WiTechnology Forum",
   "WiFi-as-a-Service",
   "Level 1 B-BBEE · 100% Women-Owned",
 ];

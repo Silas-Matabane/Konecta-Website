@@ -12,6 +12,7 @@ const InsightsPage = lazy(() => import("@pages/InsightsPage"));
 const AboutPage = lazy(() => import("@pages/AboutPage"));
 const ContactPage = lazy(() => import("@pages/ContactPage"));
 const WifiPlatformPage = lazy(() => import("@pages/WifiPlatformPage"));
+const EventDetailPage = lazy(() => import("@pages/EventDetailPage"));
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="services" element={<ServicesPage />} />
             <Route path="microsoft" element={<MicrosoftPage />} />
             <Route path="events" element={<EventsPage />} />
+            <Route path="events/:slug" element={<EventDetailPage />} />
             <Route path="impact" element={<ImpactPage />} />
             <Route path="insights" element={<InsightsPage />} />
             <Route path="about" element={<AboutPage />} />

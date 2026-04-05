@@ -1,6 +1,6 @@
 ﻿import Leadership from "@components/sections/Leadership";
 import AfricaPresence from "@components/sections/AfricaPresence";
-import WiTechAfricaBand from "@components/sections/WiTechAfricaBand";
+import WiTechnologyBand from "@components/sections/WiTechnologyBand";
 import PartnersSection from "@components/sections/PartnersSection";
 import CTASection from "@components/common/CTASection";
 import PageHeader from "@components/common/PageHeader";
@@ -22,7 +22,7 @@ export default function AboutPage() {
       />
       <Leadership />
       <AfricaPresence />
-      <WiTechAfricaBand />
+      <WiTechnologyBand />
       <PartnersSection />
       <CTASection />
     </>

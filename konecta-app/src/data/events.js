@@ -42,14 +42,14 @@ export const events = [
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
   },
   {
-    id: "witechafrica",
-    slug: "witechafrica",
-    name: "WiTechAfrica Forum",
+    id: "witechnology",
+    slug: "witechnology",
+    name: "WiTechnology Forum",
     tagline: "Wireless · Telecoms · Innovation",
     badge: "🌍 Pan-African Telecoms",
     type: "secondary",
     description:
-      "Africa's most influential wireless technology and telecoms innovation platform. WiTechAfrica brings together MNOs, spectrum regulators, equipment vendors, and independent technologists to shape the future of African connectivity — from 5G rollout to rural broadband and satellite integration.",
+      "Africa's most influential wireless technology and telecoms innovation platform. WiTechnology brings together MNOs, spectrum regulators, equipment vendors, and independent technologists to shape the future of African connectivity — from 5G rollout to rural broadband and satellite integration.",
     stats: [
       { value: "500+", label: "Delegates" },
       { value: "8+", label: "Countries" },
@@ -62,7 +62,7 @@ export const events = [
   },
 ];
 
-export const witechafricaStats = [
+export const witechnologyStats = [
   { value: "500+", label: "Summit Delegates" },
   { value: "25+", label: "Industry Speakers" },
   { value: "3", label: "Annual Editions" },

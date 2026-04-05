@@ -20,6 +20,8 @@ function OfficeCard({ city, tz, label }) {
   );
 }
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
 export default function ContactPage() {
   const [ref, inView] = useInView({ threshold: 0.1 });
   const [formData, setFormData] = useState({
@@ -29,14 +31,47 @@ export default function ContactPage() {
     subject: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    window.location.href = `mailto:${COMPANY.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nCompany: ${formData.company}\n\n${formData.message}`)}`;
+    setStatus("sending");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMsg(
+          data.errors?.join(" ") || data.error || "Something went wrong.",
+        );
+        return;
+      }
+
+      setStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        subject: "",
+        message: "",
+      });
+    } catch {
+      setStatus("error");
+      setErrorMsg("Network error. Please try again later.");
+    }
   };
 
   const inputClass =
@@ -209,9 +244,22 @@ export default function ContactPage() {
                 placeholder="Tell us about your project..."
               />
             </div>
-            <button type="submit" className="btn-primary self-start mt-2">
-              Send Message
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="btn-primary self-start mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {status === "sending" ? "Sending…" : "Send Message"}
             </button>
+
+            {status === "success" && (
+              <p className="text-green-400 text-sm mt-2">
+                Message sent! We&apos;ll be in touch shortly.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-red-400 text-sm mt-2">{errorMsg}</p>
+            )}
           </form>
         </div>
       </section>

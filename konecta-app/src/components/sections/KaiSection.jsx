@@ -10,7 +10,7 @@ function KaiFeatureCard({ feat, index }) {
       className={`glass-card-orange p-8 lg:p-10 group transition-all duration-700 ${cardInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      <div className="font-heading text-5xl font-extrabold text-konecta-orange/10 mb-6 group-hover:text-konecta-orange/25 transition-colors">
+      <div className="font-heading text-5xl font-extrabold text-konecta-orange/50 mb-6 group-hover:text-konecta-orange/70 transition-colors">
         {feat.number}
       </div>
       <h3 className="font-heading font-bold text-lg text-konecta-white mb-3">

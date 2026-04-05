@@ -90,7 +90,7 @@ konecta-app/
 │   │       ├── LogoMarquee.jsx       # Partner logos marquee
 │   │       ├── PartnersSection.jsx   # Technology partners
 │   │       ├── Testimonials.jsx      # Client testimonials
-│   │       └── WiTechAfricaBand.jsx  # WiTechAfrica promo band
+│   │       └── WiTechnologyBand.jsx  # WiTechnology promo band
 │   ├── data/                   # Centralised content & data
 │   │   ├── constants.js              # Company info, stats, nav links
 │   │   ├── services.js               # Services, pipeline stages, Microsoft solutions
@@ -155,7 +155,7 @@ The site uses a custom glassmorphism design system built on Tailwind CSS:
 | **Services**          | 6 pillars: WiFi, Managed IT, AI, Platform Dev, Consulting, OTT |
 | **AI Infrastructure** | Enterprise AI Factory practice                                 |
 | **Microsoft**         | Azure, Copilot, M365, Dynamics, Security partnership           |
-| **Events**            | CIO Konect, Municipal Indaba, WiTechAfrica                     |
+| **Events**            | CIO Konect, Municipal Indaba, WiTechnology                     |
 | **Impact**            | Case studies with measurable results                           |
 | **Leadership**        | CEO Yandisa Sokhanyile and executive team                      |
 
