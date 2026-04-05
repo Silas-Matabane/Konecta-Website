@@ -20,7 +20,7 @@ export default function Leadership() {
         <div
           className={`transition-all duration-1000 ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}
         >
-          <div className="relative">
+          <div className="relative max-w-sm mx-auto">
             <div className="image-glass-overlay rounded-2xl overflow-hidden aspect-[3/4]">
               <img
                 src={LEADERSHIP_DATA.image}

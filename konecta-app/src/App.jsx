@@ -11,6 +11,7 @@ const ImpactPage = lazy(() => import("@pages/ImpactPage"));
 const InsightsPage = lazy(() => import("@pages/InsightsPage"));
 const AboutPage = lazy(() => import("@pages/AboutPage"));
 const ContactPage = lazy(() => import("@pages/ContactPage"));
+const AcademyPage = lazy(() => import("@pages/AcademyPage"));
 const WifiPlatformPage = lazy(() => import("@pages/WifiPlatformPage"));
 const EventDetailPage = lazy(() => import("@pages/EventDetailPage"));
 
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="impact" element={<ImpactPage />} />
             <Route path="insights" element={<InsightsPage />} />
             <Route path="about" element={<AboutPage />} />
+            <Route path="academy" element={<AcademyPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="wifi-platform" element={<WifiPlatformPage />} />
           </Route>

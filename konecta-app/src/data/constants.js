@@ -60,6 +60,11 @@ export const PAGE_SEO = {
     description:
       "Konecta's enterprise-grade WiFi platform delivering connectivity, captive portals, and analytics across Africa.",
   },
+  academy: {
+    title: "Konecta Academy",
+    description:
+      "Accredited training programmes in AI, technopreneurship, and change management — upskilling Africa's digital workforce.",
+  },
 };
 
 export const OFFICES = [
@@ -110,7 +115,7 @@ export const HERO_IMAGE =
   "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80";
 
 export const LEADERSHIP_DATA = {
-  image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80",
+  image: "/speakers/yandisa-sokhanyile.png",
   yearsExperience: "15+",
   quote:
     "Konecta has evolved into a technology company focused on building the intelligent infrastructure that powers Africa\u2019s digital future.",
@@ -132,6 +137,7 @@ export const NAV_LINKS = [
   { label: "Events", path: "/events" },
   { label: "Impact", path: "/impact" },
   { label: "Insights", path: "/insights" },
+  { label: "Academy", path: "/academy" },
   { label: "About", path: "/about" },
 ];
 

@@ -379,7 +379,7 @@ function FilterBar({
 export default function EventsPage() {
   const [headerRef, headerInView] = useInView({ threshold: 0.1 });
   const [search, setSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState("all");
+  const [statusFilter, setStatusFilter] = useState("upcoming");
   const [category, setCategory] = useState("all");
   const [sector, setSector] = useState("all");
   const [location, setLocation] = useState("all");
