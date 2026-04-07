@@ -57,8 +57,8 @@ export const impactProjectsDatabase = [
     year: "2025",
     location: "Midrand, South Africa",
     badge: "Women in Tech",
-    image: "/images/event-witech-new.jpg",
-    thumbnail: "/images/event-witech-new.jpg",
+    image: "/images/witechnology-summit-2025/cover.jpg",
+    thumbnail: "/images/witechnology-summit-2025/cover.jpg",
     description:
       "The WiTechnology Summit 2025 brought together trailblazing women, industry leaders, and innovators in Midrand for an unforgettable celebration of progress in ICT and technology. From the official launch of the WiTechnology digital hub to powerful conversations on women's economic empowerment, the summit spotlighted changemakers driving Africa's digital transformation.",
     longDescription:
@@ -80,11 +80,11 @@ export const impactProjectsDatabase = [
       "Strong Sponsor Commitment: Support from sponsors like Motorola Solutions, Telecel Centrafrique SA, and Innovator Trust",
     ],
     gallery: [
-      "/images/events/witech-summit-hero.jpg",
-      "/images/events/witech-summit-1.jpg",
-      "/images/events/witech-summit-2.jpg",
-      "/images/events/witech-summit-3.jpg",
-      "/images/events/witech-summit-4.jpeg",
+      "/images/witechnology-summit-2025/gallery-hero.jpg",
+      "/images/witechnology-summit-2025/gallery-1.jpg",
+      "/images/witechnology-summit-2025/gallery-2.jpg",
+      "/images/witechnology-summit-2025/gallery-3.jpg",
+      "/images/witechnology-summit-2025/gallery-4.jpeg",
     ],
     ctaText: "Visit WiTechnology Hub",
     ctaUrl: "https://witechnology.africa/become-a-member/",
@@ -112,8 +112,8 @@ export const impactProjectsDatabase = [
     year: "2025",
     location: "Adapt IT, Johannesburg",
     badge: "Tech Leadership",
-    image: "/images/event-cio-new.jpg",
-    thumbnail: "/images/event-cio-new.jpg",
+    image: "/images/cio-konect-2025/cover.jpg",
+    thumbnail: "/images/cio-konect-2025/cover.jpg",
     description:
       "CIO-Konect 2025 took place on 22 May at Adapt IT, Johannesburg, uniting South Africa's top tech leaders and digital transformation experts for a day of bold ideas and future-forward thinking.",
     longDescription:
@@ -133,11 +133,11 @@ export const impactProjectsDatabase = [
       "Industry Insight: Gaining valuable insights into the challenges and opportunities facing CIOs and IT leaders",
     ],
     gallery: [
-      "/images/events/cio-konect-hero.png",
-      "/images/events/cio-konect-1.jpg",
-      "/images/events/cio-konect-2.jpg",
-      "/images/events/cio-konect-3.jpg",
-      "/images/events/cio-konect-4.jpg",
+      "/images/cio-konect-2025/gallery-hero.png",
+      "/images/cio-konect-2025/gallery-1.jpg",
+      "/images/cio-konect-2025/gallery-2.jpg",
+      "/images/cio-konect-2025/gallery-3.jpg",
+      "/images/cio-konect-2025/gallery-4.jpg",
     ],
     tags: ["CIO", "digital-transformation", "leadership", "enterprise", "AI"],
     metric: "100+",
@@ -158,8 +158,8 @@ export const impactProjectsDatabase = [
     year: "2025",
     location: "Durban, South Africa",
     badge: "Digital Government",
-    image: "/images/event-govtech-new.jpeg",
-    thumbnail: "/images/event-govtech-new.jpeg",
+    image: "/images/govtech-2025/cover.jpeg",
+    thumbnail: "/images/govtech-2025/cover.jpeg",
     description:
       "A recap of Konecta's impactful participation at South Africa's premier public sector ICT event, where we showcased how smarter WiFi connectivity is building more inclusive, efficient, and data-driven government services.",
     longDescription:
@@ -175,11 +175,11 @@ export const impactProjectsDatabase = [
       "Day 3: Wrapped up with a focus on collaboration and next steps for building inclusive digital solutions",
     ],
     gallery: [
-      "/images/events/govtech-hero.jpeg",
-      "/images/events/govtech-1.jpeg",
-      "/images/events/govtech-2.jpeg",
-      "/images/events/govtech-3.jpeg",
-      "/images/events/govtech-4.jpeg",
+      "/images/govtech-2025/gallery-hero.jpeg",
+      "/images/govtech-2025/gallery-1.jpeg",
+      "/images/govtech-2025/gallery-2.jpeg",
+      "/images/govtech-2025/gallery-3.jpeg",
+      "/images/govtech-2025/gallery-4.jpeg",
     ],
     tags: ["government", "digital-services", "WiFi", "public-sector"],
     metric: "3",
@@ -200,8 +200,8 @@ export const impactProjectsDatabase = [
     year: "2025",
     location: "Gallagher Convention Centre, Midrand",
     badge: "Enterprise Development",
-    image: "/images/event-procurement-new.jpg",
-    thumbnail: "/images/event-procurement-new.jpg",
+    image: "/images/smart-procurement-indaba/cover.jpg",
+    thumbnail: "/images/smart-procurement-indaba/cover.jpg",
     description:
       "At the 19th Annual Smart Procurement Indaba, Konecta revealed how its platform transforms simple internet access into a strategic tool for customer intelligence and community engagement.",
     longDescription:
@@ -218,10 +218,10 @@ export const impactProjectsDatabase = [
       "Reinforcing the importance of building ecosystems where technology and enterprise development go hand-in-hand",
     ],
     gallery: [
-      "/images/events/procurement-hero.jpeg",
-      "/images/events/procurement-1.jpg",
-      "/images/events/procurement-2.jpeg",
-      "/images/events/procurement-3.jpg",
+      "/images/smart-procurement-indaba/gallery-hero.jpeg",
+      "/images/smart-procurement-indaba/gallery-1.jpg",
+      "/images/smart-procurement-indaba/gallery-2.jpeg",
+      "/images/smart-procurement-indaba/gallery-3.jpg",
     ],
     tags: ["procurement", "enterprise", "WiFi", "business-growth"],
     metric: "100s",
@@ -242,8 +242,8 @@ export const impactProjectsDatabase = [
     year: "2025",
     location: "University of the Witwatersrand, Johannesburg",
     badge: "Social Innovation",
-    image: "/images/event-hackathon-new.jpg",
-    thumbnail: "/images/event-hackathon-new.jpg",
+    image: "/images/hackathon-wits-adapt-it/cover.jpg",
+    thumbnail: "/images/hackathon-wits-adapt-it/cover.jpg",
     description:
       "Join 261 students driving social impact through technology. Discover how Konecta supported innovative solutions like Ubuntu Shield for digital safety and community empowerment at the Wits & Adapt IT Hackathon.",
     longDescription:
@@ -256,7 +256,7 @@ export const impactProjectsDatabase = [
       "Development of Ubuntu Shield project",
       "Strengthened industry-academia ties",
     ],
-    gallery: ["/images/events/hackathon-hero.jpg"],
+    gallery: ["/images/hackathon-wits-adapt-it/gallery-hero.jpg"],
     quote: {
       text: "Events like these are crucial for bridging the gap between academic learning and real-world problem solving. We're proud to support the next generation of tech innovators who are using their skills to make a positive difference in society.",
       author: "Konecta Representative",
@@ -280,8 +280,8 @@ export const impactProjectsDatabase = [
     year: "2025",
     location: "Thembisa, Ekurhuleni",
     badge: "Community Impact",
-    image: "/images/event-worldbank-new.png",
-    thumbnail: "/images/event-worldbank-new.png",
+    image: "/images/world-bank-thembisa/cover.png",
+    thumbnail: "/images/world-bank-thembisa/cover.png",
     description:
       "The City of Ekurhuleni, in collaboration with National Treasury, the World Bank, and technical partners Konecta and Avo Vision, hosted a two-day digital strategy validation session in Tembisa.",
     longDescription:
@@ -303,10 +303,10 @@ export const impactProjectsDatabase = [
       "Public-Private Partnership Model: Landmark demonstration of collaboration between municipal government, national treasury, international organisations, and the private sector",
     ],
     gallery: [
-      "/images/events/worldbank-hero.png",
-      "/images/events/worldbank-1.jpg",
-      "/images/events/worldbank-2.webp",
-      "/images/events/worldbank-3.jpg",
+      "/images/world-bank-thembisa/gallery-hero.png",
+      "/images/world-bank-thembisa/gallery-1.jpg",
+      "/images/world-bank-thembisa/gallery-2.webp",
+      "/images/world-bank-thembisa/gallery-3.jpg",
     ],
     quote: {
       text: "The convergence of the World Bank, National Treasury, the City of Ekurhuleni, and private sector partners like Konecta and Avo Vision in Thembisa signals a new era of collaborative digital development, one where technology truly serves the people.",
@@ -337,8 +337,8 @@ export const impactProjectsDatabase = [
     year: "2024",
     location: "South Africa",
     badge: "Inaugural Summit",
-    image: "/images/event-witechafrica-new.webp",
-    thumbnail: "/images/event-witechafrica-new.webp",
+    image: "/images/witechafrica-2024/cover.webp",
+    thumbnail: "/images/witechafrica-2024/cover.webp",
     description:
       "Konecta, a telecoms consultancy firm, launched the WiTechAfrica platform to promote diversity, innovation, and excellence in the telecoms industry.",
     longDescription:
@@ -357,10 +357,10 @@ export const impactProjectsDatabase = [
       "Focus on 5G, IoT & Digital Inclusion: Deep dives into emerging technologies and their potential to bridge the digital divide",
     ],
     gallery: [
-      "/images/events/witechafrica-hero.jpeg",
-      "/images/events/witechafrica-1.jpeg",
-      "/images/events/witechafrica-2.jpeg",
-      "/images/events/witechafrica-3.jpeg",
+      "/images/witechafrica-2024/gallery-hero.jpeg",
+      "/images/witechafrica-2024/gallery-1.jpeg",
+      "/images/witechafrica-2024/gallery-2.jpeg",
+      "/images/witechafrica-2024/gallery-3.jpeg",
     ],
     ctaText: "Visit WiTechAfrica",
     ctaUrl: "https://witechnology.africa/",
@@ -382,8 +382,8 @@ export const impactProjectsDatabase = [
     year: "2024",
     location: "South Africa",
     badge: "Empowerment",
-    image: "/images/event-witech.jpg",
-    thumbnail: "/images/event-witech.jpg",
+    image: "/images/witechnology-summit-2025/cover.jpg",
+    thumbnail: "/images/witechnology-summit-2025/cover.jpg",
     description:
       "An inspiring event focused on empowering women who are leading the way in the telecom industry. We celebrate their contributions, fostering conversations on the vital role women play in shaping the future of telecoms.",
     tags: ["women-in-tech", "telecoms", "empowerment", "leadership"],
@@ -402,8 +402,8 @@ export const impactProjectsDatabase = [
     year: "2024",
     location: "South Africa",
     badge: "Service Delivery",
-    image: "/images/event-hackathon.jpg",
-    thumbnail: "/images/event-hackathon.jpg",
+    image: "/images/hackathon-wits-adapt-it/cover.jpg",
+    thumbnail: "/images/hackathon-wits-adapt-it/cover.jpg",
     description:
       "A dynamic event that brings together experts to discuss the challenges and solutions in municipal service delivery. The Municipal Indaba creates a space for dialogue that helps improve local governance and service provision.",
     tags: ["municipal", "governance", "service-delivery", "public-sector"],
@@ -496,8 +496,8 @@ export const newsDatabase = [
     date: "2025-09",
     year: "2025",
     featured: true,
-    image: "/images/women-in-tech.png",
-    thumbnail: "/images/women-in-tech.png",
+    image: "/images/witechnology-summit-2025/cover.jpg",
+    thumbnail: "/images/witechnology-summit-2025/cover.jpg",
     excerpt:
       "WiTechnology has officially launched its new digital marketplace platform. The initiative, launched at an event in Midrand, aims to connect female entrepreneurs with corporate and government partners.",
     description:
@@ -516,8 +516,8 @@ export const newsDatabase = [
     date: "2025-05",
     year: "2025",
     featured: true,
-    image: "/images/event-cio-konect.jpg",
-    thumbnail: "/images/event-cio-konect.jpg",
+    image: "/images/cio-konect-2025/cover.jpg",
+    thumbnail: "/images/cio-konect-2025/cover.jpg",
     excerpt:
       "On the sidelines of the CIO Konect event, ITWeb TV hosted a discussion with industry experts on the impending impact of artificial intelligence on jobs.",
     description:
@@ -536,8 +536,8 @@ export const newsDatabase = [
     date: "2025-05",
     year: "2025",
     featured: false,
-    image: "/images/event-worldbank.png",
-    thumbnail: "/images/event-worldbank.png",
+    image: "/images/world-bank-thembisa/cover.png",
+    thumbnail: "/images/world-bank-thembisa/cover.png",
     excerpt:
       "The City of Ekurhuleni, in collaboration with National Treasury, the World Bank, and technical partners Konecta and Avo Vision, hosted a two-day digital strategy validation session in Tembisa.",
     description:
@@ -556,8 +556,8 @@ export const newsDatabase = [
     date: "2024",
     year: "2024",
     featured: false,
-    image: "/images/event-witechafrica.webp",
-    thumbnail: "/images/event-witechafrica.webp",
+    image: "/images/witechafrica-2024/cover.webp",
+    thumbnail: "/images/witechafrica-2024/cover.webp",
     excerpt:
       "Konecta, a telecoms consultancy firm, launched the WiTechAfrica platform to promote diversity, innovation, and excellence in the telecoms industry.",
     description:
@@ -577,8 +577,8 @@ export const newsDatabase = [
     date: "2024",
     year: "2024",
     featured: true,
-    image: "/images/event-witech.jpg",
-    thumbnail: "/images/event-witech.jpg",
+    image: "/images/witechafrica-2024/cover.webp",
+    thumbnail: "/images/witechafrica-2024/cover.webp",
     excerpt:
       "In this interview on SABC, Yandisa Sokhanyile discusses the highlights and key takeaways from the WiTech Africa Summit 2024.",
     description:
@@ -597,8 +597,8 @@ export const newsDatabase = [
     date: "2024",
     year: "2024",
     featured: true,
-    image: "/images/consulting-strategy.png",
-    thumbnail: "/images/consulting-strategy.png",
+    image: "/images/witechnology-summit-2025/cover.jpg",
+    thumbnail: "/images/witechnology-summit-2025/cover.jpg",
     excerpt:
       "Founder and CEO of Konecta, Yandisa Sokhanyile is spotlighted as a prominent figure in the African telecommunications space.",
     description:
