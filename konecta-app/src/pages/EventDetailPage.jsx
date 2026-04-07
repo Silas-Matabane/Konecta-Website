@@ -468,7 +468,7 @@ function PartnersSection({ sponsors }) {
                 className="flex-shrink-0 flex items-center justify-center"
               >
                 <img
-                  src={`/sponsors/${toSlug(name)}.png`}
+                  src={`/images/sponsors/${toSlug(name)}.png`}
                   alt={name}
                   className="h-24 sm:h-32 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
                   onError={(e) => {

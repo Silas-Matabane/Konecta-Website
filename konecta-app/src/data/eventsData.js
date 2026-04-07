@@ -569,22 +569,22 @@ export const eventsDatabase = [
       {
         name: "Yandisa Sokhanyile",
         role: "CEO, Konecta",
-        image: "/speakers/yandisa-sokhanyile.png",
+        image: "/images/speakers/yandisa-sokhanyile.png",
       },
       {
         name: "Miyelani Holeni",
         role: "Ntinyiso Consulting",
-        image: "/speakers/miyelani-holeni.png",
+        image: "/images/speakers/miyelani-holeni.png",
       },
       {
         name: "Monde Sekiti",
         role: "Sentech",
-        image: "/speakers/monde-sekiti.png",
+        image: "/images/speakers/monde-sekiti.png",
       },
       {
         name: "John Smith",
         role: "Kagiso Trust",
-        image: "/speakers/john-smith.png",
+        image: "/images/speakers/john-smith.png",
       },
     ],
 
