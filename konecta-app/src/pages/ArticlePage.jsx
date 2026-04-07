@@ -78,7 +78,7 @@ function HeroSection({ article }) {
         <img
           src={article.featuredImage}
           alt={article.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[center_20%]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black via-konecta-black/70 to-konecta-black/30" />
       </div>

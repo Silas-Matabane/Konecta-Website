@@ -13,7 +13,7 @@ const insights = articlesDatabase
   .slice(0, 3)
   .map(enrichArticle);
 
-function ArticleCard({ article, index }) {
+function FeaturedCard({ article }) {
   const [ref, inView] = useInView({ threshold: 0.15 });
   const categoryLabel =
     BLOG_CATEGORIES.find((c) => c.id === article.category)?.label ||
@@ -23,31 +23,74 @@ function ArticleCard({ article, index }) {
     <Link
       to={`/insights/${article.slug}`}
       ref={ref}
-      className={`glass-card group overflow-hidden transition-all duration-700 ${article.featured ? "md:col-span-2" : ""} ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-      style={{ transitionDelay: `${index * 120}ms` }}
+      className={`glass-card group overflow-hidden transition-all duration-700 md:row-span-2 flex flex-col ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
     >
-      {/* Image */}
-      <div
-        className={`relative overflow-hidden ${article.featured ? "min-h-[260px]" : "min-h-[200px]"}`}
-      >
+      <div className="relative overflow-hidden min-h-[260px] md:flex-1">
         <img
           src={article.featuredImage}
           alt={article.title}
           loading="lazy"
-          className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover object-[center_20%] absolute inset-0 group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black/80 to-transparent" />
       </div>
-      {/* Body */}
-      <div className="p-6">
-        <div
-          className={`text-[0.65rem] font-heading font-bold tracking-widest uppercase mb-3 ${article.featured ? "text-konecta-orange" : "text-white/80"}`}
-        >
+      <div className="p-6 lg:p-8">
+        <div className="text-[0.65rem] font-heading font-bold tracking-widest uppercase mb-3 text-konecta-orange">
           {categoryLabel}
         </div>
-        <h3 className="font-heading font-bold text-lg text-konecta-white leading-snug mb-4 card-hover-underline">
+        <h3 className="font-heading font-bold text-xl lg:text-2xl text-konecta-white leading-snug mb-4 card-hover-underline">
           {article.title}
         </h3>
+        <p className="text-sm text-white/60 leading-relaxed mb-4 line-clamp-2">
+          {article.excerpt}
+        </p>
+        <div className="flex gap-4 text-xs text-white/80">
+          <span>{article.readingTime}</span>
+          <span>
+            {new Date(article.publishDate).toLocaleDateString("en-ZA", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            })}
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+function SmallCard({ article, index }) {
+  const [ref, inView] = useInView({ threshold: 0.15 });
+  const categoryLabel =
+    BLOG_CATEGORIES.find((c) => c.id === article.category)?.label ||
+    article.category;
+
+  return (
+    <Link
+      to={`/insights/${article.slug}`}
+      ref={ref}
+      className={`glass-card group overflow-hidden transition-all duration-700 md:grid md:grid-cols-[200px_1fr] ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      style={{ transitionDelay: `${index * 120}ms` }}
+    >
+      <div className="relative overflow-hidden min-h-[180px] md:min-h-full">
+        <img
+          src={article.featuredImage}
+          alt={article.title}
+          loading="lazy"
+          className="w-full h-full object-cover object-[center_20%] absolute inset-0 group-hover:scale-105 transition-transform duration-700"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-konecta-black/80 to-transparent" />
+      </div>
+      <div className="p-5">
+        <div className="text-[0.65rem] font-heading font-bold tracking-widest uppercase mb-2 text-konecta-orange">
+          {categoryLabel}
+        </div>
+        <h3 className="font-heading font-bold text-base text-konecta-white leading-snug mb-2 card-hover-underline">
+          {article.title}
+        </h3>
+        <p className="text-xs text-white/60 leading-relaxed mb-3 line-clamp-2">
+          {article.excerpt}
+        </p>
         <div className="flex gap-4 text-xs text-white/80">
           <span>{article.readingTime}</span>
           <span>
@@ -93,9 +136,10 @@ export default function InsightsSection() {
         </div>
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-        {insights.map((article, i) => (
-          <ArticleCard key={article.id} article={article} index={i} />
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-5">
+        <FeaturedCard article={insights[0]} />
+        {insights.slice(1).map((article, i) => (
+          <SmallCard key={article.id} article={article} index={i + 1} />
         ))}
       </div>
     </section>

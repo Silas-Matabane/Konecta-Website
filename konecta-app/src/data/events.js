@@ -6,6 +6,7 @@ export const events = [
     tagline: "Where Africa's Technology Leaders Converge",
     badge: "★ Flagship Annual Summit",
     type: "flagship",
+    link: "/impact/cio-konect-2025",
     description:
       "Africa's premier gathering for Chief Information Officers, technology executives, and digital transformation leaders. CIO Konect creates a curated environment for peer learning, strategic partnerships, and exposure to the technologies reshaping enterprise IT — including Microsoft AI, cloud strategy, and cybersecurity.",
     extraDescription:
@@ -27,6 +28,7 @@ export const events = [
     tagline: "Smart Cities · eGovernment",
     badge: "🏛️ Government & Municipal",
     type: "secondary",
+    link: "/events/municipal-indaba-2026",
     description:
       "Dedicated to South Africa's local government technology agenda. The Municipal Indaba convenes mayors, municipal managers, IT directors, and service delivery officials to address smart city implementation, eGovernment platforms, connectivity for underserved communities, and digital infrastructure planning.",
     extraDescription:
@@ -48,6 +50,7 @@ export const events = [
     tagline: "Wireless · Telecoms · Innovation",
     badge: "🌍 Pan-African Telecoms",
     type: "secondary",
+    link: "/impact/witechnology-summit-2025",
     description:
       "Africa's most influential wireless technology and telecoms innovation platform. WiTechnology brings together MNOs, spectrum regulators, equipment vendors, and independent technologists to shape the future of African connectivity — from 5G rollout to rural broadband and satellite integration.",
     stats: [

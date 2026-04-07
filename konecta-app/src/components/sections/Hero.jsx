@@ -44,8 +44,8 @@ export default function Hero() {
           className="w-full h-full object-cover"
           fetchpriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-konecta-black/80 via-konecta-black/70 to-konecta-black" />
-        <div className="absolute inset-0 bg-gradient-to-r from-konecta-black/90 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-konecta-black/50 via-konecta-black/40 to-konecta-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-konecta-black/60 via-transparent to-transparent" />
       </div>
 
       {/* Floating glow orbs */}

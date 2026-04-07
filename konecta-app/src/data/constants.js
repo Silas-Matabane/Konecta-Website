@@ -197,7 +197,24 @@ export const COUNTRIES = [
 ];
 
 export const SOCIAL_LINKS = [
-  { label: "in", href: "#", platform: "LinkedIn" },
-  { label: "f", href: "#", platform: "Facebook" },
-  { label: "𝕏", href: "#", platform: "X" },
+  {
+    label: "in",
+    href: "https://www.linkedin.com/company/konectagroup/posts/?feedView=all",
+    platform: "LinkedIn",
+  },
+  {
+    label: "f",
+    href: "https://web.facebook.com/profile.php?id=61565887414540",
+    platform: "Facebook",
+  },
+  {
+    label: "IG",
+    href: "https://www.instagram.com/konecta_rsa?igsh=MWxhOHU0d2tldnFiaw==",
+    platform: "Instagram",
+  },
+  {
+    label: "▶",
+    href: "https://www.youtube.com/@Konecta1",
+    platform: "YouTube",
+  },
 ];

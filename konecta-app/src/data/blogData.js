@@ -204,8 +204,7 @@ export const articlesDatabase = [
       <h2>Media Contact</h2>
       <p><strong>Miss Nwabisa Vumazonke</strong><br/>Marketing and PR Coordinator, Konecta (Pty) Ltd<br/>Email: nwabisa@konecta.co.za<br/>Phone: 068 336 2508<br/>Web: www.konecta.co.za</p>
     `,
-    featuredImage:
-      "https://images.unsplash.com/photo-1540575467063-178a50e2fd87?w=1200&q=80",
+    featuredImage: "/images/cio-konect-2025/cover.jpg",
     category: "software-development",
     tags: [
       "CIO",

@@ -11,13 +11,13 @@ function EventCard({ event, index }) {
     <div
       ref={ref}
       className={`group glass-card overflow-hidden hover:border-konecta-orange/30 transition-all duration-700 ${
-        isFlagship ? "md:col-span-2" : ""
+        isFlagship ? "md:col-span-2 md:grid md:grid-cols-2" : ""
       } ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Image area with real demo photo */}
       <div
-        className={`relative ${isFlagship ? "min-h-[280px]" : "min-h-[200px]"} overflow-hidden`}
+        className={`relative ${isFlagship ? "min-h-[280px] md:min-h-full" : "min-h-[200px]"} overflow-hidden`}
       >
         <img
           src={event.image}
@@ -58,7 +58,7 @@ function EventCard({ event, index }) {
           </div>
         )}
 
-        <Link to="/events" className="btn-secondary text-xs">
+        <Link to={event.link || "/events"} className="btn-secondary text-xs">
           Learn More
         </Link>
       </div>
@@ -105,7 +105,7 @@ export default function EventsSection() {
       </div>
 
       {/* Events grid */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
         {events.map((ev, i) => (
           <EventCard key={ev.id} event={ev} index={i} />
         ))}
