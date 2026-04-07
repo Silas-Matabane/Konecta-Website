@@ -7,14 +7,14 @@ function PartnerCard({ partner, index }) {
   return (
     <div
       ref={cardRef}
-      className={`glass-card p-6 flex flex-col items-center justify-center group hover:border-konecta-orange/20 transition-all duration-500 ${cardInView ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
-      style={{ transitionDelay: `${index * 60}ms` }}
+      className={`rounded-2xl p-6 flex flex-col items-center justify-center group border border-konecta-orange/10 hover:border-konecta-orange/30 transition-all duration-500 ${cardInView ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+      style={{ transitionDelay: `${index * 60}ms`, background: "#ffede0" }}
     >
       {partner.logo ? (
         <img
           src={partner.logo}
           alt={partner.name}
-          className="h-12 max-w-[120px] object-contain mb-3 opacity-80 group-hover:opacity-100 transition-opacity"
+          className="h-16 max-w-[150px] object-contain mb-3 transition-transform group-hover:scale-105"
           loading="lazy"
         />
       ) : (
@@ -24,7 +24,7 @@ function PartnerCard({ partner, index }) {
           {partner.name}
         </div>
       )}
-      <div className="text-xs text-white/75 mt-auto">{partner.type}</div>
+      <div className="text-xs text-neutral-500 font-medium mt-auto">{partner.type}</div>
     </div>
   );
 }

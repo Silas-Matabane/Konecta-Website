@@ -14,6 +14,7 @@ export const partners = [
     name: "Sentech",
     type: "Strategic Partner",
     logo: "/images/partners-clients/sentech.png",
+    logoClass: "h-24 max-w-[200px]",
   },
   {
     name: "Huawei",

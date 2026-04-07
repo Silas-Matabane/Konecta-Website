@@ -18,13 +18,14 @@ function MarqueeRow({ items, reverse = false }) {
         {doubled.map((p, i) => (
           <div
             key={`${p.name}-${i}`}
-            className="flex-shrink-0 px-8 py-4 rounded-xl glass-card hover:border-konecta-orange/30 transition-all duration-300 flex items-center justify-center"
+            className="flex-shrink-0 px-8 py-5 rounded-xl border border-konecta-orange/10 hover:border-konecta-orange/30 transition-all duration-300 flex items-center justify-center"
+            style={{ background: "#ffede0" }}
           >
             {p.logo ? (
               <img
                 src={p.logo}
                 alt={p.name}
-                className="h-8 max-w-[100px] object-contain opacity-75 hover:opacity-100 transition-opacity"
+                className="h-10 max-w-[120px] object-contain transition-transform hover:scale-105"
                 loading="lazy"
               />
             ) : (
