@@ -23,7 +23,7 @@ const PROGRAMMES = [
     ],
     outcome:
       "Your teams leave with practical tools and a clear adoption roadmap — not just a certificate.",
-    color: "#F48120",
+    color: "#E85A1B",
   },
   {
     id: "tech",
@@ -41,7 +41,7 @@ const PROGRAMMES = [
     ],
     outcome:
       "Ideal for SMMEs, startups, innovation hubs, incubators, corporate innovation teams, and anyone serious about building a tech-enabled business.",
-    color: "#2979C8",
+    color: "#E85A1B",
     badge: "QCTO Qualification Applied",
   },
   {
@@ -60,7 +60,7 @@ const PROGRAMMES = [
     ],
     outcome:
       "Real, lasting value from your technology investments — measured in adoption rates, user satisfaction, and business impact.",
-    color: "#16A34A",
+    color: "#E85A1B",
   },
 ];
 
@@ -287,7 +287,7 @@ function TestimonialsSection() {
               <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                  style={{ backgroundColor: "#F48120" }}
+                  style={{ backgroundColor: "#E85A1B" }}
                 >
                   {t.name.charAt(0)}
                 </div>

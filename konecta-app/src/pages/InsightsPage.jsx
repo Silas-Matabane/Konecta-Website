@@ -48,7 +48,7 @@ function FeaturedHero({ article }) {
       <img
         src={article.featuredImage}
         alt={article.title}
-        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        className="absolute inset-0 w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700"
         loading="lazy"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-konecta-black via-konecta-black/60 to-transparent" />
@@ -107,7 +107,7 @@ function ArticleCard({ article, index }) {
         <img
           src={article.featuredImage}
           alt={article.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black/60 to-transparent" />

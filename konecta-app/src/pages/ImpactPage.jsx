@@ -112,7 +112,7 @@ function ImpactCard({ item, index }) {
           src={item.image}
           alt={item.title}
           loading="lazy"
-          className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover object-[center_20%] absolute inset-0 group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black via-konecta-black/60 to-transparent" />
 
@@ -228,7 +228,7 @@ function NewsCard({ item, index }) {
           src={item.image}
           alt={item.title}
           loading="lazy"
-          className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover object-[center_20%] absolute inset-0 group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black via-konecta-black/60 to-transparent" />
         {item.sourceName && (
@@ -337,7 +337,7 @@ function EventMiniCard({ item, index }) {
           src={item.image}
           alt={item.title}
           loading="lazy"
-          className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover object-[center_20%] absolute inset-0 group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black via-konecta-black/60 to-transparent" />
         {item.badge && (

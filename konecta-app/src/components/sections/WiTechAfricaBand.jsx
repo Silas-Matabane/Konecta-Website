@@ -80,7 +80,7 @@ export default function WiTechnologyBand() {
           >
             Learn About WiTechnology
           </Link>
-          <Link to="/events" className="btn-secondary">
+          <Link to="/impact/witechnology-summit-2025" className="btn-secondary">
             2025 Summit Highlights
           </Link>
         </div>

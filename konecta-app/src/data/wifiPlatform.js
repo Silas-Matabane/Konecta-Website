@@ -38,7 +38,7 @@ export const steps = [
 
 export const sectors = [
   {
-    color: "#00A86B",
+    color: "#E85A1B",
     icon: "🏛️",
     name: "Public Sector",
     tag: "Municipalities · Transport Hubs · Smart Cities",
@@ -52,7 +52,7 @@ export const sectors = [
     ],
   },
   {
-    color: "#B86000",
+    color: "#E85A1B",
     icon: "🛍️",
     name: "Retail",
     tag: "Shopping Centres · Large Retail Venues",
@@ -66,7 +66,7 @@ export const sectors = [
     ],
   },
   {
-    color: "#1A56E8",
+    color: "#E85A1B",
     icon: "🏦",
     name: "Financial Services",
     tag: "Banks · Financial Institutions",
@@ -80,7 +80,7 @@ export const sectors = [
     ],
   },
   {
-    color: "#008080",
+    color: "#E85A1B",
     icon: "☕",
     name: "Hospitality & F&B",
     tag: "Cafés · Restaurants · Venues",
@@ -94,7 +94,7 @@ export const sectors = [
     ],
   },
   {
-    color: "#7B3FE4",
+    color: "#E85A1B",
     icon: "📡",
     name: "Telecommunications",
     tag: "Telecoms Providers · ISPs",
@@ -108,7 +108,7 @@ export const sectors = [
     ],
   },
   {
-    color: null, // uses default orange
+    color: "#E85A1B",
     icon: "🤝",
     name: "Not Your Sector?",
     tag: "Any organisation with WiFi infrastructure",

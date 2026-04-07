@@ -70,7 +70,7 @@ export default function Leadership() {
             infrastructure can accelerate economic development.
           </p>
 
-          <Link to="/about" className="btn-primary">
+          <Link to="/about#team" className="btn-primary">
             Meet the Team
           </Link>
         </div>

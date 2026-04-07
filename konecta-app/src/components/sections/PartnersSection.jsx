@@ -24,7 +24,7 @@ function PartnerCard({ partner, index }) {
           {partner.name}
         </div>
       )}
-      <div className="text-xs text-neutral-500 font-medium mt-auto">
+      <div className="text-sm text-neutral-500 font-medium mt-auto">
         {partner.type}
       </div>
     </div>

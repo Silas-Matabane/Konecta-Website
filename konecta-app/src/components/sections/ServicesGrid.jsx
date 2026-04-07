@@ -55,7 +55,7 @@ export default function ServicesGrid() {
       </div>
 
       {/* Active service content */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-start">
         {/* Left — description in glass card */}
         <div key={active.id} className="glass-card p-8 lg:p-10 animate-fade-in">
           <div className="text-4xl mb-5">{active.icon}</div>
@@ -88,12 +88,12 @@ export default function ServicesGrid() {
         </div>
 
         {/* Right — demo image with glass overlay */}
-        <div className="image-glass-overlay rounded-2xl overflow-hidden min-h-[250px] sm:min-h-[400px]">
+        <div className="image-glass-overlay rounded-2xl overflow-hidden max-w-[440px] sm:max-w-[560px]">
           <img
             src={active.image}
             alt={active.title}
             loading="lazy"
-            className="w-full h-full object-cover min-h-[250px] sm:min-h-[400px]"
+            className="w-full h-auto object-contain"
           />
         </div>
       </div>

@@ -181,12 +181,12 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-[0_8px_30px_rgba(37,211,102,0.4)] transition-all duration-300"
+        className="fixed bottom-6 right-20 z-50 w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-[0_8px_30px_rgba(37,211,102,0.4)] transition-all duration-300"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 32 32"
-          className="w-7 h-7 fill-white"
+          className="w-5 h-5 fill-white"
         >
           <path d="M16.004 0h-.008C7.174 0 .002 7.174.002 16.002c0 3.5 1.129 6.744 3.047 9.381L1.06 31.372l6.182-1.96A15.905 15.905 0 0 0 16.004 32C24.83 32 32 24.826 32 15.998S24.83 0 16.004 0zm9.32 22.602c-.39 1.1-2.276 2.103-3.156 2.18-.878.076-1.697.396-5.716-1.19-4.852-1.916-7.896-6.93-8.132-7.252-.236-.322-1.93-2.567-1.93-4.893s1.222-3.47 1.656-3.944c.435-.474.948-.593 1.264-.593.316 0 .632.003.908.016.292.014.682-.11 1.067.814.39.94 1.326 3.237 1.443 3.473.117.236.195.512.039.826-.156.316-.234.512-.468.788-.234.278-.494.62-.704.832-.234.234-.478.488-.206.96s1.214 2.003 2.606 3.244c1.79 1.596 3.3 2.09 3.77 2.326.468.236.74.198 1.012-.118.274-.316 1.17-1.364 1.482-1.834.312-.468.624-.39 1.054-.234.43.156 2.724 1.284 3.192 1.518.468.234.78.352.896.546.118.196.118 1.12-.272 2.218z" />
         </svg>

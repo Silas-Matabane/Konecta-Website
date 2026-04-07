@@ -12,8 +12,7 @@ export const services = [
       "Analytics Platforms",
       "Municipal Networks",
     ],
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+    image: "/images/wifi-as-service/wifi-as-service.png",
     featured: true,
   },
   {
