@@ -1,12 +1,27 @@
 import { Link } from "react-router-dom";
 import SectionEyebrow from "@components/common/SectionEyebrow";
-import { insights } from "@data/insights";
+import {
+  articlesDatabase,
+  enrichArticle,
+  BLOG_CATEGORIES,
+} from "@data/blogData";
 import useInView from "@hooks/useInView";
+
+const insights = articlesDatabase
+  .filter((a) => a.status === "published")
+  .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
+  .slice(0, 3)
+  .map(enrichArticle);
 
 function ArticleCard({ article, index }) {
   const [ref, inView] = useInView({ threshold: 0.15 });
+  const categoryLabel =
+    BLOG_CATEGORIES.find((c) => c.id === article.category)?.label ||
+    article.category;
+
   return (
-    <div
+    <Link
+      to={`/insights/${article.slug}`}
       ref={ref}
       className={`glass-card group overflow-hidden transition-all duration-700 ${article.featured ? "md:col-span-2" : ""} ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       style={{ transitionDelay: `${index * 120}ms` }}
@@ -16,7 +31,7 @@ function ArticleCard({ article, index }) {
         className={`relative overflow-hidden ${article.featured ? "min-h-[260px]" : "min-h-[200px]"}`}
       >
         <img
-          src={article.image}
+          src={article.featuredImage}
           alt={article.title}
           loading="lazy"
           className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
@@ -28,17 +43,23 @@ function ArticleCard({ article, index }) {
         <div
           className={`text-[0.65rem] font-heading font-bold tracking-widest uppercase mb-3 ${article.featured ? "text-konecta-orange" : "text-white/80"}`}
         >
-          {article.category}
+          {categoryLabel}
         </div>
         <h3 className="font-heading font-bold text-lg text-konecta-white leading-snug mb-4 card-hover-underline">
           {article.title}
         </h3>
         <div className="flex gap-4 text-xs text-white/80">
-          <span>{article.readTime}</span>
-          <span>{article.date}</span>
+          <span>{article.readingTime}</span>
+          <span>
+            {new Date(article.publishDate).toLocaleDateString("en-ZA", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            })}
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

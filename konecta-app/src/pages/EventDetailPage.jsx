@@ -121,7 +121,7 @@ function HeroSection({ event }) {
             />
             {isUpcoming ? "Upcoming" : "Past Event"}
           </span>
-          <span className="px-2.5 py-0.5 rounded-md bg-konecta-orange/10 text-konecta-orange text-[0.6rem] font-heading font-bold tracking-wider uppercase">
+          <span className="px-2.5 py-0.5 rounded-md bg-konecta-orange/10 text-konecta-orange text-xs font-heading font-bold tracking-wider uppercase">
             {event.badge}
           </span>
         </div>
@@ -241,25 +241,25 @@ function InfoSidebar({ event }) {
       {/* Details */}
       <div className="space-y-4">
         <div>
-          <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
+          <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
             Date
           </div>
-          <div className="text-sm text-konecta-white">
+          <div className="text-base text-konecta-white">
             {formatDateRange(event.dateStart, event.dateEnd)}
           </div>
         </div>
         <div>
-          <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
+          <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
             Time
           </div>
-          <div className="text-sm text-konecta-white">{event.time}</div>
+          <div className="text-base text-konecta-white">{event.time}</div>
         </div>
         <div>
-          <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
+          <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
             Venue
           </div>
-          <div className="text-sm text-konecta-white">{event.venue}</div>
-          <div className="text-xs text-white/50 mt-0.5">{event.address}</div>
+          <div className="text-base text-konecta-white">{event.venue}</div>
+          <div className="text-sm text-white/50 mt-0.5">{event.address}</div>
           {event.mapUrl && (
             <a
               href={event.mapUrl}
@@ -273,30 +273,30 @@ function InfoSidebar({ event }) {
         </div>
         {event.capacity && (
           <div>
-            <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
+            <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
               Capacity
             </div>
-            <div className="text-sm text-konecta-white">
+            <div className="text-base text-konecta-white">
               {event.capacity} attendees
             </div>
           </div>
         )}
         {event.attendeeProfile && (
           <div>
-            <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
+            <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
               Who Attends
             </div>
-            <div className="text-xs text-white/60 leading-relaxed">
+            <div className="text-sm text-white/60 leading-relaxed">
               {event.attendeeProfile}
             </div>
           </div>
         )}
         {isUpcoming && event.registrationDeadline && (
           <div>
-            <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
+            <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
               Registration Deadline
             </div>
-            <div className="text-sm text-konecta-orange font-semibold">
+            <div className="text-base text-konecta-orange font-semibold">
               {formatDate(event.registrationDeadline)}
             </div>
           </div>
@@ -306,7 +306,7 @@ function InfoSidebar({ event }) {
       {/* Sponsors */}
       {event.sponsors?.length > 0 && (
         <div>
-          <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-2">
+          <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-2">
             Sponsors & Partners
           </div>
           <div className="flex flex-wrap gap-2">
@@ -325,14 +325,14 @@ function InfoSidebar({ event }) {
       {/* Tags */}
       {event.tags?.length > 0 && (
         <div>
-          <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-2">
+          <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-2">
             Topics
           </div>
           <div className="flex flex-wrap gap-1.5">
             {event.tags.map((t) => (
               <span
                 key={t}
-                className="px-2 py-0.5 rounded-full bg-konecta-orange/10 text-konecta-orange text-[0.6rem] font-heading font-bold tracking-wider"
+                className="px-2.5 py-1 rounded-full bg-konecta-orange/10 text-konecta-orange text-xs font-heading font-bold tracking-wider"
               >
                 {t}
               </span>
@@ -356,7 +356,7 @@ function DescriptionSection({ event }) {
         About This Event
       </h2>
       {event.longDescription.split("\n\n").map((para, i) => (
-        <p key={i} className="text-sm text-white/70 leading-relaxed mb-4">
+        <p key={i} className="text-white/70 leading-relaxed mb-4">
           {para}
         </p>
       ))}
@@ -369,10 +369,7 @@ function DescriptionSection({ event }) {
           </h3>
           <ul className="space-y-2.5">
             {event.highlights.map((h, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 text-sm text-white/70"
-              >
+              <li key={i} className="flex items-start gap-3 text-white/70">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-konecta-orange shrink-0" />
                 {h}
               </li>
@@ -525,7 +522,7 @@ function AgendaSection({ agenda }) {
                         {session.description}
                       </div>
                     )}
-                    <div className="text-[0.6rem] text-white/40 uppercase tracking-wider mt-0.5">
+                    <div className="text-xs text-white/40 uppercase tracking-wider mt-0.5">
                       {session.type}
                     </div>
                   </div>

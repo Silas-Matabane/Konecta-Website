@@ -193,10 +193,7 @@ function ProgrammeCard({ programme, isActive, onClick }) {
         </h4>
         <ul className="space-y-2 mb-6">
           {modules.map((m) => (
-            <li
-              key={m}
-              className="flex items-start gap-2 text-sm text-konecta-silver"
-            >
+            <li key={m} className="flex items-start gap-2 text-konecta-silver">
               <span
                 className="mt-1 block w-1.5 h-1.5 rounded-full flex-shrink-0"
                 style={{ backgroundColor: color }}
@@ -219,9 +216,7 @@ function ProgrammeCard({ programme, isActive, onClick }) {
           >
             Key Outcome
           </h4>
-          <p className="text-konecta-silver text-sm leading-relaxed">
-            {outcome}
-          </p>
+          <p className="text-konecta-silver leading-relaxed">{outcome}</p>
         </div>
       </div>
 
@@ -286,7 +281,7 @@ function TestimonialsSection() {
               <span className="text-konecta-orange text-4xl leading-none mb-3">
                 &ldquo;
               </span>
-              <p className="text-konecta-silver text-sm leading-relaxed flex-1">
+              <p className="text-konecta-silver leading-relaxed flex-1">
                 {t.quote}
               </p>
               <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
@@ -339,7 +334,7 @@ function WhySection() {
               <h3 className="font-heading text-lg font-bold text-konecta-white mb-1">
                 {item.title}
               </h3>
-              <p className="text-konecta-silver text-sm leading-relaxed">
+              <p className="text-konecta-silver leading-relaxed">
                 {item.description}
               </p>
             </div>

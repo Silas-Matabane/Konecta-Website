@@ -51,7 +51,7 @@ export default function Footer() {
             <div className="font-logo text-2xl font-extrabold tracking-tight mb-4">
               KONEC<span className="text-konecta-orange">T</span>A
             </div>
-            <p className="text-sm text-white/80 leading-relaxed mb-6 max-w-[280px]">
+            <p className="text-white/80 leading-relaxed mb-6 max-w-[280px]">
               Africa&apos;s leading telecoms and technology consultancy. We
               build networks, develop platforms, and enable digital
               transformation across the continent.

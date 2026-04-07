@@ -47,7 +47,7 @@ export default function MicrosoftPartnership() {
             <div className="font-heading font-bold text-xl text-konecta-silver">
               Microsoft Partner Network
             </div>
-            <div className="text-sm text-white/80">
+            <div className="text-white/80">
               Authorised reseller &amp; implementation partner
             </div>
           </div>

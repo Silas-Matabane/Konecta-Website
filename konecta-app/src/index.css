@@ -198,8 +198,8 @@
 
   /* Section title */
   .section-title {
-    @apply font-heading font-extrabold leading-[1.05] tracking-tight;
-    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    @apply font-heading font-extrabold leading-[1.1] tracking-tight;
+    font-size: clamp(1.8rem, 2.8vw, 2.9rem);
     letter-spacing: -0.02em;
   }
 

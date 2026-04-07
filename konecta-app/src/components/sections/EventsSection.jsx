@@ -40,7 +40,7 @@ function EventCard({ event, index }) {
 
       {/* Body */}
       <div className="p-8 lg:p-10">
-        <div className="inline-block px-3 py-1 rounded-md bg-konecta-orange/10 text-konecta-orange text-[0.6rem] font-heading font-bold tracking-wider uppercase mb-4">
+        <div className="inline-block px-3 py-1 rounded-md bg-konecta-orange/10 text-konecta-orange text-xs font-heading font-bold tracking-wider uppercase mb-4">
           {event.badge}
         </div>
         <p className="text-base text-white/75 leading-relaxed mb-6">

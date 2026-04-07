@@ -25,7 +25,7 @@ function ImpactCard({ study, index }) {
           className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black/90 to-transparent" />
-        <div className="absolute top-4 left-4 px-3 py-1 rounded-md bg-konecta-orange/15 text-konecta-orange text-[0.6rem] font-heading font-bold tracking-wider uppercase backdrop-blur-sm">
+        <div className="absolute top-4 left-4 px-3 py-1 rounded-md bg-konecta-orange/15 text-konecta-orange text-xs font-heading font-bold tracking-wider uppercase backdrop-blur-sm">
           {study.tag}
         </div>
       </div>

@@ -84,7 +84,6 @@ export const impactProjectsDatabase = [
       "/images/witechnology-summit-2025/gallery-1.jpg",
       "/images/witechnology-summit-2025/gallery-2.jpg",
       "/images/witechnology-summit-2025/gallery-3.jpg",
-      "/images/witechnology-summit-2025/gallery-4.jpeg",
     ],
     ctaText: "Visit WiTechnology Hub",
     ctaUrl: "https://witechnology.africa/become-a-member/",
@@ -163,23 +162,29 @@ export const impactProjectsDatabase = [
     description:
       "A recap of Konecta's impactful participation at South Africa's premier public sector ICT event, where we showcased how smarter WiFi connectivity is building more inclusive, efficient, and data-driven government services.",
     longDescription:
-      "From 8–10 September 2025, South Africa's premier public sector ICT conference, GovTech 2025, took place in Durban. The Konecta team was proud to exhibit and engage with government leaders and industry experts to showcase how our WiFi platform supports the development of transformative digital government services.\n\nOur participation was driven by a commitment to collaborate with policymakers and leaders to explore solutions that bridge the digital divide and enhance service delivery for all citizens.",
+      "From 8–10 September 2025, South Africa's premier public sector ICT conference, GovTech 2025, took place in Durban. The Konecta team was proud to exhibit and engage with government leaders and industry experts to showcase how our WiFi platform supports the development of transformative digital government services.",
+    purpose:
+      "Our participation was driven by a commitment to collaborate with policymakers and leaders to explore solutions that bridge the digital divide and enhance service delivery for all citizens.",
     focusAreas: [
       "Expanding access to digital services through reliable, free WiFi networks",
       "Unlocking data-driven insights to improve service delivery",
       "Fostering inclusive engagement between government and citizens",
     ],
+    highlightsIntro:
+      "The three-day event was filled with inspiring conversations and productive discussions that built momentum for future collaborations.",
     highlights: [
       "Day 1: Set the tone with inspiring conversations and strong interest in how connectivity unlocks opportunities for efficient governance",
       "Day 2: Featured deeper discussions on the practical applications of our solutions",
       "Day 3: Wrapped up with a focus on collaboration and next steps for building inclusive digital solutions",
     ],
+    galleryDescription:
+      "A look at our team in action at the Konecta stall, connecting with delegates at GovTech 2025.",
     gallery: [
-      "/images/govtech-2025/gallery-hero.jpeg",
-      "/images/govtech-2025/gallery-1.jpeg",
-      "/images/govtech-2025/gallery-2.jpeg",
-      "/images/govtech-2025/gallery-3.jpeg",
-      "/images/govtech-2025/gallery-4.jpeg",
+      { src: "/images/govtech-2025/gallery-hero.jpeg", caption: "" },
+      { src: "/images/govtech-2025/gallery-1.jpeg", caption: "" },
+      { src: "/images/govtech-2025/gallery-2.jpeg", caption: "" },
+      { src: "/images/govtech-2025/gallery-3.jpeg", caption: "" },
+      { src: "/images/govtech-2025/gallery-4.jpeg", caption: "" },
     ],
     tags: ["government", "digital-services", "WiFi", "public-sector"],
     metric: "3",
@@ -247,14 +252,28 @@ export const impactProjectsDatabase = [
     description:
       "Join 261 students driving social impact through technology. Discover how Konecta supported innovative solutions like Ubuntu Shield for digital safety and community empowerment at the Wits & Adapt IT Hackathon.",
     longDescription:
-      "On Friday, 5 September 2025, the University of the Witwatersrand, in collaboration with Adapt IT Telecoms, hosted the Social Good Hackathon — a dynamic gathering where 261 students came together to harness the power of technology for positive social impact.\n\nThe event showcased the creativity, collaboration, and problem-solving abilities of South Africa's next generation of innovators. Teams worked intensively to develop solutions addressing some of society's most pressing challenges, from digital safety to community upliftment.\n\nAs part of our commitment to empowering young innovators, Konecta sponsored gifts for the 2nd place winners, Ctrl Alt Defeat. Their project, Ubuntu Shield, stood out for its innovative approach to digital safety, offering a fresh perspective on how technology can be used to protect and empower communities.",
+      "On Friday, 5 September 2025, the University of the Witwatersrand, in collaboration with Adapt IT Telecoms, hosted the Social Good Hackathon — a dynamic gathering where 261 students came together to harness the power of technology for positive social impact.\n\nThe event showcased the creativity, collaboration, and problem-solving abilities of South Africa's next generation of innovators. Teams worked intensively to develop solutions addressing some of society's most pressing challenges, from digital safety to community upliftment.\n\nAs part of our commitment to empowering young innovators, Konecta sponsored gifts for the 2nd place winners, Ctrl Alt Defeat. Their project, Ubuntu Shield, stood out for its innovative approach to digital safety, offering a fresh perspective on how technology can be used to protect and empower communities.\n\nCongratulations to Ctrl Alt Defeat and to all the teams who took part in this inspiring event. Every participant demonstrated the potential of technology to create meaningful change.",
+    closingSection: {
+      title: "A Day to Remember",
+      text: "The Social Good Hackathon was more than just a competition — it was a celebration of innovation with purpose. By bringing together students, industry leaders, and partners, the event reinforced the role of technology as a tool for social transformation.",
+    },
+    purpose:
+      "To bring together students, industry leaders, and partners to harness the power of technology for positive social impact — reinforcing the role of innovation as a tool for social transformation.",
+    focusAreas: [
+      "Social Impact Solutions: Developing technology solutions that address society's most pressing challenges",
+      "Digital Safety: Innovating approaches to protect and empower communities in the digital age",
+      "Industry-Academia Collaboration: Bridging the gap between academic learning and real-world problem solving",
+      "Youth Empowerment: Supporting the next generation of tech innovators to make a positive difference",
+    ],
     highlights: [
       "261 students participated in the hackathon",
       "Focus on social impact solutions",
       "Industry and academic collaboration",
       "Innovation in digital safety",
-      "Development of Ubuntu Shield project",
+      "Development of Ubuntu Shield project by Ctrl Alt Defeat (2nd place winners)",
       "Strengthened industry-academia ties",
+      "Konecta sponsored gifts for the 2nd place winners",
+      "Demonstration of tech for social good",
     ],
     gallery: ["/images/hackathon-wits-adapt-it/gallery-hero.jpg"],
     quote: {
@@ -324,8 +343,8 @@ export const impactProjectsDatabase = [
   },
 
   {
-    id: "witechafrica-2024",
-    slug: "witechafrica-2024",
+    id: "witechnology-summit-2024",
+    slug: "witechnology-summit-2024",
     title:
       "WiTechAfrica 2024: The Launch of a Transformative Platform for Women in African Telecoms",
     shortTitle: "WiTechAfrica 2024",
@@ -337,8 +356,8 @@ export const impactProjectsDatabase = [
     year: "2024",
     location: "South Africa",
     badge: "Inaugural Summit",
-    image: "/images/witechafrica-2024/cover.webp",
-    thumbnail: "/images/witechafrica-2024/cover.webp",
+    image: "/images/witechnology-summit-2024/cover.webp",
+    thumbnail: "/images/witechnology-summit-2024/cover.webp",
     description:
       "Konecta, a telecoms consultancy firm, launched the WiTechAfrica platform to promote diversity, innovation, and excellence in the telecoms industry.",
     longDescription:
@@ -357,10 +376,11 @@ export const impactProjectsDatabase = [
       "Focus on 5G, IoT & Digital Inclusion: Deep dives into emerging technologies and their potential to bridge the digital divide",
     ],
     gallery: [
-      "/images/witechafrica-2024/gallery-hero.jpeg",
-      "/images/witechafrica-2024/gallery-1.jpeg",
-      "/images/witechafrica-2024/gallery-2.jpeg",
-      "/images/witechafrica-2024/gallery-3.jpeg",
+      "/images/witechnology-summit-2024/gallery-hero.jpeg",
+      "/images/witechnology-summit-2024/gallery-1.jpeg",
+      "/images/witechnology-summit-2024/gallery-2.jpeg",
+      "/images/witechnology-summit-2024/gallery-3.jpeg",
+      "/images/witechnology-summit-2024/gallery-4.jpeg",
     ],
     ctaText: "Visit WiTechAfrica",
     ctaUrl: "https://witechnology.africa/",
@@ -556,8 +576,8 @@ export const newsDatabase = [
     date: "2024",
     year: "2024",
     featured: false,
-    image: "/images/witechafrica-2024/cover.webp",
-    thumbnail: "/images/witechafrica-2024/cover.webp",
+    image: "/images/witechnology-summit-2024/cover.webp",
+    thumbnail: "/images/witechnology-summit-2024/cover.webp",
     excerpt:
       "Konecta, a telecoms consultancy firm, launched the WiTechAfrica platform to promote diversity, innovation, and excellence in the telecoms industry.",
     description:
@@ -577,8 +597,8 @@ export const newsDatabase = [
     date: "2024",
     year: "2024",
     featured: true,
-    image: "/images/witechafrica-2024/cover.webp",
-    thumbnail: "/images/witechafrica-2024/cover.webp",
+    image: "/images/witechnology-summit-2024/cover.webp",
+    thumbnail: "/images/witechnology-summit-2024/cover.webp",
     excerpt:
       "In this interview on SABC, Yandisa Sokhanyile discusses the highlights and key takeaways from the WiTech Africa Summit 2024.",
     description:

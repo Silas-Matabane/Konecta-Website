@@ -51,7 +51,7 @@ function HeroSection({ project }) {
               {project.badge}
             </span>
           )}
-          <span className="px-2.5 py-0.5 rounded-md bg-white/10 text-white/70 text-[0.6rem] font-heading font-bold tracking-wider uppercase border border-white/10">
+          <span className="px-2.5 py-0.5 rounded-md bg-white/10 text-white/70 text-xs font-heading font-bold tracking-wider uppercase border border-white/10">
             {project.type === "event-hosted" ? "Event" : "Case Study"}
           </span>
         </div>
@@ -143,36 +143,38 @@ function InfoSidebar({ project }) {
 
       <div className="space-y-4">
         <div>
-          <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
+          <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
             Category
           </div>
-          <div className="text-sm text-konecta-white">{categoryLabel}</div>
+          <div className="text-base text-konecta-white">{categoryLabel}</div>
         </div>
         {project.location && (
           <div>
-            <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
+            <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
               Location
             </div>
-            <div className="text-sm text-konecta-white">{project.location}</div>
+            <div className="text-base text-konecta-white">
+              {project.location}
+            </div>
           </div>
         )}
         {project.year && (
           <div>
-            <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
+            <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
               Year
             </div>
-            <div className="text-sm text-konecta-white">{project.year}</div>
+            <div className="text-base text-konecta-white">{project.year}</div>
           </div>
         )}
         {project.metric && (
           <div>
-            <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
+            <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-1">
               Key Metric
             </div>
             <div className="font-heading font-extrabold text-xl text-konecta-orange">
               {project.metric}
             </div>
-            <div className="text-xs text-white/50 mt-0.5">
+            <div className="text-sm text-white/50 mt-0.5">
               {project.metricLabel}
             </div>
           </div>
@@ -181,14 +183,14 @@ function InfoSidebar({ project }) {
 
       {project.tags?.length > 0 && (
         <div>
-          <div className="text-[0.6rem] uppercase tracking-wider text-white/40 font-heading font-bold mb-2">
+          <div className="text-xs uppercase tracking-wider text-white/40 font-heading font-bold mb-2">
             Topics
           </div>
           <div className="flex flex-wrap gap-1.5">
             {project.tags.map((t) => (
               <span
                 key={t}
-                className="px-2 py-0.5 rounded-full bg-konecta-orange/10 text-konecta-orange text-[0.6rem] font-heading font-bold tracking-wider"
+                className="px-2.5 py-1 rounded-full bg-konecta-orange/10 text-konecta-orange text-xs font-heading font-bold tracking-wider"
               >
                 {t}
               </span>
@@ -213,7 +215,7 @@ function DescriptionSection({ project }) {
         About This Project
       </h2>
       {project.longDescription.split("\n\n").map((para, i) => (
-        <p key={i} className="text-sm text-white/70 leading-relaxed mb-4">
+        <p key={i} className="text-white/70 leading-relaxed mb-4">
           {para}
         </p>
       ))}
@@ -224,9 +226,7 @@ function DescriptionSection({ project }) {
           <h3 className="font-heading font-bold text-base text-konecta-orange mb-3">
             Our Purpose
           </h3>
-          <p className="text-sm text-white/70 leading-relaxed">
-            {project.purpose}
-          </p>
+          <p className="text-white/70 leading-relaxed">{project.purpose}</p>
         </div>
       )}
 
@@ -252,7 +252,7 @@ function DescriptionSection({ project }) {
                         {title}
                       </div>
                       {desc && (
-                        <div className="text-xs text-white/60 mt-1 leading-relaxed">
+                        <div className="text-white/60 mt-1 leading-relaxed">
                           {desc}
                         </div>
                       )}
@@ -271,12 +271,14 @@ function DescriptionSection({ project }) {
           <h3 className="font-heading font-bold text-lg text-konecta-white mb-4">
             Key Highlights
           </h3>
+          {project.highlightsIntro && (
+            <p className="text-white/60 leading-relaxed mb-4">
+              {project.highlightsIntro}
+            </p>
+          )}
           <ul className="space-y-2.5">
             {project.highlights.map((h, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 text-sm text-white/70"
-              >
+              <li key={i} className="flex items-start gap-3 text-white/70">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-konecta-orange shrink-0" />
                 {h}
               </li>
@@ -284,12 +286,54 @@ function DescriptionSection({ project }) {
           </ul>
         </div>
       )}
+
+      {/* Quote */}
+      {project.quote && (
+        <div className="mt-8 glass-card p-6 lg:p-8 border-l-2 border-konecta-orange/50">
+          <blockquote className="text-white/80 leading-relaxed italic">
+            &ldquo;{project.quote.text}&rdquo;
+          </blockquote>
+          {project.quote.author && (
+            <div className="mt-4 text-xs font-heading font-bold text-konecta-orange tracking-wider">
+              — {project.quote.author}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Closing Section */}
+      {project.closingSection && (
+        <div className="mt-12 relative">
+          {/* Decorative divider */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-konecta-orange/30 to-transparent" />
+            <span className="w-2 h-2 rotate-45 bg-konecta-orange/60" />
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-konecta-orange/30 to-transparent" />
+          </div>
+
+          <div className="text-center px-4 lg:px-8">
+            <h3 className="font-heading font-extrabold text-xl lg:text-2xl text-konecta-white mb-4 tracking-wide">
+              {project.closingSection.title}
+            </h3>
+            <p className="lg:text-base text-white/70 leading-relaxed max-w-2xl mx-auto">
+              {project.closingSection.text}
+            </p>
+          </div>
+
+          {/* Bottom decorative divider */}
+          <div className="flex items-center gap-4 mt-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-konecta-orange/30 to-transparent" />
+            <span className="w-2 h-2 rotate-45 bg-konecta-orange/60" />
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-konecta-orange/30 to-transparent" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
 /* ── Gallery ── */
-function GallerySection({ gallery, title }) {
+function GallerySection({ gallery, title, description }) {
   const [ref, inView] = useInView({ threshold: 0.1 });
   if (!gallery?.length) return null;
 
@@ -298,20 +342,34 @@ function GallerySection({ gallery, title }) {
       ref={ref}
       className={`mt-12 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
     >
-      <h2 className="font-heading font-extrabold text-xl text-konecta-white mb-6">
+      <h2 className="font-heading font-extrabold text-xl text-konecta-white mb-3">
         Gallery
       </h2>
+      {description && (
+        <p className="text-white/60 leading-relaxed mb-6">{description}</p>
+      )}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-        {gallery.map((src, i) => (
-          <div key={i} className="rounded-xl overflow-hidden aspect-video">
-            <img
-              src={src}
-              alt={`${title} gallery ${i + 1}`}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-            />
-          </div>
-        ))}
+        {gallery.map((item, i) => {
+          const src = typeof item === "string" ? item : item.src;
+          const caption = typeof item === "string" ? null : item.caption;
+          return (
+            <figure key={i} className="group">
+              <div className="rounded-xl overflow-hidden aspect-video">
+                <img
+                  src={src}
+                  alt={caption || `${title} gallery ${i + 1}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              {caption && (
+                <figcaption className="mt-2 text-xs text-white/50 leading-relaxed">
+                  {caption}
+                </figcaption>
+              )}
+            </figure>
+          );
+        })}
       </div>
     </div>
   );
@@ -423,7 +481,11 @@ export default function ImpactDetailPage() {
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="flex-1 min-w-0">
             <DescriptionSection project={project} />
-            <GallerySection gallery={project.gallery} title={project.title} />
+            <GallerySection
+              gallery={project.gallery}
+              title={project.title}
+              description={project.galleryDescription}
+            />
           </div>
           <div className="lg:w-[340px] shrink-0">
             <InfoSidebar project={project} />

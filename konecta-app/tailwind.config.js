@@ -24,11 +24,11 @@ export default {
         body: ["Catamaran", "sans-serif"],
       },
       fontSize: {
-        display: "clamp(3rem, 5.5vw, 6rem)",
-        hero: "clamp(2.5rem, 4.5vw, 5rem)",
-        section: "clamp(2rem, 3.5vw, 3.5rem)",
-        "sub-section": "clamp(1.4rem, 2vw, 2rem)",
-        "cta-heading": "clamp(2rem, 3.5vw, 3.5rem)",
+        display: "clamp(2.7rem, 4.2vw, 4.8rem)",
+        hero: "clamp(2.7rem, 4.2vw, 4.8rem)",
+        section: "clamp(1.8rem, 2.8vw, 2.9rem)",
+        "sub-section": "clamp(1.2rem, 1.8vw, 1.6rem)",
+        "cta-heading": "clamp(1.8rem, 2.8vw, 2.9rem)",
       },
       spacing: {
         section: "clamp(5rem, 10vw, 8rem)",

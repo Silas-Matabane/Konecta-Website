@@ -133,7 +133,7 @@ export default function ContactPage() {
                 <div className="font-heading font-bold text-xs text-konecta-white uppercase tracking-wider mb-2">
                   Location
                 </div>
-                <div className="text-sm text-white/75">{COMPANY.location}</div>
+                <div className="text-white/75">{COMPANY.location}</div>
               </div>
             </div>
 

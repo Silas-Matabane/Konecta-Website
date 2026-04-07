@@ -129,7 +129,7 @@ function ImpactCard({ item, index }) {
             <div className="font-heading font-extrabold text-2xl text-konecta-orange leading-none">
               {item.metric}
             </div>
-            <div className="text-[0.6rem] text-white/60 uppercase tracking-wider mt-0.5">
+            <div className="text-xs text-white/60 uppercase tracking-wider mt-0.5">
               {item.metricLabel}
             </div>
           </div>
@@ -531,7 +531,7 @@ export default function ImpactPage() {
             className="font-heading font-extrabold text-konecta-white mt-4 leading-[1.05]"
             style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
           >
-            Impact, Events
+            Impact
             <br />
             <span className="text-gradient-orange">&amp; News</span>
           </h1>
