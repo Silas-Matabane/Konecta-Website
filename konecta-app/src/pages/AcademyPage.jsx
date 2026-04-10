@@ -2,6 +2,7 @@ import { useState } from "react";
 import SEO from "@components/common/SEO";
 import PageHeader from "@components/common/PageHeader";
 import SectionEyebrow from "@components/common/SectionEyebrow";
+import ThemedIcon from "@components/common/ThemedIcon";
 import useInView from "@hooks/useInView";
 import { PAGE_SEO } from "@data/constants";
 
@@ -143,7 +144,7 @@ function ProgrammeCard({ programme, isActive, onClick }) {
     >
       {/* header row */}
       <div className="flex items-start gap-4">
-        <span className="text-3xl">{icon}</span>
+        <ThemedIcon name={icon} size={32} />
         <div className="flex-1">
           <p
             className="text-[0.65rem] font-bold uppercase tracking-widest mb-1"
@@ -330,7 +331,7 @@ function WhySection() {
               }`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <span className="text-3xl mb-3 block">{item.icon}</span>
+              <ThemedIcon name={item.icon} size={32} className="mb-3" />
               <h3 className="font-heading text-lg font-bold text-konecta-white mb-1">
                 {item.title}
               </h3>

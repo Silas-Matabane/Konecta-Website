@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SectionEyebrow from "@components/common/SectionEyebrow";
 import useInView from "@hooks/useInView";
 import { LEADERSHIP_DATA } from "@data/constants";
@@ -69,10 +68,6 @@ export default function Leadership() {
             operators, the team brings a unique perspective on how digital
             infrastructure can accelerate economic development.
           </p>
-
-          <Link to="/about#team" className="btn-primary">
-            Meet the Team
-          </Link>
         </div>
       </div>
     </section>

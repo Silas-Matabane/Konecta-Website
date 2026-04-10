@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import SEO from "@components/common/SEO";
 import SectionEyebrow from "@components/common/SectionEyebrow";
+import ThemedIcon from "@components/common/ThemedIcon";
 import useInView from "@hooks/useInView";
 import { PAGE_SEO } from "@data/constants";
 import {
@@ -493,7 +494,7 @@ export default function EventsPage() {
           </div>
         ) : (
           <div className="relative z-10 text-center py-20">
-            <div className="text-4xl mb-4 opacity-30">🔍</div>
+            <ThemedIcon name="search" size={40} className="mb-4 opacity-30" />
             <h3 className="font-heading font-bold text-xl text-konecta-white mb-2">
               No events found
             </h3>

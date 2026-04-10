@@ -275,7 +275,22 @@ export const impactProjectsDatabase = [
       "Konecta sponsored gifts for the 2nd place winners",
       "Demonstration of tech for social good",
     ],
-    gallery: ["/images/hackathon-wits-adapt-it/gallery-hero.jpg"],
+    gallery: [
+      "/images/hackathon-wits-adapt-it/gallery-hero.jpg",
+      "/images/hackathon-wits-adapt-it/1757583589528.jpg",
+      "/images/hackathon-wits-adapt-it/1757583589578.jpg",
+      "/images/hackathon-wits-adapt-it/1757583589735.jpg",
+      "/images/hackathon-wits-adapt-it/1757583589742.jpg",
+      "/images/hackathon-wits-adapt-it/1757583590013.jpg",
+      "/images/hackathon-wits-adapt-it/1757583590166.jpg",
+    ],
+    inlineImages: [
+      {
+        afterParagraph: 1,
+        src: "/images/hackathon-wits-adapt-it/1757583589528.jpg",
+        alt: "Students collaborating at the Social Good Hackathon",
+      },
+    ],
     quote: {
       text: "Events like these are crucial for bridging the gap between academic learning and real-world problem solving. We're proud to support the next generation of tech innovators who are using their skills to make a positive difference in society.",
       author: "Konecta Representative",
@@ -305,6 +320,23 @@ export const impactProjectsDatabase = [
       "The City of Ekurhuleni, in collaboration with National Treasury, the World Bank, and technical partners Konecta and Avo Vision, hosted a two-day digital strategy validation session in Tembisa.",
     longDescription:
       "In May 2025, a historic Mission Week unfolded in Thembisa, one of South Africa's largest and most vibrant townships, bringing together a powerful coalition of partners dedicated to bridging the digital divide. The City of Ekurhuleni, South African National Treasury, the World Bank Group, Konecta, and Avo Vision (by Nedbank) joined forces to explore and initiate a comprehensive digital transformation roadmap for the community.\n\nThis collaborative initiative represents a significant step towards creating a more equitable digital landscape, focusing on practical solutions that empower local residents and businesses.",
+    inlineImages: [
+      {
+        afterParagraph: 0,
+        src: "/images/world-bank-thembisa/gallery/dsc00005_54518755534_o.jpg",
+        alt: "Mission Week opening session in Thembisa",
+      },
+      {
+        afterParagraph: 1,
+        src: "/images/world-bank-thembisa/gallery/dsc00099_54518572341_o.jpg",
+        alt: "Stakeholder collaboration during Mission Week",
+      },
+      {
+        afterParagraph: 1,
+        src: "/images/world-bank-thembisa/gallery/1747304409780.jpg",
+        alt: "Community engagement in Thembisa",
+      },
+    ],
     purpose:
       "Bridging the digital divide through a public-private partnership model that leverages technology for community empowerment.",
     focusAreas: [
@@ -326,6 +358,18 @@ export const impactProjectsDatabase = [
       "/images/world-bank-thembisa/gallery-1.jpg",
       "/images/world-bank-thembisa/gallery-2.webp",
       "/images/world-bank-thembisa/gallery-3.jpg",
+      "/images/world-bank-thembisa/gallery/dsc00001_54518755514_o.jpg",
+      "/images/world-bank-thembisa/gallery/dsc00009_54518573111_o.jpg",
+      "/images/world-bank-thembisa/gallery/dsc00018_54518754829_o.jpg",
+      "/images/world-bank-thembisa/gallery/dsc00050_54517710417_o.jpg",
+      "/images/world-bank-thembisa/gallery/dsc00084_54518572611_o.jpg",
+      "/images/world-bank-thembisa/gallery/dsc00101_54518572361_o.jpg",
+      "/images/world-bank-thembisa/gallery/dsc00109_54518923615_o.jpg",
+      "/images/world-bank-thembisa/gallery/1747304409516.jpg",
+      "/images/world-bank-thembisa/gallery/1747304409906.jpg",
+      "/images/world-bank-thembisa/gallery/1747304410147.jpg",
+      "/images/world-bank-thembisa/gallery/1747304410216.jpg",
+      "/images/world-bank-thembisa/gallery/1747304410370.jpg",
     ],
     quote: {
       text: "The convergence of the World Bank, National Treasury, the City of Ekurhuleni, and private sector partners like Konecta and Avo Vision in Thembisa signals a new era of collaborative digital development, one where technology truly serves the people.",
@@ -346,8 +390,8 @@ export const impactProjectsDatabase = [
     id: "witechnology-summit-2024",
     slug: "witechnology-summit-2024",
     title:
-      "WiTechAfrica 2024: The Launch of a Transformative Platform for Women in African Telecoms",
-    shortTitle: "WiTechAfrica 2024",
+      "WiTechnology 2024: The Launch of a Transformative Platform for Women in African Telecoms",
+    shortTitle: "WiTechnology 2024",
     category: "women-in-tech",
     type: "event-hosted",
     status: "completed",
@@ -359,9 +403,9 @@ export const impactProjectsDatabase = [
     image: "/images/witechnology-summit-2024/cover.webp",
     thumbnail: "/images/witechnology-summit-2024/cover.webp",
     description:
-      "Konecta, a telecoms consultancy firm, launched the WiTechAfrica platform to promote diversity, innovation, and excellence in the telecoms industry.",
+      "Konecta, a telecoms consultancy firm, launched the WiTechnology platform to promote diversity, innovation, and excellence in the telecoms industry.",
     longDescription:
-      "The inaugural WiTechAfrica Telecoms and Datacentre Summit 2024 marked the birth of a groundbreaking platform dedicated to championing diversity, innovation, and excellence in Africa's rapidly growing telecommunications and datacentre sectors.\n\nThis landmark event brought together some of the continent's most brilliant minds, pioneering leaders, and passionate advocates for a future where technology is inclusive, transformative, and empowering for all.\n\nWiTechAfrica was conceived as more than a conference – it is a movement. The summit was designed to create a permanent, impactful platform addressing critical needs in the African tech ecosystem.",
+      "The inaugural WiTechnology Telecoms and Datacentre Summit 2024 marked the birth of a groundbreaking platform dedicated to championing diversity, innovation, and excellence in Africa's rapidly growing telecommunications and datacentre sectors.\n\nThis landmark event brought together some of the continent's most brilliant minds, pioneering leaders, and passionate advocates for a future where technology is inclusive, transformative, and empowering for all.\n\nWiTechnology was conceived as more than a conference – it is a movement. The summit was designed to create a permanent, impactful platform addressing critical needs in the African tech ecosystem.",
     focusAreas: [
       "Women's Empowerment: Elevating the role of women in the telecoms and datacentre industries by creating opportunities for leadership, mentorship, and career advancement",
       "Startup Growth & Innovation: Providing a launchpad for startups and emerging businesses in the tech space, connecting them with investors, mentors, and established industry players",
@@ -369,7 +413,7 @@ export const impactProjectsDatabase = [
       "Industry Excellence: Setting new benchmarks for excellence in African telecoms and datacentres through knowledge sharing and best practice dissemination",
     ],
     highlights: [
-      "Official Platform Launch: The historic unveiling of the WiTechAfrica platform, establishing a permanent digital home for the community",
+      "Official Platform Launch: The historic unveiling of the WiTechnology platform, establishing a permanent digital home for the community",
       "Keynote by Wabo Majavu: An inspiring opening address emphasising the critical need for diversity and innovation",
       "Expert Panel Discussions: High-impact panels featuring executives from Seacom, Sentech, and Telecel SA",
       "Networking & Masterclasses: Dedicated sessions for capacity building, knowledge exchange, and forging new partnerships",
@@ -382,11 +426,11 @@ export const impactProjectsDatabase = [
       "/images/witechnology-summit-2024/gallery-3.jpeg",
       "/images/witechnology-summit-2024/gallery-4.jpeg",
     ],
-    ctaText: "Visit WiTechAfrica",
+    ctaText: "Visit WiTechnology",
     ctaUrl: "https://witechnology.africa/",
     tags: ["women-in-tech", "telecoms", "datacentre", "startup", "diversity"],
     metric: "1st",
-    metricLabel: "Inaugural WiTechAfrica platform launch",
+    metricLabel: "Inaugural WiTechnology platform launch",
   },
 
   {
@@ -427,79 +471,6 @@ export const impactProjectsDatabase = [
     description:
       "A dynamic event that brings together experts to discuss the challenges and solutions in municipal service delivery. The Municipal Indaba creates a space for dialogue that helps improve local governance and service provision.",
     tags: ["municipal", "governance", "service-delivery", "public-sector"],
-  },
-
-  /* ── CASE STUDY IMPACT PROJECTS ── */
-  {
-    id: "venue-wifi-johannesburg",
-    slug: "venue-wifi-johannesburg",
-    title: "Venue Network & Data Platform — Johannesburg",
-    shortTitle: "Venue WiFi Platform",
-    category: "wifi-as-a-service",
-    type: "case-study",
-    status: "completed",
-    featured: false,
-    date: "2025",
-    year: "2025",
-    location: "Johannesburg, South Africa",
-    badge: "WiFi-as-a-Service",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    thumbnail:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    description:
-      "Deployed managed WiFi across 6 venues. Built a data platform collecting 50+ behavioural data points per session, enabling monetised portals, footfall analytics, and targeted digital marketing for operators.",
-    tags: ["wifi", "analytics", "data-platform", "venues"],
-    metric: "2.4M+",
-    metricLabel: "Monthly sessions — full behavioural analytics",
-  },
-
-  {
-    id: "azure-migration-finservices",
-    slug: "azure-migration-financial-services",
-    title: "Azure Migration & Copilot AI — Financial Services",
-    shortTitle: "Azure Migration",
-    category: "microsoft-azure",
-    type: "case-study",
-    status: "completed",
-    featured: false,
-    date: "2025",
-    year: "2025",
-    location: "Johannesburg, South Africa",
-    badge: "Microsoft Azure",
-    image:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
-    thumbnail:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
-    description:
-      "Full Microsoft Azure migration with Konecta-managed services. Included Copilot AI deployment that cut manual reporting time by 60%.",
-    tags: ["azure", "cloud", "AI", "copilot", "finservices"],
-    metric: "35%",
-    metricLabel: "Infrastructure cost reduction post-migration",
-  },
-
-  {
-    id: "smart-connectivity-municipality",
-    slug: "smart-connectivity-local-government",
-    title: "Smart Connectivity for Local Government",
-    shortTitle: "Municipal Connectivity",
-    category: "municipal-technology",
-    type: "case-study",
-    status: "completed",
-    featured: false,
-    date: "2025",
-    year: "2025",
-    location: "South Africa",
-    badge: "Municipal Technology",
-    image:
-      "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80",
-    thumbnail:
-      "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80",
-    description:
-      "Managed network and service delivery platform for a South African municipality — enabling real-time reporting, citizen analytics, and digital service channels.",
-    tags: ["municipal", "connectivity", "analytics", "government"],
-    metric: "40+",
-    metricLabel: "Municipal sites connected with analytics layer",
   },
 ];
 
@@ -567,9 +538,9 @@ export const newsDatabase = [
   },
 
   {
-    id: "witechafrica-platform-launch-news",
-    slug: "witechafrica-platform-launch-news",
-    title: "Konecta Launches WiTechAfrica Platform for Local Tech Startups",
+    id: "witechnology-platform-launch-news",
+    slug: "witechnology-platform-launch-news",
+    title: "Konecta Launches WiTechnology Platform for Local Tech Startups",
     category: "announcement",
     source: "other",
     sourceName: "Industry Press",
@@ -579,11 +550,11 @@ export const newsDatabase = [
     image: "/images/witechnology-summit-2024/cover.webp",
     thumbnail: "/images/witechnology-summit-2024/cover.webp",
     excerpt:
-      "Konecta, a telecoms consultancy firm, launched the WiTechAfrica platform to promote diversity, innovation, and excellence in the telecoms industry.",
+      "Konecta, a telecoms consultancy firm, launched the WiTechnology platform to promote diversity, innovation, and excellence in the telecoms industry.",
     description:
-      "Konecta, a telecoms consultancy firm, launched the WiTechAfrica platform to promote diversity, innovation, and excellence in the telecoms industry.",
+      "Konecta, a telecoms consultancy firm, launched the WiTechnology platform to promote diversity, innovation, and excellence in the telecoms industry.",
     externalUrl: null,
-    tags: ["witechafrica", "startups", "telecoms", "diversity"],
+    tags: ["witechnology", "startups", "telecoms", "diversity"],
   },
 
   {
@@ -604,7 +575,7 @@ export const newsDatabase = [
     description:
       "In this interview on SABC, Yandisa Sokhanyile discusses the highlights and key takeaways from the WiTech Africa Summit 2024. Watch as Yandisa provides insights into the event's major themes, innovative discussions, and the impact on the technology and telecommunications sectors in Africa.",
     externalUrl: null,
-    tags: ["SABC", "interview", "WiTechAfrica", "Yandisa-Sokhanyile"],
+    tags: ["SABC", "interview", "WiTechnology", "Yandisa-Sokhanyile"],
   },
 
   {

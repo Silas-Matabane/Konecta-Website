@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SectionEyebrow from "@components/common/SectionEyebrow";
+import ThemedIcon from "@components/common/ThemedIcon";
 import useInView from "@hooks/useInView";
 import { events } from "@data/events";
 
@@ -51,7 +52,11 @@ function EventCard({ event, index }) {
           <div className="flex flex-wrap gap-6 mb-6">
             {event.meta.map((m) => (
               <span key={m.text} className="text-sm text-white/80">
-                {m.icon}{" "}
+                <ThemedIcon
+                  name={m.icon}
+                  size={14}
+                  className="inline-block align-middle"
+                />{" "}
                 <strong className="text-konecta-white">{m.text}</strong>
               </span>
             ))}

@@ -1,5 +1,6 @@
-﻿import MicrosoftLogo from '@components/common/MicrosoftLogo';
-import { CREDIBILITY_ITEMS } from '@data/constants';
+﻿import MicrosoftLogo from "@components/common/MicrosoftLogo";
+import ThemedIcon from "@components/common/ThemedIcon";
+import { CREDIBILITY_ITEMS } from "@data/constants";
 
 export default function CredibilityBand() {
   return (
@@ -8,14 +9,24 @@ export default function CredibilityBand() {
         {CREDIBILITY_ITEMS.map((item, i) => (
           <div key={item.title} className="contents">
             <div className="flex items-center gap-3">
-              <div className={`text-xl shrink-0 ${item.isMicrosoft ? 'flex items-center justify-center' : ''}`}>
-                {item.isMicrosoft ? <MicrosoftLogo size={20} /> : item.icon}
+              <div
+                className={`text-xl shrink-0 ${item.isMicrosoft ? "flex items-center justify-center" : ""}`}
+              >
+                {item.isMicrosoft ? (
+                  <MicrosoftLogo size={20} />
+                ) : (
+                  <ThemedIcon name={item.icon} size={20} />
+                )}
               </div>
               <div>
-                <div className={`font-heading font-bold text-xs ${item.isMicrosoft ? 'text-konecta-silver' : 'text-konecta-white'}`}>
+                <div
+                  className={`font-heading font-bold text-xs ${item.isMicrosoft ? "text-konecta-silver" : "text-konecta-white"}`}
+                >
                   {item.title}
                 </div>
-                <div className="text-[0.65rem] text-konecta-muted">{item.desc}</div>
+                <div className="text-[0.65rem] text-konecta-muted">
+                  {item.desc}
+                </div>
               </div>
             </div>
             {i < CREDIBILITY_ITEMS.length - 1 && (

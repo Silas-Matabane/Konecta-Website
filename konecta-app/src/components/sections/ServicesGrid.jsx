@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import SectionEyebrow from "@components/common/SectionEyebrow";
+import ThemedIcon from "@components/common/ThemedIcon";
 import useInView from "@hooks/useInView";
 import { services } from "@data/services";
 
@@ -58,7 +59,7 @@ export default function ServicesGrid() {
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-start">
         {/* Left — description in glass card */}
         <div key={active.id} className="glass-card p-8 lg:p-10 animate-fade-in">
-          <div className="text-4xl mb-5">{active.icon}</div>
+          <ThemedIcon name={active.icon} size={40} className="mb-5" />
           <h3
             className="font-heading font-extrabold text-konecta-white leading-tight mb-4"
             style={{ fontSize: "clamp(1.5rem, 2.5vw, 2.2rem)" }}
@@ -88,7 +89,7 @@ export default function ServicesGrid() {
         </div>
 
         {/* Right — demo image with glass overlay */}
-        <div className="image-glass-overlay rounded-2xl overflow-hidden max-w-[440px] sm:max-w-[560px]">
+        <div className="rounded-2xl overflow-hidden max-w-[440px] sm:max-w-[560px]">
           <img
             src={active.image}
             alt={active.title}

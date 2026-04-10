@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ThemedIcon from "@components/common/ThemedIcon";
 import useInView from "@hooks/useInView";
 import useCountUp from "@hooks/useCountUp";
 import { HERO_STATS, HERO_IMAGE } from "@data/constants";
@@ -9,9 +10,11 @@ function StatCounter({ end, suffix = "", label, icon }) {
 
   return (
     <div ref={ref} className="glass-card p-6 lg:p-8 text-center group">
-      <div className="text-2xl mb-3 opacity-60 group-hover:opacity-100 transition-opacity">
-        {icon}
-      </div>
+      <ThemedIcon
+        name={icon}
+        size={28}
+        className="mb-3 opacity-60 group-hover:opacity-100 transition-opacity"
+      />
       <div
         className="font-heading font-extrabold text-konecta-white leading-none"
         style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)" }}

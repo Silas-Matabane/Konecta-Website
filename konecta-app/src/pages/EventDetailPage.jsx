@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import SEO from "@components/common/SEO";
 import SectionEyebrow from "@components/common/SectionEyebrow";
+import ThemedIcon from "@components/common/ThemedIcon";
 import useInView from "@hooks/useInView";
 import MicrosoftLogo from "@components/common/MicrosoftLogo";
 import { eventsDatabase } from "@data/eventsData";
@@ -703,7 +704,7 @@ function RelatedEvents({ current }) {
 function EventNotFound() {
   return (
     <section className="px-6 lg:px-14 pt-40 pb-section text-center">
-      <div className="text-5xl mb-6 opacity-30">🔗</div>
+      <ThemedIcon name="link" size={48} className="mb-6 opacity-30" />
       <h1 className="font-heading font-extrabold text-3xl text-konecta-white mb-3">
         Event Not Found
       </h1>

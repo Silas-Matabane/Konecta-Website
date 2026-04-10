@@ -569,7 +569,7 @@ export const eventsDatabase = [
       {
         name: "Yandisa Sokhanyile",
         role: "CEO, Konecta",
-        image: "/images/speakers/yandisa-sokhanyile.png",
+        image: "/images/speakers/yandisa-sokhanyile.jpg",
       },
       {
         name: "Miyelani Holeni",

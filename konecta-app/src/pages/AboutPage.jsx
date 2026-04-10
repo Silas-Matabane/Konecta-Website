@@ -1,6 +1,4 @@
 ﻿import Leadership from "@components/sections/Leadership";
-import TeamSection from "@components/sections/TeamSection";
-import AfricaPresence from "@components/sections/AfricaPresence";
 import WiTechnologyBand from "@components/sections/WiTechnologyBand";
 import PartnersSection from "@components/sections/PartnersSection";
 import CTASection from "@components/common/CTASection";
@@ -22,8 +20,6 @@ export default function AboutPage() {
         description="Africa's premier telecoms and technology consultancy — Level 1 B-BBEE certified, 100% women-owned, and a trusted Microsoft Partner."
       />
       <Leadership />
-      <TeamSection />
-      <AfricaPresence />
       <WiTechnologyBand />
       <PartnersSection />
       <CTASection />

@@ -10,6 +10,7 @@ import {
   dashboardBars,
 } from "@data/wifiPlatform";
 import SEO from "@components/common/SEO";
+import ThemedIcon from "@components/common/ThemedIcon";
 import { PAGE_SEO } from "@data/constants";
 import "../css/wifi-platform.css";
 
@@ -180,7 +181,9 @@ export default function WifiPlatformPage() {
           {steps.map((step, i) => (
             <div className="wfp-step" key={step.number}>
               <div className="wfp-step-num">{step.number}</div>
-              <div className="wfp-step-icon">{step.icon}</div>
+              <div className="wfp-step-icon">
+                <ThemedIcon name={step.icon} size={28} />
+              </div>
               <div className="wfp-step-title">{step.title}</div>
               <p className="wfp-step-desc">{step.description}</p>
               {i < steps.length - 1 && <div className="wfp-step-connector" />}
@@ -215,7 +218,9 @@ export default function WifiPlatformPage() {
                   : {}),
               }}
             >
-              <div className="wfp-sector-icon">{sector.icon}</div>
+              <div className="wfp-sector-icon">
+                <ThemedIcon name={sector.icon} size={32} />
+              </div>
               <div className="wfp-sector-name">{sector.name}</div>
               <div className="wfp-sector-tag">{sector.tag}</div>
               <div className="wfp-sector-desc">{sector.description}</div>
@@ -248,7 +253,9 @@ export default function WifiPlatformPage() {
           {clients.map((client) => (
             <div className="wfp-client-card" key={client.name}>
               <div className="wfp-client-header">
-                <div className="wfp-client-icon">{client.icon}</div>
+                <div className="wfp-client-icon">
+                  <ThemedIcon name={client.icon} size={22} />
+                </div>
                 <div>
                   <div className="wfp-client-name">{client.name}</div>
                   <div className="wfp-client-type">{client.type}</div>

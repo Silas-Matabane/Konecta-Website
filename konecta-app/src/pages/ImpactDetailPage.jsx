@@ -1,6 +1,8 @@
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import SEO from "@components/common/SEO";
 import SectionEyebrow from "@components/common/SectionEyebrow";
+import ThemedIcon from "@components/common/ThemedIcon";
 import useInView from "@hooks/useInView";
 import { impactProjectsDatabase, IMPACT_CATEGORIES } from "@data/impactData";
 
@@ -17,7 +19,7 @@ function HeroSection({ project }) {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[center_15%]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black via-konecta-black/70 to-konecta-black/30" />
       </div>
@@ -215,9 +217,47 @@ function DescriptionSection({ project }) {
         About This Project
       </h2>
       {project.longDescription.split("\n\n").map((para, i) => (
-        <p key={i} className="text-white/70 leading-relaxed mb-4">
-          {para}
-        </p>
+        <React.Fragment key={i}>
+          <p className="text-white/70 leading-relaxed mb-4">{para}</p>
+          {(() => {
+            const imgs =
+              project.inlineImages?.filter((img) => img.afterParagraph === i) ||
+              [];
+            if (!imgs.length) return null;
+            if (imgs.length === 2) {
+              return (
+                <div className="grid grid-cols-2 gap-2 my-4 max-w-full sm:max-w-[80%] lg:max-w-[70%]">
+                  {imgs.map((img, j) => (
+                    <div
+                      key={j}
+                      className="rounded-lg overflow-hidden h-[180px] sm:h-[220px] md:h-[260px] lg:h-[300px]"
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.alt || `${project.title} image`}
+                        className="w-full h-full object-cover object-[center_25%]"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              );
+            }
+            return imgs.map((img, j) => (
+              <div
+                key={j}
+                className="my-4 rounded-lg overflow-hidden max-w-full sm:max-w-[65%] lg:max-w-[55%] h-[220px] sm:h-[260px] md:h-[300px] lg:h-[360px]"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt || `${project.title} image`}
+                  className="w-full h-full object-cover object-[center_25%]"
+                  loading="lazy"
+                />
+              </div>
+            ));
+          })()}
+        </React.Fragment>
       ))}
 
       {/* Purpose */}
@@ -442,7 +482,7 @@ function RelatedProjects({ current }) {
 function ProjectNotFound() {
   return (
     <section className="px-6 lg:px-14 pt-40 pb-section text-center">
-      <div className="text-5xl mb-6 opacity-30">🔗</div>
+      <ThemedIcon name="link" size={48} className="mb-6 opacity-30" />
       <h1 className="font-heading font-extrabold text-3xl text-konecta-white mb-3">
         Project Not Found
       </h1>

@@ -115,7 +115,7 @@ export const HERO_IMAGE =
   "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80";
 
 export const LEADERSHIP_DATA = {
-  image: "/images/speakers/yandisa-sokhanyile.png",
+  image: "/images/speakers/yandisa-sokhanyile.jpg",
   yearsExperience: "15+",
   quote:
     "Konecta has evolved into a technology company focused on building the intelligent infrastructure that powers Africa\u2019s digital future.",

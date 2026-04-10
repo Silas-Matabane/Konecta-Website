@@ -145,7 +145,7 @@ export const articlesDatabase = [
       <p>For government, the G20 outcomes provide political cover and funding pathways for ambitious digital inclusion programmes. For the private sector, township digitalisation represents a massive market opportunity — millions of connected consumers and businesses. For communities, it's a chance to leap from analog to digital, bypassing the infrastructure gaps of the past.</p>
     `,
     featuredImage:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+      "/images/articles-news/south_africa_township_showin_technological_enhancement_and_tr.jpg",
     category: "digital-transformation",
     tags: ["G20", "Township", "Digital Inclusion", "Thembisa", "Policy"],
     author: "konecta-editorial",
@@ -223,20 +223,22 @@ export const articlesDatabase = [
     status: "published",
   },
 
-  // ─── 4. WiTechAfrica Launch ──────────────────────────────
+  // ─── 4. WiTechnology Launch ──────────────────────────────
   {
     id: "art-004",
-    title: "Konecta Launches WiTechAfrica to Support Local Tech Startups",
-    slug: "witechafrica-launch",
+    title: "Konecta Launches WiTechnology to Support Local Tech Startups",
+    slug: "witechnology-launch",
     excerpt:
-      "Unlock opportunities, empower women. Konecta launches WiTechAfrica — a platform dedicated to supporting women-led tech startups and fostering digital skills across Africa.",
+      "Unlock opportunities, empower women. Konecta launches WiTechnology — a platform dedicated to supporting women-led tech startups and fostering digital skills across Africa.",
     content: `
-      <p>Konecta is proud to announce the launch of WiTechAfrica — a comprehensive platform designed to support, mentor, and fund women-led technology startups across the African continent. The initiative represents Konecta's commitment to creating an inclusive technology ecosystem where talent and innovation know no gender barriers.</p>
+      <p>Konecta is proud to announce the launch of WiTechnology — a comprehensive platform designed to support, mentor, and fund women-led technology startups across the African continent. The initiative represents Konecta's commitment to creating an inclusive technology ecosystem where talent and innovation know no gender barriers.</p>
+
+      <img src="/images/witechnology-summit-2024/gallery-hero.jpeg" alt="WiTechnology Summit 2024" style="width:100%;border-radius:12px;margin:1.5rem 0" />
 
       <h2>The Gender Gap in African Tech</h2>
-      <p>Despite significant progress, women remain underrepresented in Africa's technology sector. Less than 30% of tech professionals across the continent are women, and female-founded startups receive less than 5% of venture capital funding. WiTechAfrica aims to change these numbers through direct intervention.</p>
+      <p>Despite significant progress, women remain underrepresented in Africa's technology sector. Less than 30% of tech professionals across the continent are women, and female-founded startups receive less than 5% of venture capital funding. WiTechnology aims to change these numbers through direct intervention.</p>
 
-      <h2>What WiTechAfrica Offers</h2>
+      <h2>What WiTechnology Offers</h2>
       <ul>
         <li><strong>Mentorship Programme:</strong> Pairing early-stage founders with experienced technology leaders and entrepreneurs for structured guidance.</li>
         <li><strong>Skills Development:</strong> Technical training in software development, cloud computing, data science, and AI — delivered through workshops, bootcamps, and online courses.</li>
@@ -244,19 +246,27 @@ export const articlesDatabase = [
         <li><strong>Community:</strong> A peer network of women in technology, providing support, collaboration opportunities, and shared learning.</li>
       </ul>
 
+      <img src="/images/witechnology-summit-2024/gallery-1.jpeg" alt="WiTechnology Summit highlights" style="width:100%;border-radius:12px;margin:1.5rem 0" />
+
       <h2>Launch Events</h2>
-      <p>The WiTechAfrica launch includes a series of events across South Africa, including the flagship WiTechnology Africa Summit, regional meetups, and an online hackathon that brings together women technologists from across the continent.</p>
+      <p>The WiTechnology launch includes a series of events across South Africa, including the flagship WiTechnology Africa Summit, regional meetups, and an online hackathon that brings together women technologists from across the continent.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0">
+        <img src="/images/witechnology-summit-2024/gallery-2.jpeg" alt="WiTechnology Summit networking" style="width:100%;border-radius:12px;object-fit:cover;height:240px" />
+        <img src="/images/witechnology-summit-2024/gallery-3.jpeg" alt="WiTechnology Summit panels" style="width:100%;border-radius:12px;object-fit:cover;height:240px" />
+      </div>
 
       <h2>Get Involved</h2>
-      <p>WiTechAfrica welcomes participation from founders, mentors, sponsors, and technology companies committed to gender diversity. Together, we can build an African tech ecosystem that leverages the full talent pool — because innovation doesn't have a gender.</p>
+      <p>WiTechnology welcomes participation from founders, mentors, sponsors, and technology companies committed to gender diversity. Together, we can build an African tech ecosystem that leverages the full talent pool — because innovation doesn't have a gender.</p>
+
+      <img src="/images/witechnology-summit-2024/gallery-4.jpeg" alt="WiTechnology Summit community" style="width:100%;border-radius:12px;margin:1.5rem 0" />
     `,
-    featuredImage:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80",
+    featuredImage: "/images/witechnology-summit-2024/cover.webp",
     category: "women-in-tech",
     tags: [
       "Women in Tech",
       "Startups",
-      "WiTechAfrica",
+      "WiTechnology",
       "Diversity",
       "Empowerment",
     ],
@@ -687,7 +697,7 @@ export const articlesDatabase = [
       <p>Konecta's digital marketing team produces high-quality video content tailored to your brand and audience. From concept and scripting to production and distribution, we help businesses leverage video to tell their stories and drive results.</p>
     `,
     featuredImage:
-      "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=1200&q=80",
+      "https://images.unsplash.com/photo-1579566346927-c68383817a25?w=1200&q=80",
     category: "digital-marketing",
     tags: ["Video Marketing", "Content", "Social Media", "Brand", "Engagement"],
     author: "konecta-editorial",

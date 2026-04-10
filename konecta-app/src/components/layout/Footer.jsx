@@ -2,28 +2,11 @@ import { Link } from "react-router-dom";
 import {
   COMPANY,
   SOCIAL_LINKS,
-  OFFICES,
   FOOTER_SERVICES,
   FOOTER_EVENTS,
   FOOTER_COMPANY,
   BADGES,
 } from "@data/constants";
-import useClock from "@hooks/useClock";
-
-function OfficeClock({ city, tz, label }) {
-  const time = useClock(tz);
-  return (
-    <div className="glass-card p-6 text-center">
-      <div className="font-mono text-2xl lg:text-3xl text-gradient-orange tracking-wider">
-        {time}
-      </div>
-      <div className="text-xs text-white/80 mt-2 uppercase tracking-wider">
-        {city}
-        {label ? ` · ${label}` : ""}
-      </div>
-    </div>
-  );
-}
 
 export default function Footer() {
   return (
@@ -33,15 +16,6 @@ export default function Footer() {
     >
       {/* Ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-konecta-orange/[0.03] blur-[120px] rounded-full pointer-events-none" />
-
-      {/* Live clocks strip */}
-      <div className="relative z-10 px-6 lg:px-14 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {OFFICES.map((o) => (
-            <OfficeClock key={o.city} {...o} />
-          ))}
-        </div>
-      </div>
 
       {/* Main footer grid */}
       <div className="relative z-10 px-6 lg:px-14 py-16">
@@ -177,7 +151,7 @@ export default function Footer() {
 
       {/* Floating WhatsApp button */}
       <a
-        href="https://wa.me/27729776467"
+        href="https://wa.me/27721300531"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
