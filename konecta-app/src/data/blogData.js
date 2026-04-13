@@ -46,6 +46,7 @@ export const BLOG_CATEGORIES = [
   { id: "value-added-services", label: "Value-Added Services" },
   { id: "industry-trends", label: "Industry Trends" },
   { id: "women-in-tech", label: "Women in Tech" },
+  { id: "case-studies", label: "Case Studies" },
 ];
 
 // ── Sort options ───────────────────────────────────────────
@@ -1482,6 +1483,236 @@ export const articlesDatabase = [
     lastUpdated: "2025-03-17",
     likes: 50,
     views: 1320,
+    featured: false,
+    status: "published",
+  },
+
+  // ─── 33. Digital Thembisa Case Study ─────────────────────
+  {
+    id: "art-033",
+    title: "Building a Digital Future for Thembisa",
+    slug: "digital-thembisa-case-study",
+    excerpt:
+      "Konecta Group was appointed by the World Bank to design and deliver South Africa's first township-level digital economy strategy for Thembisa, coordinating government, multilateral and community stakeholders toward a replicable blueprint.",
+    content: "",
+    caseStudyFile: "/case-studies/01-thembisa-case-study.html",
+    featuredImage: "/images/world-bank-thembisa/cover.png",
+    category: "case-studies",
+    tags: [
+      "World Bank",
+      "Digital Infrastructure",
+      "SMME Enablement",
+      "Township Digital Economy",
+      "DFI Alignment",
+      "Women & Youth Focus",
+    ],
+    author: "konecta-editorial",
+    publishDate: "2025-05-15",
+    lastUpdated: "2025-05-15",
+    likes: 89,
+    views: 2340,
+    featured: true,
+    status: "published",
+  },
+
+  // ─── 34. Thembisa Series — Digital Skills ────────────────
+  {
+    id: "art-034",
+    title: "The Skills Gap Holding Township Entrepreneurs Back",
+    slug: "thembisa-digital-skills-gap",
+    excerpt:
+      "The digital skills gap in South Africa's townships is not a gap — it is a chasm. Unlike infrastructure deficits, targeted programming can begin to close it in months. That is both the opportunity and the imperative.",
+    content: "",
+    caseStudyFile: "/case-studies/02-digital-skills.html",
+    featuredImage: "/images/world-bank-thembisa/gallery-hero.png",
+    category: "case-studies",
+    tags: [
+      "Digital Skills",
+      "Township Economy",
+      "SMME Development",
+      "Technopreneurship",
+      "Digital Inclusion",
+      "World Bank",
+    ],
+    author: "konecta-editorial",
+    publishDate: "2025-05-18",
+    lastUpdated: "2025-05-18",
+    likes: 67,
+    views: 1890,
+    featured: false,
+    status: "published",
+  },
+
+  // ─── 35. Thembisa Series — Digital Infrastructure ────────
+  {
+    id: "art-035",
+    title: "The Infrastructure Is There. The Collaboration Isn't.",
+    slug: "thembisa-digital-infrastructure",
+    excerpt:
+      "Ekurhuleni has fibre and microwave infrastructure, and private sector operators are active in the same geography — yet township communities remain underserved. The problem is fragmentation, not investment.",
+    content: "",
+    caseStudyFile: "/case-studies/03-digital-infrastructure.html",
+    featuredImage: "/images/world-bank-thembisa/gallery-1.jpg",
+    category: "case-studies",
+    tags: [
+      "Digital Infrastructure",
+      "Public-Private Partnership",
+      "Municipal ROI",
+      "Open Access Networks",
+      "Township Connectivity",
+      "DFI Funding",
+    ],
+    author: "konecta-editorial",
+    publishDate: "2025-05-22",
+    lastUpdated: "2025-05-22",
+    likes: 54,
+    views: 1670,
+    featured: false,
+    status: "published",
+  },
+
+  // ─── 36. Thembisa Series — Local Ownership ───────────────
+  {
+    id: "art-036",
+    title:
+      "Connected But Not Included: The Case for Local Ownership of Digital Infrastructure",
+    slug: "thembisa-local-ownership",
+    excerpt:
+      "Being able to access the internet is not the same as participating in the digital economy. In Thembisa, communities consume connectivity they do not own and watch economic value flow out of their neighbourhoods.",
+    content: "",
+    caseStudyFile: "/case-studies/04-local-ownership.html",
+    featuredImage: "/images/world-bank-thembisa/gallery-2.webp",
+    category: "case-studies",
+    tags: [
+      "Local Ownership",
+      "Community Networks",
+      "Digital Inclusion",
+      "Economic Development",
+      "Township Economy",
+      "DFI",
+    ],
+    author: "konecta-editorial",
+    publishDate: "2025-05-25",
+    lastUpdated: "2025-05-25",
+    likes: 48,
+    views: 1450,
+    featured: false,
+    status: "published",
+  },
+
+  // ─── 37. Thembisa Series — Digital Finance ───────────────
+  {
+    id: "art-037",
+    title:
+      "Why Township Traders Still Prefer Cash — And What It Costs Everyone",
+    slug: "thembisa-digital-finance",
+    excerpt:
+      "Cash dominates township commerce not because digital alternatives are absent, but because a compounding loop of cost, emotional attachment, cybercrime fear and low awareness makes digital finance inaccessible, unaffordable and feared.",
+    content: "",
+    caseStudyFile: "/case-studies/05-digital-finance.html",
+    featuredImage: "/images/world-bank-thembisa/gallery-3.jpg",
+    category: "case-studies",
+    tags: [
+      "Financial Inclusion",
+      "Mobile Money",
+      "Township Commerce",
+      "Fintech",
+      "Cash Dominance",
+      "Spaza Economy",
+    ],
+    author: "konecta-editorial",
+    publishDate: "2025-05-28",
+    lastUpdated: "2025-05-28",
+    likes: 53,
+    views: 1580,
+    featured: false,
+    status: "published",
+  },
+
+  // ─── 38. Thembisa Series — Platform Paradox ──────────────
+  {
+    id: "art-038",
+    title:
+      "The Platform Paradox: Tools That Exist, Communities That Can't Use Them",
+    slug: "thembisa-platform-paradox",
+    excerpt:
+      "Digital platforms fail in township communities not because they are absent, but because they are designed without them — English-only, untrained, unresponsive, and built for imagined users rather than real ones.",
+    content: "",
+    caseStudyFile: "/case-studies/06-platform-paradox.html",
+    featuredImage:
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80",
+    category: "case-studies",
+    tags: [
+      "Digital Platforms",
+      "E-Government",
+      "E-Commerce",
+      "Platform Design",
+      "Digital Trust",
+      "UX for Inclusion",
+    ],
+    author: "konecta-editorial",
+    publishDate: "2025-06-01",
+    lastUpdated: "2025-06-01",
+    likes: 46,
+    views: 1390,
+    featured: false,
+    status: "published",
+  },
+
+  // ─── 39. Gauteng on the Move ─────────────────────────────
+  {
+    id: "art-039",
+    title: "Gauteng on the Move — Built by Konecta",
+    slug: "gauteng-on-the-move",
+    excerpt:
+      "Konecta built Gauteng on the Move — a provincial-scale real-time journey planner integrating nine public transport operators into a single app for iOS and Android, commissioned by the Gautrain Management Agency.",
+    content: "",
+    caseStudyFile: "/case-studies/gauteng-on-the-move.html",
+    featuredImage:
+      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&q=80",
+    category: "case-studies",
+    tags: [
+      "App Development",
+      "GovTech",
+      "Real-Time Transport",
+      "iOS & Android",
+      "Gautrain Management Agency",
+      "Journey Planning",
+    ],
+    author: "konecta-editorial",
+    publishDate: "2025-06-05",
+    lastUpdated: "2025-06-05",
+    likes: 72,
+    views: 2100,
+    featured: true,
+    status: "published",
+  },
+
+  // ─── 40. Alexandra WiFi Intelligence ─────────────────────
+  {
+    id: "art-040",
+    title: "Beyond Connectivity: WiFi as a Community Intelligence Tool",
+    slug: "alexandra-wifi-intelligence",
+    excerpt:
+      "When Konecta deployed free WiFi in Alexandra, people connected but weren't using it productively. Changing the communication — not the infrastructure — transformed usage. Then the platform became a community intelligence tool for the Department of Transport.",
+    content: "",
+    caseStudyFile: "/case-studies/alexandra-wifi-intelligence.html",
+    featuredImage:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+    category: "case-studies",
+    tags: [
+      "Community WiFi",
+      "Behaviour Change",
+      "Data Intelligence",
+      "Department of Transport",
+      "Travel Pattern Mapping",
+      "Alexandra",
+    ],
+    author: "konecta-editorial",
+    publishDate: "2025-06-08",
+    lastUpdated: "2025-06-08",
+    likes: 61,
+    views: 1750,
     featured: false,
     status: "published",
   },

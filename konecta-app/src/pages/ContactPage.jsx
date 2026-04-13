@@ -1,24 +1,13 @@
 import { useState } from "react";
 import SectionEyebrow from "@components/common/SectionEyebrow";
 import SEO from "@components/common/SEO";
-import { COMPANY, OFFICES, CONTACT_SUBJECTS, PAGE_SEO } from "@data/constants";
-import useClock from "@hooks/useClock";
+import {
+  COMPANY,
+  SOCIAL_LINKS,
+  CONTACT_SUBJECTS,
+  PAGE_SEO,
+} from "@data/constants";
 import useInView from "@hooks/useInView";
-
-function OfficeCard({ city, tz, label }) {
-  const time = useClock(tz);
-  return (
-    <div className="glass-card p-6">
-      <div className="font-mono text-xl text-gradient-orange tracking-wider mb-2">
-        {time}
-      </div>
-      <div className="font-heading font-bold text-sm text-konecta-white">
-        {city}
-      </div>
-      <div className="text-xs text-white/80 mt-1">{label}</div>
-    </div>
-  );
-}
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
@@ -137,10 +126,24 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {OFFICES.map((o) => (
-                <OfficeCard key={o.city} {...o} />
-              ))}
+            <div>
+              <div className="font-heading font-bold text-xs text-konecta-white uppercase tracking-wider mb-4">
+                Follow Us
+              </div>
+              <div className="flex gap-4">
+                {SOCIAL_LINKS.map((s) => (
+                  <a
+                    key={s.platform}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-11 h-11 rounded-xl glass-card flex items-center justify-center text-sm text-white/80 no-underline hover:border-konecta-orange hover:text-konecta-orange transition-all"
+                    aria-label={s.platform}
+                  >
+                    {s.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import SEO from "@components/common/SEO";
 import SectionEyebrow from "@components/common/SectionEyebrow";
@@ -145,6 +145,135 @@ function HeroSection({ article }) {
       </div>
     </section>
   );
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CASE STUDY FULL-PAGE RENDERER
+   ═══════════════════════════════════════════════════════════ */
+
+const SCOPE = ".case-study-root";
+
+/** Prefix every selector in a CSS rule with the scope class */
+function scopeSelector(sel) {
+  const s = sel.trim();
+  if (!s) return s;
+  if (s === "body" || s === "html" || s === ":root") return SCOPE;
+  if (s === "*") return `${SCOPE} *`;
+  if (/^\*::/.test(s)) return `${SCOPE} ${s}`;
+  return `${SCOPE} ${s}`;
+}
+
+/** Recursively scope all rules using the browser CSSStyleSheet API */
+function scopeRules(rules) {
+  let out = "";
+  for (const rule of rules) {
+    if (rule instanceof CSSStyleRule) {
+      const scoped = rule.selectorText.split(",").map(scopeSelector).join(", ");
+      out += `${scoped} { ${rule.style.cssText} }\n`;
+    } else if (rule instanceof CSSMediaRule) {
+      out += `@media ${rule.conditionText} {\n${scopeRules(rule.cssRules)}}\n`;
+    } else if (
+      rule instanceof CSSKeyframesRule ||
+      rule instanceof CSSFontFaceRule
+    ) {
+      out += rule.cssText + "\n";
+    } else {
+      out += rule.cssText + "\n";
+    }
+  }
+  return out;
+}
+
+function CaseStudyContent({ htmlFile, title }) {
+  const [html, setHtml] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    fetch(htmlFile)
+      .then((r) => r.text())
+      .then((raw) => {
+        if (cancelled) return;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(raw, "text/html");
+
+        // Extract all <style> blocks
+        let css = "";
+        doc.querySelectorAll("style").forEach((s) => {
+          css += s.textContent + "\n";
+        });
+
+        // Remove <nav>, <footer> and logo-bar elements from body
+        doc.body
+          .querySelectorAll("nav, footer, .logo-bar")
+          .forEach((n) => n.remove());
+        const bodyHtml = doc.body.innerHTML;
+
+        // Replace fonts with website fonts
+        css = css
+          .replace(/'Playfair Display',?\s*serif/g, "'Inter', sans-serif")
+          .replace(/'Syne',?\s*sans-serif/g, "'Inter', sans-serif")
+          .replace(/'DM Sans',?\s*sans-serif/g, "'Catamaran', sans-serif");
+
+        // Remove @import rules (Google Fonts links not needed)
+        css = css.replace(/@import\s+url\([^)]+\)\s*;?/g, "");
+
+        // Scope ALL selectors to .case-study-root using the browser CSSOM
+        let processedCss = css;
+        try {
+          const sheet = new CSSStyleSheet();
+          sheet.replaceSync(css);
+          processedCss = scopeRules(sheet.cssRules);
+        } catch {
+          // Fallback: basic regex scoping if CSSOM fails
+          processedCss = css
+            .replace(
+              /\*\s*,\s*\*::before\s*,\s*\*::after\s*\{/g,
+              `${SCOPE} *, ${SCOPE} *::before, ${SCOPE} *::after {`,
+            )
+            .replace(/(?:^|\n|\})\s*body\s*\{/g, (m) =>
+              m.replace("body", SCOPE),
+            )
+            .replace(/(?:^|\n|\})\s*html\s*\{/g, (m) =>
+              m.replace("html", SCOPE),
+            )
+            .replace(/:root\s*\{/g, `${SCOPE} {`)
+            .replace(/(?:^|\n|\})\s*nav\s*[\{,]/g, (m) =>
+              m.replace("nav", `${SCOPE} nav`),
+            )
+            .replace(/(?:^|\n|\})\s*footer\s*[\{,]/g, (m) =>
+              m.replace("footer", `${SCOPE} footer`),
+            );
+        }
+
+        setHtml(
+          `<style>${processedCss}</style><div class="case-study-root">${bodyHtml}</div>`,
+        );
+        setLoading(false);
+      })
+      .catch(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [htmlFile]);
+
+  if (loading) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center bg-konecta-black">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-8 h-8 border-2 border-konecta-orange/30 border-t-konecta-orange rounded-full animate-spin" />
+          <p className="text-white/40 text-sm font-heading">
+            Loading case study…
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -732,6 +861,53 @@ export default function ArticlePage() {
   }, [slug]);
 
   if (!article) return <NotFound />;
+
+  const isCaseStudy = !!article.caseStudyFile;
+
+  if (isCaseStudy) {
+    return (
+      <>
+        <SEO
+          title={`${article.title} | Konecta Insights`}
+          description={article.excerpt}
+          path={`/insights/${slug}`}
+        />
+        <ReadingProgressBar />
+
+        {/* Floating back button */}
+        <div className="fixed top-20 left-6 z-50">
+          <Link
+            to="/insights"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-konecta-black/80 backdrop-blur-md border border-white/10 text-sm text-white/70 hover:text-konecta-orange hover:border-konecta-orange/30 transition-all"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            Back to Insights
+          </Link>
+        </div>
+
+        {/* Full-width case study content */}
+        <CaseStudyContent
+          htmlFile={article.caseStudyFile}
+          title={article.title}
+        />
+
+        <PrevNextNav prevArticle={prevArticle} nextArticle={nextArticle} />
+        <RelatedArticles articles={related} />
+      </>
+    );
+  }
 
   return (
     <>

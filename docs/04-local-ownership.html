@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Connected But Not Included | Konecta Group Insights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --orange: #E8701A;
+    --orange-mid: rgba(232,112,26,0.14);
+    --orange-pale: rgba(232,112,26,0.06);
+    --ink: #1A1A1A;
+    --ink-soft: #2C2C2C;
+    --mid: #666;
+    --rule: #E2DED8;
+    --warm: #F8F6F2;
+    --white: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 72px;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-mark {
+    width: 32px; height: 32px; background: var(--orange); border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: white;
+  }
+  .nav-name { font-size: 14px; font-weight: 500; color: var(--ink); letter-spacing: 0.03em; text-transform: uppercase; }
+  .nav-series { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+  .nav-series span { color: var(--orange); }
+
+  /* ── HERO ── */
+  .hero-wrap { max-width: 1100px; margin: 0 auto; }
+  .hero {
+    background: var(--white);
+    padding: 80px 72px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .article-series { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
+  .series-badge {
+    font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--white); background: var(--orange);
+    padding: 5px 12px; border-radius: 2px;
+  }
+  .series-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); }
+  .series-divider { width: 1px; height: 14px; background: var(--rule); }
+
+  .article-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5.5vw, 70px);
+    font-weight: 900; line-height: 1.0;
+    letter-spacing: -0.025em; color: var(--ink);
+    max-width: 880px; margin-bottom: 28px;
+  }
+  .article-title em { font-style: italic; color: var(--orange); }
+
+  .article-deck {
+    font-size: 19px; font-weight: 300; line-height: 1.65;
+    color: var(--mid); max-width: 680px; margin-bottom: 48px;
+  }
+
+  .article-byline {
+    border-top: 1px solid var(--rule);
+    padding: 24px 0;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .byline-left { display: flex; gap: 32px; flex-wrap: wrap; }
+  .byline-item { display: flex; flex-direction: column; gap: 3px; }
+  .byline-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+  .byline-value { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .share-link {
+    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--orange); text-decoration: none;
+    border-bottom: 1px solid var(--orange); padding-bottom: 2px; flex-shrink: 0;
+  }
+
+  /* ── LAYOUT ── */
+  .article-body {
+    max-width: 1100px; margin: 0 auto; padding: 72px 72px 100px;
+    display: grid; grid-template-columns: 1fr 280px;
+    gap: 80px; align-items: start;
+  }
+  .main-col { min-width: 0; }
+
+  /* ── PROSE ── */
+  .prose p {
+    font-size: 17px; font-weight: 300; line-height: 1.85;
+    color: var(--ink-soft); margin-bottom: 24px;
+  }
+  .prose h3 {
+    font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700;
+    line-height: 1.2; color: var(--ink); margin: 52px 0 18px; letter-spacing: -0.01em;
+  }
+  .prose h3::before {
+    content: ''; display: block; width: 32px; height: 3px;
+    background: var(--orange); margin-bottom: 16px;
+  }
+
+  .pull-out {
+    background: var(--orange-pale); border-left: 3px solid var(--orange);
+    padding: 28px 32px; margin: 40px 0;
+  }
+  .pull-out p {
+    font-family: 'Fraunces', serif; font-size: 21px;
+    font-weight: 300; font-style: italic; line-height: 1.5;
+    color: var(--ink); margin: 0 !important;
+  }
+
+  /* ── OWNERSHIP SPECTRUM ── */
+  .spectrum {
+    margin: 48px 0;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .spectrum-header {
+    background: var(--ink);
+    padding: 20px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2px;
+  }
+  .spectrum-col-head {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(255,255,255,0.4);
+    text-align: center;
+  }
+  .spectrum-col-head.highlight { color: var(--orange); }
+
+  .spectrum-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--rule);
+    gap: 0;
+  }
+  .spectrum-row:last-child { border-bottom: none; }
+
+  .spectrum-cell {
+    padding: 16px 20px;
+    font-size: 13px; font-weight: 300;
+    line-height: 1.5; color: var(--mid);
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .spectrum-cell:last-child { border-right: none; }
+  .spectrum-cell.row-label {
+    font-size: 12px; font-weight: 600;
+    color: var(--ink); text-align: left;
+    background: var(--warm);
+  }
+  .spectrum-cell.highlight {
+    background: var(--orange-pale);
+    color: var(--ink); font-weight: 500;
+  }
+
+  /* ── THE TWO GAPS ── */
+  .two-gaps {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; background: var(--rule); margin: 48px 0;
+  }
+  .gap-card { background: var(--white); padding: 36px 30px; }
+  .gap-card-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 12px;
+  }
+  .gap-card-title {
+    font-family: 'Fraunces', serif; font-size: 22px;
+    font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 14px;
+  }
+  .gap-card-body {
+    font-size: 14px; font-weight: 300; line-height: 1.7; color: var(--mid);
+  }
+  .gap-card-impact {
+    margin-top: 20px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px; font-weight: 500; color: var(--orange);
+  }
+
+  /* ── LOCAL OWNERSHIP MODELS ── */
+  .models-grid {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--rule); background: var(--white); margin: 40px 0;
+  }
+  .model-row {
+    display: grid; grid-template-columns: 48px 200px 1fr auto;
+    border-bottom: 1px solid var(--rule);
+    align-items: start; gap: 0;
+  }
+  .model-row:last-child { border-bottom: none; }
+  .model-num {
+    padding: 24px 0 24px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px; font-weight: 500; color: var(--orange);
+  }
+  .model-name {
+    padding: 24px 20px;
+    font-size: 14px; font-weight: 600; color: var(--ink);
+    border-right: 1px solid var(--rule);
+    line-height: 1.35;
+  }
+  .model-desc {
+    padding: 24px 24px;
+    font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--mid);
+    border-right: 1px solid var(--rule);
+  }
+  .model-tag {
+    padding: 24px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--orange); white-space: nowrap;
+  }
+
+  /* ── ECONOMIC CASE ── */
+  .econ-case {
+    background: var(--ink); padding: 52px 48px;
+    margin: 48px 0; position: relative; overflow: hidden;
+  }
+  .econ-case::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 320px; height: 320px; border-radius: 50%;
+    background: var(--orange); opacity: 0.05;
+  }
+  .econ-tag {
+    display: inline-block; font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--orange); border: 1px solid rgba(232,112,26,0.4);
+    padding: 4px 12px; border-radius: 2px; margin-bottom: 20px;
+  }
+  .econ-title {
+    font-family: 'Fraunces', serif; font-size: 28px;
+    font-weight: 700; color: white; line-height: 1.2; margin-bottom: 16px;
+  }
+  .econ-body {
+    font-size: 15px; font-weight: 300; line-height: 1.75;
+    color: rgba(255,255,255,0.6); max-width: 620px; margin-bottom: 40px;
+  }
+  .econ-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px; background: rgba(255,255,255,0.06); margin-bottom: 36px;
+  }
+  .econ-card {
+    background: rgba(255,255,255,0.03); padding: 28px 24px;
+  }
+  .econ-card-icon {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 12px;
+  }
+  .econ-card-title {
+    font-size: 15px; font-weight: 600; color: white;
+    margin-bottom: 8px; line-height: 1.3;
+  }
+  .econ-card-body {
+    font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.55;
+  }
+  .econ-footer {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .econ-status {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .econ-status span { color: var(--orange); }
+  .econ-cta {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: white; text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .econ-cta:hover { color: var(--orange); border-color: var(--orange); }
+
+  /* ── ENABLING CONDITIONS ── */
+  .conditions-list {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--rule); background: var(--white); margin: 40px 0;
+  }
+  .condition-row {
+    display: grid; grid-template-columns: 240px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .condition-row:last-child { border-bottom: none; }
+  .condition-label {
+    padding: 22px 20px; background: var(--orange-pale);
+    border-right: 1px solid var(--rule);
+    font-size: 13px; font-weight: 600; color: var(--ink);
+    display: flex; align-items: center; line-height: 1.35;
+  }
+  .condition-body {
+    padding: 22px 24px; font-size: 14px; font-weight: 300;
+    line-height: 1.65; color: var(--mid); display: flex; align-items: center;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: sticky; top: 80px;
+    display: flex; flex-direction: column; gap: 32px;
+  }
+  .sidebar-card {
+    background: var(--white); border: 1px solid var(--rule); padding: 28px 24px;
+  }
+  .sidebar-label {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 16px;
+  }
+  .sidebar-text {
+    font-size: 13px; font-weight: 300; line-height: 1.65; color: var(--mid);
+  }
+  .sidebar-text strong { color: var(--ink); font-weight: 500; }
+
+  .series-nav {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--rule); overflow: hidden; background: var(--white);
+  }
+  .series-nav-label {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid);
+    padding: 16px 20px; border-bottom: 1px solid var(--rule); background: var(--warm);
+  }
+  .series-nav-item {
+    padding: 16px 20px; border-bottom: 1px solid var(--rule);
+    text-decoration: none; display: block; transition: background 0.2s;
+  }
+  .series-nav-item:last-child { border-bottom: none; }
+  .series-nav-item:hover { background: var(--orange-pale); }
+  .series-nav-item.active { background: var(--orange-pale); border-left: 3px solid var(--orange); }
+  .sni-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--orange); margin-bottom: 4px; }
+  .sni-title { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.35; }
+
+  .engage-cta { background: var(--orange); padding: 28px 24px; }
+  .engage-cta-title {
+    font-family: 'Fraunces', serif; font-size: 20px;
+    font-weight: 700; color: white; margin-bottom: 10px; line-height: 1.2;
+  }
+  .engage-cta-body {
+    font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.75);
+    line-height: 1.6; margin-bottom: 20px;
+  }
+  .engage-btn {
+    display: block; background: white; color: var(--orange);
+    font-size: 12px; font-weight: 600; padding: 12px 20px;
+    text-align: center; text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .engage-btn:hover { opacity: 0.9; }
+
+  .key-stat { text-align: center; padding: 8px 0; }
+  .key-stat-num {
+    font-family: 'Fraunces', serif; font-size: 48px;
+    font-weight: 900; color: var(--orange);
+    letter-spacing: -0.03em; line-height: 1;
+  }
+  .key-stat-label {
+    font-size: 12px; font-weight: 300; color: var(--mid);
+    margin-top: 8px; line-height: 1.45;
+  }
+
+  /* ── ARTICLE FOOTER ── */
+  .article-footer {
+    max-width: 1100px; margin: 0 auto; padding: 48px 72px 80px;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: start; gap: 48px;
+  }
+  .tags-block { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid);
+    border: 1px solid var(--rule); padding: 5px 12px;
+    border-radius: 2px; background: var(--white);
+  }
+  .prev-next { text-align: right; flex-shrink: 0; }
+  .prev-next-label {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); margin-bottom: 6px;
+  }
+  .prev-next-link {
+    font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700;
+    color: var(--orange); line-height: 1.2; text-decoration: none; display: block;
+  }
+  .prev-next-link:hover { text-decoration: underline; }
+
+  /* ── GLOBAL FOOTER ── */
+  footer {
+    background: var(--ink); padding: 36px 72px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-brand {
+    font-family: 'DM Mono', monospace; font-size: 12px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3);
+  }
+  .footer-brand span { color: var(--orange); }
+  .footer-creds { display: flex; gap: 20px; }
+  .fcred {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.08);
+    padding: 4px 10px; border-radius: 2px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav, footer { padding: 16px 24px; }
+    .hero { padding: 56px 24px 0; }
+    .article-body { grid-template-columns: 1fr; padding: 40px 24px 72px; gap: 48px; }
+    .sidebar { position: static; }
+    .two-gaps { grid-template-columns: 1fr; }
+    .spectrum-header, .spectrum-row { grid-template-columns: 1fr 1fr; }
+    .spectrum-cell:nth-child(3), .spectrum-cell:nth-child(4),
+    .spectrum-col-head:nth-child(3), .spectrum-col-head:nth-child(4) { display: none; }
+    .econ-grid { grid-template-columns: 1fr; }
+    .model-row { grid-template-columns: 40px 1fr; }
+    .model-name { display: none; }
+    .model-tag { display: none; }
+    .model-desc { border-right: none; }
+    .condition-row, .principle-row { grid-template-columns: 1fr; }
+    .condition-label { border-right: none; border-bottom: 1px solid var(--rule); }
+    .article-footer { flex-direction: column; padding: 32px 24px; }
+    .prev-next { text-align: left; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-mark">K</div>
+    <div class="nav-name">Konecta Group</div>
+  </a>
+  <div class="nav-series">Insights Series · <span>Thembisa Digital Economy</span></div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero-wrap">
+  <div class="hero">
+    <div class="article-series">
+      <div class="series-badge">Insight 04</div>
+      <div class="series-divider"></div>
+      <div class="series-label">Local Ownership · Community Networks · Economic Development</div>
+    </div>
+    <h1 class="article-title">
+      Connected but<br /><em>not included.</em><br />The case for local ownership<br />of digital infrastructure.
+    </h1>
+    <p class="article-deck">
+      Being able to access the internet is not the same as participating in the digital economy. In Thembisa — and across South Africa's townships — communities consume connectivity they do not own, pay for services they cannot influence, and watch economic value flow out of their neighbourhoods. That has to change.
+    </p>
+    <div class="article-byline">
+      <div class="byline-left">
+        <div class="byline-item">
+          <div class="byline-label">Published by</div>
+          <div class="byline-value">Konecta Group</div>
+        </div>
+        <div class="byline-item">
+          <div class="byline-label">Evidence Source</div>
+          <div class="byline-value">Thembisa Infrastructure Audit & Digital Economy Baseline Report, 2024</div>
+        </div>
+        <div class="byline-item">
+          <div class="byline-label">Applies to</div>
+          <div class="byline-value">Township Communities · Municipalities · DFIs · Sector Regulators</div>
+        </div>
+      </div>
+      <a href="/cdn-cgi/l/email-protection#3855594a535d4c51565f785357565d5b4c59165b57164259" class="share-link">Partner With Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── BODY ── -->
+<div class="article-body">
+  <main class="main-col">
+    <div class="prose">
+
+      <p>
+        When we conducted the infrastructure audit of Thembisa's digital ecosystem — ground-level mapping of fibre routes, wireless nodes, connectivity hotspots and service providers — one pattern stood out beyond the infrastructure gaps themselves. The township had multiple operators providing connectivity. But not a single one of them was locally owned. Not one was community-controlled. Not one was structured to keep economic value circulating within Thembisa.
+      </p>
+
+      <p>
+        This is not unusual. Across South Africa's townships, the pattern is consistent: connectivity is sold into communities by external operators, and the revenue generated — subscription fees, data bundle purchases, business broadband contracts — flows out. The township is a market. It is not yet an owner.
+      </p>
+
+      <p>
+        This distinction matters enormously. It is the difference between digital access and digital economic participation. It is the difference between being a consumer of the digital economy and being a stakeholder in it. And it is the gap that neither infrastructure investment, nor skills programmes, nor platform development will close on their own — because it is a structural question about who owns the means of connectivity.
+      </p>
+
+      <div class="pull-out">
+        <p>"Township communities are among the most active consumers of digital services in South Africa. The question is not whether they are online — it is whether they own any piece of the infrastructure that keeps them there."</p>
+      </div>
+
+      <h3>Two gaps that compound each other</h3>
+
+      <p>
+        Konecta's infrastructure audit of Thembisa identified two specific and related gaps in the local ownership landscape. They are distinct problems that share a common root — and compound each other's effects.
+      </p>
+
+      <div class="two-gaps">
+        <div class="gap-card">
+          <div class="gap-card-num">Gap 01</div>
+          <div class="gap-card-title">No Community-Owned Networks</div>
+          <div class="gap-card-body">There are no community network infrastructure models operating in Thembisa — no resident cooperatives, community trusts, or neighbourhood-level wireless networks that are owned and managed by the people they serve. All connectivity infrastructure is owned externally, by operators headquartered outside the township.</div>
+          <div class="gap-card-impact">Economic value generated by local connectivity spend exits the community entirely.</div>
+        </div>
+        <div class="gap-card">
+          <div class="gap-card-num">Gap 02</div>
+          <div class="gap-card-title">No Locally-Owned ISPs</div>
+          <div class="gap-card-body">There is an absence of locally-registered, community-anchored internet service providers operating in Thembisa. This means no locally controlled pricing, no community-accountability for service quality, and no local entrepreneurial pathway into one of the township's most active economic sectors — internet service provision.</div>
+          <div class="gap-card-impact">A viable local business sector is structurally excluded from its own most active service market.</div>
+        </div>
+      </div>
+
+      <h3>Who owns the network, owns the economy</h3>
+
+      <p>
+        The principle is straightforward — and it is one that development economists, infrastructure investors and community development practitioners have observed consistently across sectors. Ownership determines who captures value. In agriculture, land reform is about ownership. In mining, beneficiation is about ownership. In the digital economy, community network development and local ISP formation is the equivalent intervention.
+      </p>
+
+      <p>
+        The analogy goes further. Community-owned networks have been demonstrated across the developing world — in rural South Africa, in Mexico's Oaxacan indigenous communities, in Bangladesh's union-level networks — to deliver connectivity at lower cost, with better service reliability and greater community accountability than external operators. When a community owns its network, it has every incentive to protect it from vandalism, maintain it, and ensure it works. When an external operator owns the infrastructure, the community has no stake in it — and no voice in decisions that determine their connectivity.
+      </p>
+
+      <p>
+        For Thembisa specifically, the implications are significant. A community-owned network model would not only reduce the cost of connectivity for residents and businesses. It would create local employment in network management, technical maintenance and customer service. It would generate revenue that stays in the township. And it would give the community a seat at the table in decisions about digital infrastructure expansion — currently made entirely by external actors.
+      </p>
+
+      <h3>The local ISP opportunity is bigger than it looks</h3>
+
+      <p>
+        South Africa's ICASA licensing framework includes provisions for small and micro ISP operators. The technical and capital barriers to starting a licensed ISP have reduced significantly over the past decade. Wireless last-mile technology, community fibre models and open-access network frameworks mean that a locally-owned ISP serving a single township is technically and commercially viable — if the enabling support exists.
+      </p>
+
+      <p>
+        What does that support look like? It is not simply capital, though funding access matters. It is a combination of technical training, business mentorship, regulatory guidance, access to wholesale connectivity at competitive rates, and a structured pathway from informal WiFi reseller to formally licensed operator. It is, in other words, exactly the kind of intervention that a digital skills and entrepreneurship programme like the Thembisa Technopreneurship Programme should include as a dedicated track.
+      </p>
+
+      <!-- OWNERSHIP MODELS TABLE -->
+      <div class="models-grid">
+        <div class="model-row">
+          <div class="model-num">01</div>
+          <div class="model-name">Community Network Cooperative</div>
+          <div class="model-desc">Residents pool resources to own and operate a neighbourhood-level wireless network. Governed democratically, priced affordably, surplus reinvested in coverage expansion. Can access city infrastructure under a PPP open-access framework at preferential rates as a community benefit condition.</div>
+          <div class="model-tag">Cooperative Model</div>
+        </div>
+        <div class="model-row">
+          <div class="model-num">02</div>
+          <div class="model-name">Local Micro-ISP</div>
+          <div class="model-desc">A locally-registered internet service provider, licensed by ICASA, providing connectivity to a defined township zone. Buys wholesale bandwidth from a national carrier, resells at competitive local rates. Creates local employment and keeps subscription revenue circulating locally.</div>
+          <div class="model-tag">Entrepreneurship Model</div>
+        </div>
+        <div class="model-row">
+          <div class="model-num">03</div>
+          <div class="model-name">Community Trust Infrastructure</div>
+          <div class="model-desc">Digital infrastructure assets — towers, fibre, conduit — held in a community trust with defined beneficiary rights for township residents. Infrastructure leased to commercial operators under community-benefit conditions that include local employment, affordable pricing tiers and reinvestment obligations.</div>
+          <div class="model-tag">Trust Model</div>
+        </div>
+        <div class="model-row">
+          <div class="model-num">04</div>
+          <div class="model-name">Municipal-Community JV</div>
+          <div class="model-desc">A joint venture between the city — contributing existing infrastructure assets — and a community-owned entity, to provide connectivity at the township level. Combines the city's infrastructure base with community accountability and local operational capacity. Both parties share in the revenue.</div>
+          <div class="model-tag">Partnership Model</div>
+        </div>
+      </div>
+
+      <h3>The economic development case for DFIs and funders</h3>
+
+      <p>
+        For development finance institutions, the local ownership argument is not simply a social equity case — though it is that. It is an economic development argument grounded in demonstrated impact evidence from comparable markets globally.
+      </p>
+
+      <!-- ECONOMIC CASE BLOCK -->
+      <div class="econ-case">
+        <div class="econ-tag">Economic Development Case · For DFIs & Private Sector Funders</div>
+        <div class="econ-title">Why local ownership of connectivity infrastructure is a development finance priority</div>
+        <div class="econ-body">
+          Community-owned networks and locally-anchored ISPs are not a niche social enterprise model. They are an economic infrastructure intervention that generates measurable, trackable returns across multiple development dimensions simultaneously.
+        </div>
+        <div class="econ-grid">
+          <div class="econ-card">
+            <div class="econ-card-icon">Value Retention</div>
+            <div class="econ-card-title">Local revenue circulation</div>
+            <div class="econ-card-body">Subscription fees paid to locally-owned operators stay in the township — spent at local businesses, reinvested in network expansion, paid as local salaries. External operators extract this value entirely.</div>
+          </div>
+          <div class="econ-card">
+            <div class="econ-card-icon">Job Creation</div>
+            <div class="econ-card-title">Local technical employment</div>
+            <div class="econ-card-body">Network installation, maintenance, customer service and management roles are filled locally. This creates a skilled technical workforce with employment anchored in the community — not imported from outside.</div>
+          </div>
+          <div class="econ-card">
+            <div class="econ-card-icon">B-BBEE Alignment</div>
+            <div class="econ-card-title">Transformation of sector ownership</div>
+            <div class="econ-card-body">The ICT sector remains among South Africa's least transformed from an ownership perspective. Local ISP development is a direct instrument of sector B-BBEE — creating Black-owned, township-anchored operators in a sector that has historically excluded them.</div>
+          </div>
+          <div class="econ-card">
+            <div class="econ-card-icon">Infrastructure Protection</div>
+            <div class="econ-card-title">Community stake in asset preservation</div>
+            <div class="econ-card-body">Community-owned infrastructure experiences significantly lower vandalism and theft rates. When residents are shareholders and beneficiaries, they protect assets they own. This dramatically reduces the infrastructure attrition that undermines connectivity investment.</div>
+          </div>
+          <div class="econ-card">
+            <div class="econ-card-icon">Affordability</div>
+            <div class="econ-card-title">Lower costs, broader access</div>
+            <div class="econ-card-body">Community networks consistently deliver connectivity at lower cost than commercial operators — removing profit margin extraction and prioritising coverage over returns. Broader affordability means higher adoption, greater digital participation, and stronger economic impact from upstream investments in skills and platforms.</div>
+          </div>
+          <div class="econ-card">
+            <div class="econ-card-icon">Ecosystem Anchor</div>
+            <div class="econ-card-title">Foundation for the full digital economy</div>
+            <div class="econ-card-body">A locally-owned connectivity infrastructure is the economic foundation on which all other digital economy elements depend. Local ISPs create the incentive to deploy broadly, price affordably and serve the community comprehensively — exactly the behaviour that unlocks digital inclusion at scale.</div>
+          </div>
+        </div>
+        <div class="econ-footer">
+          <div class="econ-status">Opportunity Status: <span>Identified · Enabling Framework Required</span></div>
+          <a href="/cdn-cgi/l/email-protection#681109060c011b09280307060d0b1c09460b07461209" class="econ-cta">Engage Konecta on Local Ownership Models →</a>
+        </div>
+      </div>
+
+      <h3>What needs to happen to make this real</h3>
+
+      <p>
+        The local ownership opportunity in Thembisa — and in township digital economies broadly — will not be realised through intention alone. It requires a set of enabling conditions, each of which is actionable and within the reach of the stakeholders already engaged in the Digital Thembisa Strategy.
+      </p>
+
+      <div class="conditions-list">
+        <div class="condition-row">
+          <div class="condition-label">ICASA Licensing Support</div>
+          <div class="condition-body">Community entrepreneurs seeking ISP licenses face a regulatory process that is designed for established businesses — not township startups. A structured licensing facilitation programme, possibly through DTPS or ICASA's own community network policy instruments, would remove the most significant formal barrier to local ISP formation.</div>
+        </div>
+        <div class="condition-row">
+          <div class="condition-label">Wholesale Connectivity Access</div>
+          <div class="condition-body">A locally-owned ISP without access to affordable wholesale bandwidth cannot price competitively or build a sustainable business. Negotiated wholesale access agreements — potentially anchored by the city as a bulk buyer — would level the playing field between local micro-operators and established national carriers.</div>
+        </div>
+        <div class="condition-row">
+          <div class="condition-label">City Infrastructure Open Access</div>
+          <div class="condition-body">The city's fibre and microwave infrastructure, made available to community-owned operators at preferential rates as a community benefit condition, dramatically reduces the capital required to launch a local network. This is the enabling link between Articles 3 and 4 of this series — the PPP model and the local ownership model are complementary, not competing.</div>
+        </div>
+        <div class="condition-row">
+          <div class="condition-label">DFI Seed Capital & Technical Assistance</div>
+          <div class="condition-body">Community cooperatives and local ISP startups require patient, concessional capital to cover initial infrastructure costs, licensing fees and working capital — alongside technical assistance on network design, operations and commercial management. This is precisely the risk profile that DFI instruments are designed to absorb.</div>
+        </div>
+        <div class="condition-row">
+          <div class="condition-label">Local ISP Track in Technopreneurship Programme</div>
+          <div class="condition-body">The Thembisa Technopreneurship Programme — currently in implementation planning — should include a dedicated local connectivity entrepreneurship track. This would train township residents in the technical, commercial and regulatory competencies required to establish and operate a locally-owned internet service provider.</div>
+        </div>
+      </div>
+
+      <h3>This is what real digital inclusion looks like</h3>
+
+      <p>
+        The discourse around digital inclusion in South Africa has focused predominantly on access: getting communities online, closing the connectivity gap, expanding coverage. This is necessary but not sufficient. The deeper measure of digital inclusion is participation — specifically, participation as owners, operators and economic beneficiaries of the infrastructure that defines the digital age.
+      </p>
+
+      <p>
+        Thembisa's digital economy strategy, developed under Konecta Group's leadership as World Bank-appointed project manager, identifies local ownership as a strategic pillar — not an afterthought. The infrastructure audit made clear that without deliberate intervention to build community-owned networks and locally-anchored ISPs, the digital economy will replicate the patterns of exclusion that have characterised South Africa's physical economy: external ownership, value extraction and community marginalisation dressed in the language of progress.
+      </p>
+
+      <p>
+        The alternative is achievable. The models exist, globally tested and locally applicable. The infrastructure base — city-owned and private — is already in place. The entrepreneurial appetite is demonstrated. What is needed is the enabling architecture: regulatory facilitation, patient capital, open-access infrastructure policy and structured technical support.
+      </p>
+
+      <p>
+        Connecting Thembisa is only the beginning. Owning it is the goal.
+      </p>
+
+    </div>
+  </main>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <div class="series-nav">
+      <div class="series-nav-label">Thembisa Insights Series</div>
+      <a href="#" class="series-nav-item">
+        <div class="sni-num">01</div>
+        <div class="sni-title">Building a Digital Future for Thembisa: World Bank-Appointed Lead</div>
+      </a>
+      <a href="#" class="series-nav-item">
+        <div class="sni-num">02</div>
+        <div class="sni-title">The Skills Gap Holding Township Entrepreneurs Back</div>
+      </a>
+      <a href="#" class="series-nav-item">
+        <div class="sni-num">03</div>
+        <div class="sni-title">The Infrastructure Is There. The Collaboration Isn't.</div>
+      </a>
+      <a href="#" class="series-nav-item active">
+        <div class="sni-num">04</div>
+        <div class="sni-title">Connected But Not Included: The Case for Local Ownership</div>
+      </a>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-label">The Core Argument</div>
+      <div class="sidebar-text">
+        Access ≠ participation. Township communities need to be <strong>owners</strong> of connectivity infrastructure — not only consumers of it. Community networks and locally-owned ISPs are the economic development intervention that closes this gap.
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-label">Evidence Base</div>
+      <div class="sidebar-text">
+        Findings drawn from the <strong>Thembisa Infrastructure Audit</strong> and <strong>Digital Economy Baseline Report 2024</strong> — conducted by Konecta Group under appointment by the World Bank Group for the City of Ekurhuleni Digital Thembisa Strategy.
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-label">Key Insight</div>
+      <div class="key-stat">
+        <div class="key-stat-num">0</div>
+        <div class="key-stat-label">Locally-owned ISPs or community network operators identified in Thembisa during the infrastructure audit — despite a large and active connectivity market</div>
+      </div>
+    </div>
+
+    <div class="engage-cta">
+      <div class="engage-cta-title">Develop local ownership frameworks for your community or municipality</div>
+      <div class="engage-cta-body">Konecta specialises in designing enabling frameworks for community networks, local ISP development and municipal PPP infrastructure models.</div>
+      <a href="/cdn-cgi/l/email-protection#552c343b313c2634153e3a3b303621347b363a7b2f34" class="engage-btn">Talk to Konecta</a>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-label">Konecta Group</div>
+      <div class="sidebar-text">
+        <strong>Level 1 B-BBEE · 100% Women-Owned</strong><br /><br />
+        World Bank-appointed lead for the Digital Thembisa Strategy. WiFi Experience Platforms · AI Factory · Technology Division.<br /><br />
+        <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bec7dfd0dad7cddffed5d1d0dbddcadf90ddd190c4df">[email&#160;protected]</a></strong>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ── ARTICLE FOOTER ── -->
+<div class="article-footer">
+  <div class="tags-block">
+    <div class="tag">Local Ownership</div>
+    <div class="tag">Community Networks</div>
+    <div class="tag">Local ISP</div>
+    <div class="tag">Digital Inclusion</div>
+    <div class="tag">Economic Development</div>
+    <div class="tag">B-BBEE ICT</div>
+    <div class="tag">Township Economy</div>
+    <div class="tag">ICASA</div>
+    <div class="tag">DFI</div>
+  </div>
+  <div class="prev-next">
+    <div class="prev-next-label">Previous in Series</div>
+    <a href="#" class="prev-next-link">← The Collaboration Gap</a>
+  </div>
+</div>
+
+<!-- ── FOOTE

@@ -18,8 +18,7 @@ export const events = [
       { icon: "🤝", text: "Sponsorship & Exhibition Available" },
     ],
     gradient: "from-[#0d1a2b] to-[#111]",
-    image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+    image: "/images/cio-konect-2025/cover.jpg",
   },
   {
     id: "municipal-indaba",
@@ -40,8 +39,7 @@ export const events = [
     ],
     logoColor: "text-konecta-gold",
     gradient: "from-[#1a1208] to-[#0d0d0d]",
-    image:
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
+    image: "/images/govtech-2025/cover.jpeg",
   },
   {
     id: "witechnology",
@@ -60,8 +58,7 @@ export const events = [
     ],
     logoColor: "text-konecta-orange",
     gradient: "from-[#1a0808] to-[#0d0d0d]",
-    image:
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80",
+    image: "/images/witechnology-summit-2025/cover.jpg",
   },
 ];
 

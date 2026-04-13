@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Digital Thembisa | Konecta Group Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --orange: #E8701A;
+    --orange-light: #F0884A;
+    --orange-pale: rgba(232,112,26,0.08);
+    --ink: #1A1A1A;
+    --ink-soft: #2E2E2E;
+    --mid: #6B6B6B;
+    --rule: #E0DDD8;
+    --warm-white: #FAFAF7;
+    --white: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 92vh;
+  }
+
+  .hero-left {
+    padding: 72px 64px 72px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-right {
+    background: var(--orange);
+    display: flex;
+    align-items: flex-end;
+    padding: 72px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .hero-right::after {
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    left: -60px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.12);
+  }
+
+  .logo-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--orange);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: -0.5px;
+  }
+
+  .logo-name {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5.5vw, 72px);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--orange-light);
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.6);
+    margin-top: 28px;
+    max-width: 420px;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .meta-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.06em;
+  }
+
+  .meta-item span {
+    color: rgba(255,255,255,0.7);
+  }
+
+  .hero-stat-block {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(64px, 9vw, 120px);
+    font-weight: 900;
+    color: white;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-stat-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    margin-top: 16px;
+    line-height: 1.5;
+    max-width: 260px;
+  }
+
+  /* ── STRIP ── */
+  .strip {
+    background: var(--orange);
+    padding: 18px 72px;
+    display: flex;
+    gap: 48px;
+    overflow-x: auto;
+  }
+
+  .strip-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .strip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    flex-shrink: 0;
+  }
+
+  .strip-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 72px;
+  }
+
+  section {
+    padding: 100px 0;
+  }
+
+  .section-rule {
+    width: 48px;
+    height: 3px;
+    background: var(--orange);
+    margin-bottom: 40px;
+  }
+
+  .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+
+  .section-heading em {
+    font-style: italic;
+    color: var(--orange);
+  }
+
+  .body-text {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    max-width: 720px;
+  }
+
+  .body-text + .body-text {
+    margin-top: 20px;
+  }
+
+  /* ── CONTEXT ── */
+  .context-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .context-right {
+    padding-top: 8px;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .stat-card {
+    border: 1px solid var(--rule);
+    padding: 28px 24px;
+    background: var(--white);
+  }
+
+  .stat-card-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--orange);
+    letter-spacing: -0.03em;
+  }
+
+  .stat-card-label {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--mid);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    background: var(--ink);
+    padding: 80px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pull-quote::before {
+    content: '\201C';
+    position: absolute;
+    top: -30px;
+    left: 60px;
+    font-family: 'Playfair Display', serif;
+    font-size: 300px;
+    font-weight: 900;
+    color: rgba(232,112,26,0.08);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .pull-quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.45;
+    color: white;
+    max-width: 820px;
+    position: relative;
+  }
+
+  .pull-quote-attr {
+    margin-top: 32px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  /* ── ROLE ── */
+  .role-section {
+    background: var(--white);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .role-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .role-sticky {
+    position: sticky;
+    top: 40px;
+  }
+
+  .pillars-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 48px;
+  }
+
+  .pillar-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .pillar-item:nth-child(1) { animation-delay: 0.1s; }
+  .pillar-item:nth-child(2) { animation-delay: 0.2s; }
+  .pillar-item:nth-child(3) { animation-delay: 0.3s; }
+  .pillar-item:nth-child(4) { animation-delay: 0.4s; }
+  .pillar-item:nth-child(5) { animation-delay: 0.5s; }
+  .pillar-item:nth-child(6) { animation-delay: 0.6s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .pillar-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--orange);
+    padding-top: 3px;
+  }
+
+  .pillar-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .pillar-desc {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--mid);
+  }
+
+  /* ── INSIGHTS ── */
+  .insights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    margin-top: 64px;
+    background: var(--rule);
+  }
+
+  .insight-card {
+    background: var(--warm-white);
+    padding: 40px 32px;
+    position: relative;
+    transition: background 0.25s;
+  }
+
+  .insight-card:hover {
+    background: var(--orange-pale);
+  }
+
+  .insight-icon {
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--orange);
+  }
+
+  .insight-heading {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.35;
+  }
+
+  .insight-body {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--mid);
+  }
+
+  /* ── DFI OPPORTUNITY ── */
+  .opportunity-section {
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .opportunity-section::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: var(--orange);
+    opacity: 0.06;
+  }
+
+  .opportunity-section .section-heading {
+    color: white;
+  }
+
+  .opportunity-section .body-text {
+    color: rgba(255,255,255,0.6);
+  }
+
+  .opportunity-section .section-eyebrow {
+    color: var(--orange);
+  }
+
+  .opp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 64px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .opp-card {
+    background: var(--ink-soft);
+    padding: 40px 36px;
+    transition: background 0.25s;
+    position: relative;
+  }
+
+  .opp-card:hover {
+    background: #2A2A2A;
+  }
+
+  .opp-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+    border: 1px solid rgba(232,112,26,0.3);
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .opp-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .opp-body {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ── LESSONS ── */
+  .lessons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 56px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .lesson-row {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .lesson-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .lesson-body {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--mid);
+  }
+
+  .lesson-body strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--orange);
+    padding: 100px 72px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .cta-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: white;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    margin-top: 16px;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .btn-primary {
+    background: white;
+    color: var(--orange);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.9; }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 14px 32px;
+    border: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: white; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 40px 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-brand span {
+    color: var(--orange);
+  }
+
+  .footer-cred {
+    display: flex;
+    gap: 24px;
+  }
+
+  .cred-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { min-height: 280px; }
+    .hero-left { padding: 56px 32px; }
+    .hero-right { padding: 48px 32px; }
+    .strip { padding: 16px 32px; }
+    .container { padding: 0 32px; }
+    .context-grid { grid-template-columns: 1fr; gap: 48px; }
+    .role-grid { grid-template-columns: 1fr; gap: 48px; }
+    .insights-grid { grid-template-columns: 1fr; }
+    .opp-grid { grid-template-columns: 1fr; }
+    .lesson-row { grid-template-columns: 1fr; gap: 12px; }
+    .cta-section { grid-template-columns: 1fr; padding: 72px 32px; }
+    .cta-buttons { flex-direction: row; }
+    footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px; }
+    .pull-quote { padding: 64px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="logo-bar">
+        <div class="logo-mark">K</div>
+        <div class="logo-name">Konecta Group</div>
+      </div>
+      <div>
+        <div class="hero-eyebrow">Case Study · Digital Economy</div>
+        <h1 class="hero-title">
+          Building a<br /><em>Digital Future</em><br />for Thembisa
+        </h1>
+        <p class="hero-subtitle">
+          How Konecta Group — appointed by the World Bank — led South Africa's first township-level digital economy strategy, coordinating government, multilateral and community stakeholders toward an inclusive, replicable blueprint.
+        </p>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item">Appointed By &nbsp;<span>World Bank Group</span></div>
+        <div class="meta-item">Client &nbsp;<span>City of Ekurhuleni</span></div>
+        <div class="meta-item">Partners &nbsp;<span>National Treasury · Cities Support Programme</span></div>
+        <div class="meta-item">Framework &nbsp;<span>DE4A — Digital Economy for Africa (World Bank)</span></div>
+        <div class="meta-item">Status &nbsp;<span>Strategy Delivered · Implementation Phase Underway</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat-block">
+        <div class="hero-stat-number">1st</div>
+        <div class="hero-stat-label">Township-level Digital Economy Strategy of its kind in South Africa — a replicable model for cities across the continent.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── TAG STRIP ── -->
+<div class="strip">
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">Multi-Stakeholder Coordination</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">World Bank Partnership</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">Digital Infrastructure</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">SMME Enablement</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">Women & Youth Focus</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">Township Digital Economy</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-text">DFI Alignment</div></div>
+</div>
+
+<!-- ── CONTEXT ── -->
+<section>
+  <div class="container">
+    <div class="context-grid">
+      <div class="context-left">
+        <div class="section-eyebrow">The Challenge</div>
+        <h2 class="section-heading">A thriving township,<br /><em>digitally underserved</em></h2>
+        <p class="body-text">
+          Thembisa is one of Gauteng's most populous townships — a hive of commerce, culture and entrepreneurial energy. Yet beneath this vitality lay a stark digital divide: limited broadband access, low digital literacy, cash-dominated commerce, and fragmented government policy failing to catalyse private sector investment.
+        </p>
+        <p class="body-text">
+          The City of Ekurhuleni recognised that digital transformation could not be left to chance. A structured, evidence-based strategy was needed — one that would integrate infrastructure investment, skills development, financial inclusion and regulatory coherence into a single, implementable blueprint. The World Bank Group appointed Konecta Group as lead project manager to design, coordinate and deliver that strategy alongside the City of Ekurhuleni, National Treasury and the Cities Support Programme.
+        </p>
+      </div>
+      <div class="context-right">
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-card-number">5+</div>
+            <div class="stat-card-label">Ecosystem pillars diagnosed and strategised</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-number">DE4A</div>
+            <div class="stat-card-label">World Bank framework applied at township scale — a first in South Africa</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-number">4</div>
+            <div class="stat-card-label">Institutional partners coordinated across government, multilateral and community</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-number">100%</div>
+            <div class="stat-card-label">Women-owned South African company leading the initiative</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE ── -->
+<div class="pull-quote">
+  <div class="pull-quote-text">
+    "Digital transformation is not only a matter of the availability of robust infrastructure — it is a people issue. To be effective, technology must be in the hands of people capable of solving different social and economic problems."
+  </div>
+  <div class="pull-quote-attr">Paul Seadan · Senior Digital Development Specialist, The World Bank</div>
+</div>
+
+<!-- ── KONECTA'S ROLE ── -->
+<section class="role-section">
+  <div class="container">
+    <div class="role-grid">
+      <div class="role-sticky">
+        <div class="section-eyebrow">Konecta's Role</div>
+        <h2 class="section-heading">Lead project manager<br /><em>across the full ecosystem</em></h2>
+        <p class="body-text">
+          Appointed by the World Bank Group, Konecta held end-to-end project management responsibility — from scoping and stakeholder mobilisation through to strategy validation and publication. This required navigating the competing timelines, mandates and institutional cultures of a multilateral development organisation, municipal government and an active community of residents and entrepreneurs.
+        </p>
+        <p class="body-text" style="margin-top:16px;">
+          The strategy was structured around the World Bank's DE4A (Digital Economy for Africa) framework, contextualised to the specific realities of a South African township — a crucial adaptation that the World Bank's own specialists identified as the key to local relevance and implementability.
+        </p>
+      </div>
+      <div>
+        <div class="pillars-list">
+          <div class="pillar-item">
+            <div class="pillar-num">P1</div>
+            <div>
+              <div class="pillar-title">Digital Infrastructure</div>
+              <div class="pillar-desc">Scoped investment gaps, facilitated PPP dialogue, and identified community-led models to protect infrastructure against vandalism — a uniquely township-level challenge rarely addressed in national frameworks.</div>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-num">P2</div>
+            <div>
+              <div class="pillar-title">Digital Skills & Literacy</div>
+              <div class="pillar-desc">Mapped skills deficits across residents, SMMEs and city officials. Designed targeted interventions including women-focused digital skills programmes and curricula integration for institutions of learning.</div>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-num">P3</div>
+            <div>
+              <div class="pillar-title">Digital Platforms</div>
+              <div class="pillar-desc">Identified the failure points of existing government platforms — poor UX, distrust, inaccessibility — and recommended a consolidated, user-centric e-commerce and e-governance platform for Thembisa businesses and residents.</div>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-num">P4</div>
+            <div>
+              <div class="pillar-title">Digital Financial Services</div>
+              <div class="pillar-desc">Diagnosed the cash-dominance problem, financial literacy gaps and high banking costs squeezing township traders. Designed a strategy for mobile banking expansion, micro-lending access and SMME financial literacy programming.</div>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-num">P5</div>
+            <div>
+              <div class="pillar-title">Digital Entrepreneurship & Innovation</div>
+              <div class="pillar-desc">Elevated the eKasi Labs ecosystem, removed funding access barriers, and built a strategy for sector-wide incubation, accelerator programmes and startup investment facilitation through PPPs.</div>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-num">IN</div>
+            <div>
+              <div class="pillar-title">Institutional Pillar: Regulatory Environment</div>
+              <div class="pillar-desc">Identified fragmentation in policy implementation as the root inhibitor of digital growth. Designed a regulatory harmonisation framework to align existing policies with investment incentives, data protection and cybersecurity readiness.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── KEY INSIGHTS ── -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Key Insights</div>
+    <h2 class="section-heading">What we learned that<br /><em>others need to know</em></h2>
+    <p class="body-text">
+      The Thembisa project surfaced a set of structural insights that apply to township digital economy programmes across South Africa and the broader continent. These are not theoretical — they emerged from direct diagnostic work, community engagement and institutional negotiation.
+    </p>
+  </div>
+  <div style="max-width:1100px; margin:0 auto; padding:0 72px;">
+    <div class="insights-grid">
+      <div class="insight-card">
+        <div class="insight-icon">01</div>
+        <div class="insight-heading">National frameworks need township-level translation</div>
+        <div class="insight-body">The World Bank's DE4A framework is designed at national scale and loses critical granularity at township level. The most valuable intervention is contextualising it: identifying the specific barriers, actors and levers in that particular community — not applying the framework wholesale.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">02</div>
+        <div class="insight-heading">Digital inclusion is a people problem, not a technology problem</div>
+        <div class="insight-body">Infrastructure is necessary but not sufficient. The persistence of cash transactions, distrust of digital platforms and avoidance of formal financial systems stem from literacy gaps, cultural attitudes and poor UX design — not the absence of network coverage. Strategy must address both supply and demand simultaneously.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">03</div>
+        <div class="insight-heading">Vandalism is a strategic risk, not just an operational nuisance</div>
+        <div class="insight-body">The destruction of fibre and digital infrastructure is the single greatest threat to broadband expansion in townships. Effective strategy requires community-led ownership models — residents protecting infrastructure they benefit from — not just improved physical security.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">04</div>
+        <div class="insight-heading">Entrepreneurship is the pillar that creates sustainable jobs</div>
+        <div class="insight-body">In a township context, digital entrepreneurship — not e-governance — is the most direct lever for economic impact. Strategies that centre incubation, accelerator access, funding pathways and market connectivity for township entrepreneurs generate both economic growth and community ownership of digital transformation.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">05</div>
+        <div class="insight-heading">Policy fragmentation is the hidden inhibitor</div>
+        <div class="insight-body">Ekurhuleni's regulatory landscape is substantive — but its policies operate in silos, rarely reinforcing one another. The strategic intervention is not new policy, but harmonised implementation: aligning existing frameworks so they collectively catalyse private investment and accelerate digital development.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">06</div>
+        <div class="insight-heading">Change management determines whether e-services survive</div>
+        <div class="insight-body">In townships where government platforms have repeatedly failed to deliver, adoption depends on demonstrated value — not awareness campaigns. Sustainable digital services require parallel investment in change management, ongoing community outreach, and continuous UX improvement informed by actual resident feedback.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DFI OPPORTUNITY ── -->
+<section class="opportunity-section">
+  <div class="container">
+    <div class="section-eyebrow">The Replication Opportunity</div>
+    <h2 class="section-heading">Thembisa is<br /><em>just the beginning</em></h2>
+    <p class="body-text">
+      South Africa has hundreds of townships with identical structural challenges and identical potential. The Thembisa Digital Development Strategy is explicitly designed as a replicable blueprint — the first in a planned series of township digital economy programmes. Konecta is positioned to lead that rollout.
+    </p>
+    <p class="body-text" style="margin-top:18px;">
+      For DFIs and development partners seeking implementers with proven track records in township digital economy strategy, multi-stakeholder coordination, and World Bank-aligned methodologies, Konecta offers a distinctive value proposition: the only women-owned, Level 1 B-BBEE South African technology firm to have delivered at this scale.
+    </p>
+    <div class="opp-grid">
+      <div class="opp-card">
+        <div class="opp-tag">World Bank · IFC</div>
+        <div class="opp-title">Township & Informal Settlement Digital Economy Programmes</div>
+        <div class="opp-body">Having been appointed by the World Bank to deliver the Thembisa strategy, Konecta has demonstrated its ability to apply the DE4A framework at township scale — including baseline diagnostics, stakeholder mapping, strategy formulation and community validation. We are positioned to extend this mandate to additional South African municipalities and regional African city programmes.</div>
+      </div>
+      <div class="opp-card">
+        <div class="opp-tag">DBSA</div>
+        <div class="opp-title">Municipal Digital Infrastructure & PPP Facilitation</div>
+        <div class="opp-body">Our work identified concrete investment gaps in last-mile connectivity, fibre expansion and community-owned network models. We can support DBSA-funded municipal programmes with technical scoping, private sector partnership brokering and implementation management for digital infrastructure rollout.</div>
+      </div>
+      <div class="opp-card">
+        <div class="opp-tag">African Development Bank</div>
+        <div class="opp-title">Pan-African Digital Economy Diagnostics</div>
+        <div class="opp-body">The analytical framework, community engagement methodology and pillar-based strategy architecture developed for Thembisa is directly applicable to township and peri-urban digital economy programmes across sub-Saharan Africa. Konecta brings both the methodology and the lived experience of operating in an African emerging market context.</div>
+      </div>
+      <div class="opp-card">
+        <div class="opp-tag">EU · USAID · Bilateral Funders</div>
+        <div class="opp-title">Women & Youth Digital Inclusion Programmes</div>
+        <div class="opp-body">Thembisa's strategy includes a dedicated gender-responsive digital skills pillar — women-focused training, youth entrepreneurship pathways, and barrier-mapping for underrepresented groups. As a 100% women-owned company, Konecta embodies the transformation we are implementing and brings authentic credibility to gender-inclusive digital programmes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LESSONS ── -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Project Lessons · For Other Cities & Funders</div>
+    <h2 class="section-heading">What this project<br /><em>teaches future programmes</em></h2>
+    <div class="lessons-list">
+      <div class="lesson-row">
+        <div class="lesson-label">Stakeholder co-creation is non-negotiable</div>
+        <div class="lesson-body">Active participation from the full ecosystem — residents, entrepreneurs, city officials, national treasury and multilateral partners — was the defining factor in producing a strategy that communities will own and implement. <strong>Top-down digital strategies without co-creation consistently fail at the adoption stage.</strong></div>
+      </div>
+      <div class="lesson-row">
+        <div class="lesson-label">A nodal implementation agency must be established early</div>
+        <div class="lesson-body">Strategy execution requires a single, mandated entity accountable for implementation — an apex agency with the authority and resources to convene stakeholders, hold private sector partners to account, and report to Council. <strong>Without this, strategies remain on paper.</strong></div>
+      </div>
+      <div class="lesson-row">
+        <div class="lesson-label">Contingency planning must be built into project design</div>
+        <div class="lesson-body">Securing participation from relevant officials, approvals and institutional sign-off proved to be a persistent friction point. Future programmes — and their funders — must <strong>plan explicitly for institutional delays</strong> and build contingency time into every milestone.</div>
+      </div>
+      <div class="lesson-row">
+        <div class="lesson-label">Digital technology must solve real problems, visibly</div>
+        <div class="lesson-body">Communities do not adopt digital tools because they are told to — they adopt tools that demonstrably solve problems they already experience. <strong>The message to communities must lead with the problem being solved</strong>, not with the technology or the project.</div>
+      </div>
+      <div class="lesson-row">
+        <div class="lesson-label">Data-backed strategy enables accountable implementation</div>
+        <div class="lesson-body">The baseline study underpinning this strategy — the Thembisa Township Digital Economy Baseline Report 2024 — was essential. <strong>Strategies built on evidence are implementable and measurable.</strong> Funders should require baseline diagnostics before strategy funding.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="cta-section">
+  <div>
+    <h2 class="cta-heading">Ready to replicate this model in your programme or municipality?</h2>
+    <p class="cta-sub">Konecta Group brings proven methodology, World Bank-aligned frameworks, and on-the-ground South African implementation experience to township digital economy programmes. Let's talk.</p>
+  </div>
+  <div class="cta-buttons">
+    <a href="/cdn-cgi/l/email-protection#cdb4aca3a9a4beac8da6a2a3a8aeb9ace3aea2e3b7ac" class="btn-primary">Engage Konecta</a>
+    <a href="/cdn-cgi/l/email-protection#c9a4a8bba2acbda0a7ae89a2a6a7acaabda8e7aaa6e7b3a8" class="btn-secondary">Download Profile</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-brand"><span>Konecta</span> Group · Est. 2017 · South Africa</div>
+  <div class="footer-cred">
+    <div class="cred-pill">Level 1 B-BBEE</div>
+    <div class="cred-pill">100% Women-Owned</div>
+    <div cla
