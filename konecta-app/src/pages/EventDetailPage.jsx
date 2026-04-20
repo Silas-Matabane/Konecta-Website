@@ -79,13 +79,13 @@ function HeroSection({ event }) {
         <img
           src={event.image}
           alt={event.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-konecta-black via-konecta-black/70 to-konecta-black/30" />
       </div>
 
       <div
-        className={`relative z-10 w-full px-6 lg:px-14 pb-14 pt-40 transition-all duration-700 ${
+        className={`relative z-10 w-full content-px pb-14 pt-40 transition-all duration-700 ${
           inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
@@ -610,8 +610,65 @@ function TicketsSection({ event }) {
   );
 }
 
+/* ── Event Recap (past events) ── */
+function EventRecapSection({ event }) {
+  const [ref, inView] = useInView({ threshold: 0.1 });
+  if (event.status !== "past") return null;
+
+  return (
+    <div
+      ref={ref}
+      className={`mt-12 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+    >
+      <div className="glass-card rounded-2xl p-6 border border-konecta-orange/20 bg-gradient-to-br from-konecta-orange/5 to-transparent">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-2 h-2 rounded-full bg-konecta-orange animate-pulse" />
+          <h2 className="font-heading font-extrabold text-xl text-konecta-white">
+            This Event Has Taken Place
+          </h2>
+        </div>
+        <p className="text-white/70 text-sm leading-relaxed mb-4">
+          {event.name} was held on{" "}
+          <span className="text-konecta-orange font-semibold">
+            {new Date(event.dateStart).toLocaleDateString("en-ZA", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+            {event.dateEnd && event.dateEnd !== event.dateStart && (
+              <>
+                {" "}
+                –{" "}
+                {new Date(event.dateEnd).toLocaleDateString("en-ZA", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </>
+            )}
+          </span>{" "}
+          at {event.venue}, {event.city}. Browse the gallery below to see how
+          the event went.
+        </p>
+        {event.highlights?.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {event.highlights.map((h, i) => (
+              <span
+                key={i}
+                className="px-3 py-1 rounded-full bg-konecta-orange/10 text-konecta-orange text-xs font-heading font-bold border border-konecta-orange/20"
+              >
+                {h}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 /* ── Gallery ── */
-function GallerySection({ gallery, name }) {
+function GallerySection({ gallery, galleryLabel, name }) {
   const [ref, inView] = useInView({ threshold: 0.1 });
   if (!gallery?.length) return null;
 
@@ -621,7 +678,7 @@ function GallerySection({ gallery, name }) {
       className={`mt-12 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
     >
       <h2 className="font-heading font-extrabold text-xl text-konecta-white mb-6">
-        Gallery
+        {galleryLabel || "Gallery"}
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {gallery.map((src, i) => (
@@ -655,7 +712,7 @@ function RelatedEvents({ current }) {
   return (
     <section
       ref={ref}
-      className={`px-6 lg:px-14 pb-section transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+      className={`content-px pb-section transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
     >
       <h2 className="font-heading font-extrabold text-xl text-konecta-white mb-6">
         More Events
@@ -703,7 +760,7 @@ function RelatedEvents({ current }) {
 /* ── 404 state ── */
 function EventNotFound() {
   return (
-    <section className="px-6 lg:px-14 pt-40 pb-section text-center">
+    <section className="content-px pt-40 pb-section text-center">
       <ThemedIcon name="link" size={48} className="mb-6 opacity-30" />
       <h1 className="font-heading font-extrabold text-3xl text-konecta-white mb-3">
         Event Not Found
@@ -741,7 +798,7 @@ export default function EventDetailPage() {
       <HeroSection event={event} />
 
       {/* Content + Sidebar */}
-      <section className="px-6 lg:px-14 py-12 lg:py-16">
+      <section className="content-px py-12 lg:py-16">
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Main content */}
           <div className="flex-1 min-w-0">
@@ -750,7 +807,12 @@ export default function EventDetailPage() {
             <SpeakersSection speakers={event.speakers} />
             <AgendaSection agenda={event.agenda} />
             <TicketsSection event={event} />
-            <GallerySection gallery={event.gallery} name={event.name} />
+            <EventRecapSection event={event} />
+            <GallerySection
+              gallery={event.gallery}
+              galleryLabel={event.galleryLabel}
+              name={event.name}
+            />
           </div>
 
           {/* Sidebar */}

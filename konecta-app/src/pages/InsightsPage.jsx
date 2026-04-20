@@ -1,4 +1,4 @@
-﻿import { useState, useMemo, useCallback, useRef, useEffect } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@components/common/SEO";
 import SectionEyebrow from "@components/common/SectionEyebrow";
@@ -9,13 +9,15 @@ import {
   BLOG_CATEGORIES,
   SORT_OPTIONS,
   getAllTags,
+  expandTags,
   enrichArticle,
   AUTHORS,
 } from "@data/blogData";
+import UseCasesSection from "@components/sections/UseCasesSection";
 
-/* ═══════════════════════════════════════════════════════════
+/* -----------------------------------------------------------
    UTILITIES
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
 function formatDate(iso) {
   return new Date(iso + "T00:00:00").toLocaleDateString("en-ZA", {
@@ -31,9 +33,9 @@ function calcReadingTime(content) {
   return `${Math.max(1, Math.ceil(words / 220))} min`;
 }
 
-/* ═══════════════════════════════════════════════════════════
+/* -----------------------------------------------------------
    FEATURED HERO CARD
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
 function FeaturedHero({ article }) {
   const [ref, inView] = useInView({ threshold: 0.1 });
@@ -87,9 +89,9 @@ function FeaturedHero({ article }) {
   );
 }
 
-/* ═══════════════════════════════════════════════════════════
+/* -----------------------------------------------------------
    ARTICLE CARD
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
 function ArticleCard({ article, index }) {
   const [ref, inView] = useInView({ threshold: 0.1 });
@@ -147,9 +149,9 @@ function ArticleCard({ article, index }) {
   );
 }
 
-/* ═══════════════════════════════════════════════════════════
+/* -----------------------------------------------------------
    SIDEBAR POPULAR CARD (compact)
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
 function PopularCard({ article, rank }) {
   return (
@@ -166,7 +168,7 @@ function PopularCard({ article, rank }) {
         </h4>
         <div className="flex items-center gap-2 text-xs text-white/40">
           <span>{calcReadingTime(article.content)} read</span>
-          <span>·</span>
+          <span>�</span>
           <span className="flex items-center gap-1">
             <EyeIcon className="w-3 h-3" />
             {article.views.toLocaleString()}
@@ -177,9 +179,9 @@ function PopularCard({ article, rank }) {
   );
 }
 
-/* ═══════════════════════════════════════════════════════════
+/* -----------------------------------------------------------
    FILTER BAR
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
 function FilterBar({
   search,
@@ -335,7 +337,7 @@ function FilterBar({
                     : "bg-white/[0.03] text-white/50 border border-white/5 hover:border-white/20"
                 }`}
               >
-                ★ Featured Only
+                ? Featured Only
               </button>
             </div>
           </div>
@@ -350,7 +352,7 @@ function FilterBar({
               }}
               className="text-xs text-konecta-orange hover:underline font-heading font-bold"
             >
-              ✕ Clear all filters
+              ? Clear all filters
             </button>
           )}
         </div>
@@ -371,9 +373,9 @@ function FilterBar({
   );
 }
 
-/* ═══════════════════════════════════════════════════════════
+/* -----------------------------------------------------------
    SORT DROPDOWN
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
 function SortDropdown({ sortBy, setSortBy }) {
   const [open, setOpen] = useState(false);
@@ -423,9 +425,9 @@ function SortDropdown({ sortBy, setSortBy }) {
   );
 }
 
-/* ═══════════════════════════════════════════════════════════
+/* -----------------------------------------------------------
    TAG CLOUD (sidebar)
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
 function TagCloud({ activeTags, toggleTag }) {
   const allTags = useMemo(() => getAllTags(), []);
@@ -453,9 +455,9 @@ function TagCloud({ activeTags, toggleTag }) {
   );
 }
 
-/* ═══════════════════════════════════════════════════════════
+/* -----------------------------------------------------------
    EMPTY STATE
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
 function EmptyState({ search, onClear }) {
   return (
@@ -481,9 +483,9 @@ function EmptyState({ search, onClear }) {
   );
 }
 
-/* ═══════════════════════════════════════════════════════════
+/* -----------------------------------------------------------
    SMALL ICON COMPONENTS
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
 function SearchIcon({ className = "w-4 h-4" }) {
   return (
@@ -615,12 +617,12 @@ function AuthorAvatar({ author, size = "sm" }) {
   );
 }
 
-/* ═══════════════════════════════════════════════════════════
+/* -----------------------------------------------------------
    MAIN PAGE
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
 export default function InsightsPage() {
-  // ── State ──
+  // -- State --
   const [search, setSearchRaw] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
@@ -682,25 +684,25 @@ export default function InsightsPage() {
     setPage(1);
   }, []);
 
-  // ── Published articles only ──
+  // -- Published articles only --
   const published = useMemo(
     () => articlesDatabase.filter((a) => a.status === "published"),
     [],
   );
 
-  // ── Featured articles (top 2 for hero) ──
+  // -- Featured articles (top 2 for hero) --
   const featuredArticles = useMemo(
     () => published.filter((a) => a.featured).slice(0, 2),
     [published],
   );
 
-  // ── Popular articles (sidebar, top 5 by views) ──
+  // -- Popular articles (sidebar, top 5 by views) --
   const popularArticles = useMemo(
     () => [...published].sort((a, b) => b.views - a.views).slice(0, 5),
     [published],
   );
 
-  // ── Filtered + sorted articles ──
+  // -- Filtered + sorted articles --
   const filtered = useMemo(() => {
     let result = [...published];
     const q = debouncedSearch.toLowerCase().trim();
@@ -721,11 +723,10 @@ export default function InsightsPage() {
       result = result.filter((a) => a.category === activeCategory);
     }
 
-    // Tags (AND logic)
+    // Tags (AND logic — expand curated labels to original tags)
     if (activeTags.length > 0) {
-      result = result.filter((a) =>
-        activeTags.every((t) => a.tags?.includes(t)),
-      );
+      const expanded = expandTags(activeTags);
+      result = result.filter((a) => a.tags?.some((t) => expanded.has(t)));
     }
 
     // Author
@@ -764,12 +765,22 @@ export default function InsightsPage() {
     sortBy,
   ]);
 
-  // ── Pagination ──
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-  const paginatedArticles = filtered.slice(0, page * ITEMS_PER_PAGE);
+  // -- Split case studies from articles --
+  const filteredCaseStudies = useMemo(
+    () => filtered.filter((a) => a.category === "case-studies"),
+    [filtered],
+  );
+  const filteredArticles = useMemo(
+    () => filtered.filter((a) => a.category !== "case-studies"),
+    [filtered],
+  );
+
+  // -- Pagination (articles only, case studies always show) --
+  const totalPages = Math.ceil(filteredArticles.length / ITEMS_PER_PAGE);
+  const paginatedArticles = filteredArticles.slice(0, page * ITEMS_PER_PAGE);
   const hasMore = page < totalPages;
 
-  // ── Determine if hero should show (no active filters/search) ──
+  // -- Determine if hero should show (no active filters/search) --
   const showHero =
     !debouncedSearch &&
     activeCategory === "all" &&
@@ -787,7 +798,7 @@ export default function InsightsPage() {
       />
 
       {/* Page header */}
-      <section className="relative bg-konecta-black px-6 lg:px-14 pt-36 pb-10 overflow-hidden">
+      <section className="relative bg-konecta-black content-px pt-36 pb-10 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-konecta-orange/[0.03] blur-[120px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-konecta-slate/[0.03] blur-[80px] rounded-full pointer-events-none" />
 
@@ -806,7 +817,7 @@ export default function InsightsPage() {
 
       {/* Featured hero */}
       {showHero && featuredArticles.length > 0 && (
-        <section className="bg-konecta-black px-6 lg:px-14 pb-12">
+        <section className="bg-konecta-black content-px pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {featuredArticles.map((article) => (
               <FeaturedHero key={article.id} article={article} />
@@ -815,8 +826,11 @@ export default function InsightsPage() {
         </section>
       )}
 
+      {/* Use Cases */}
+      <UseCasesSection />
+
       {/* Main content area */}
-      <section className="bg-konecta-black px-6 lg:px-14 pb-20">
+      <section className="bg-konecta-black content-px pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10">
           {/* Main column */}
           <div>
@@ -836,14 +850,68 @@ export default function InsightsPage() {
               totalResults={filtered.length}
             />
 
-            {/* Articles grid */}
+            {/* Content */}
             {filtered.length > 0 ? (
               <>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {paginatedArticles.map((article, i) => (
-                    <ArticleCard key={article.id} article={article} index={i} />
-                  ))}
-                </div>
+                {/* Case Studies section */}
+                {filteredCaseStudies.length > 0 && (
+                  <div className="mb-12">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="flex items-center gap-3">
+                        <div className="w-1.5 h-8 rounded-full bg-konecta-orange" />
+                        <h2 className="font-heading font-extrabold text-2xl lg:text-3xl text-konecta-white tracking-tight">
+                          Case Studies
+                        </h2>
+                      </div>
+                      <div className="flex-1 h-px bg-gradient-to-r from-konecta-orange/30 to-transparent" />
+                      <span className="px-3 py-1 rounded-full bg-konecta-orange/10 text-konecta-orange text-sm font-heading font-bold border border-konecta-orange/20">
+                        {filteredCaseStudies.length}{" "}
+                        {filteredCaseStudies.length === 1 ? "study" : "studies"}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {filteredCaseStudies.map((article, i) => (
+                        <ArticleCard
+                          key={article.id}
+                          article={article}
+                          index={i}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Articles section */}
+                {paginatedArticles.length > 0 && (
+                  <div>
+                    {filteredCaseStudies.length > 0 && (
+                      <div className="flex items-center gap-4 mb-8">
+                        <div className="flex items-center gap-3">
+                          <div className="w-1.5 h-8 rounded-full bg-konecta-slate" />
+                          <h2 className="font-heading font-extrabold text-2xl lg:text-3xl text-konecta-white tracking-tight">
+                            Articles
+                          </h2>
+                        </div>
+                        <div className="flex-1 h-px bg-gradient-to-r from-white/15 to-transparent" />
+                        <span className="px-3 py-1 rounded-full bg-white/5 text-white/50 text-sm font-heading font-bold border border-white/10">
+                          {filteredArticles.length}{" "}
+                          {filteredArticles.length === 1
+                            ? "article"
+                            : "articles"}
+                        </span>
+                      </div>
+                    )}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {paginatedArticles.map((article, i) => (
+                        <ArticleCard
+                          key={article.id}
+                          article={article}
+                          index={i}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Load more */}
                 {hasMore && (

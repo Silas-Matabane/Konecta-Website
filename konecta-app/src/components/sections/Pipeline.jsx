@@ -55,7 +55,7 @@ export default function Pipeline() {
   return (
     <section
       ref={ref}
-      className="relative bg-[#0D0D0D] px-6 lg:px-14 py-section overflow-hidden"
+      className="relative bg-[#0D0D0D] content-px py-section overflow-hidden"
       id="platform"
     >
       {/* Ambient glow */}

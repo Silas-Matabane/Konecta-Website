@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-konecta-orange/[0.03] blur-[120px] rounded-full pointer-events-none" />
 
       {/* Main footer grid */}
-      <div className="relative z-10 px-6 lg:px-14 py-16">
+      <div className="relative z-10 content-px py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
@@ -26,9 +26,8 @@ export default function Footer() {
               KONEC<span className="text-konecta-orange">T</span>A
             </div>
             <p className="text-white/80 leading-relaxed mb-6 max-w-[280px]">
-              Africa&apos;s leading telecoms and technology consultancy. We
-              build networks, develop platforms, and enable digital
-              transformation across the continent.
+              Africa&apos;s AI-powered technology and digital infrastructure
+              company. Building platforms that connect, automate, and transform.
             </p>
             <div className="flex flex-col gap-2">
               {BADGES.map((badge) => (
@@ -109,10 +108,28 @@ export default function Footer() {
                   {COMPANY.email}
                 </a>
               </li>
+              {COMPANY.phone && (
+                <li>
+                  <a
+                    href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
+                    className="text-sm text-white/80 no-underline hover:text-konecta-white transition-colors"
+                  >
+                    {COMPANY.phone}
+                  </a>
+                </li>
+              )}
               <li>
                 <span className="text-sm text-white/80">
                   {COMPANY.location}
                 </span>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-sm text-konecta-orange no-underline hover:text-konecta-white transition-colors font-bold"
+                >
+                  Request a Proposal
+                </Link>
               </li>
             </ul>
             <div className="flex gap-3">
@@ -132,9 +149,14 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="relative z-10 px-6 lg:px-14 py-6 border-t border-[rgba(255,255,255,0.06)] flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div className="relative z-10 content-px py-6 border-t border-[rgba(255,255,255,0.06)] flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="text-xs text-white/75 text-center sm:text-left">
-          &copy; {COMPANY.year} {COMPANY.fullName} · {COMPANY.registrationNote}
+          &copy; {COMPANY.year} Konecta. {COMPANY.registrationNote} &middot;{" "}
+          {COMPANY.location}
+        </div>
+        <div className="text-xs text-white/50 hidden sm:block">
+          Built with <span className="text-konecta-orange">&bull;</span> in
+          South Africa
         </div>
         <div className="text-xs text-white/75 flex gap-4">
           <span className="hover:text-konecta-white transition-colors cursor-pointer">

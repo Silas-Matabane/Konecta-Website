@@ -1,4 +1,4 @@
-﻿import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@components/common/SEO";
 import SectionEyebrow from "@components/common/SectionEyebrow";
@@ -20,14 +20,14 @@ import {
   sortItems,
 } from "@data/impactData";
 
-/* ── Tabs ── */
+/* -- Tabs -- */
 const TABS = [
   { key: "impact", label: "Impact Projects" },
   { key: "events", label: "Events" },
   { key: "news", label: "News" },
 ];
 
-/* ── Custom Dropdown ── */
+/* -- Custom Dropdown -- */
 function Dropdown({ value, onChange, options, className = "" }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
@@ -92,7 +92,7 @@ function Dropdown({ value, onChange, options, className = "" }) {
   );
 }
 
-/* ── Impact Project Card ── */
+/* -- Impact Project Card -- */
 function ImpactCard({ item, index }) {
   const [ref, inView] = useInView({ threshold: 0.15 });
 
@@ -208,7 +208,7 @@ function ImpactCard({ item, index }) {
 
         <div className="mt-5 flex items-center gap-3">
           <span className="text-konecta-orange text-base font-heading font-bold group-hover:translate-x-1 transition-transform">
-            View Details →
+            View Details ?
           </span>
         </div>
       </div>
@@ -216,7 +216,7 @@ function ImpactCard({ item, index }) {
   );
 }
 
-/* ── News Card ── */
+/* -- News Card -- */
 function NewsCard({ item, index }) {
   const [ref, inView] = useInView({ threshold: 0.15 });
 
@@ -267,7 +267,7 @@ function NewsCard({ item, index }) {
         {item.externalUrl && (
           <div className="mt-auto flex items-center gap-3">
             <span className="text-konecta-orange text-base font-heading font-bold group-hover:translate-x-1 transition-transform">
-              Read Article →
+              Read Article ?
             </span>
             <svg
               className="w-3.5 h-3.5 text-konecta-orange/50"
@@ -318,7 +318,7 @@ function NewsCard({ item, index }) {
   );
 }
 
-/* ── Events Card ── */
+/* -- Events Card -- */
 function EventMiniCard({ item, index }) {
   const [ref, inView] = useInView({ threshold: 0.15 });
 
@@ -395,7 +395,7 @@ function EventMiniCard({ item, index }) {
         </div>
         <div className="mt-5 flex items-center gap-3">
           <span className="text-konecta-orange text-base font-heading font-bold group-hover:translate-x-1 transition-transform">
-            View Event Recap →
+            View Event Recap ?
           </span>
         </div>
       </div>
@@ -403,7 +403,7 @@ function EventMiniCard({ item, index }) {
   );
 }
 
-/* ── Empty State ── */
+/* -- Empty State -- */
 function EmptyState({ type }) {
   return (
     <div className="relative z-10 text-center py-20">
@@ -419,7 +419,7 @@ function EmptyState({ type }) {
   );
 }
 
-/* ── Stats Band ── */
+/* -- Stats Band -- */
 function StatsBand() {
   const [ref, inView] = useInView({ threshold: 0.2 });
   const stats = [
@@ -452,7 +452,7 @@ function StatsBand() {
   );
 }
 
-/* ── Main Page ── */
+/* -- Main Page -- */
 export default function ImpactPage() {
   const [headerRef, headerInView] = useInView({ threshold: 0.1 });
 
@@ -521,7 +521,7 @@ export default function ImpactPage() {
       {/* Hero */}
       <section
         ref={headerRef}
-        className="relative px-6 lg:px-14 pt-40 pb-10 overflow-hidden"
+        className="relative content-px pt-40 pb-10 overflow-hidden"
       >
         <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-konecta-orange/[0.03] blur-[150px] rounded-full pointer-events-none" />
         <div
@@ -537,7 +537,7 @@ export default function ImpactPage() {
             <span className="text-gradient-orange">&amp; News</span>
           </h1>
           <p className="text-base text-white/70 mt-6 max-w-2xl leading-relaxed">
-            From transformative projects and flagship events to media features —
+            From transformative projects and flagship events to media features �
             explore how Konecta is driving measurable change across
             Africa&apos;s technology landscape.
           </p>
@@ -545,12 +545,12 @@ export default function ImpactPage() {
       </section>
 
       {/* Stats */}
-      <section className="relative px-6 lg:px-14">
+      <section className="relative content-px">
         <StatsBand />
       </section>
 
       {/* Tabs + Content */}
-      <section className="relative px-6 lg:px-14 pb-section">
+      <section className="relative content-px pb-section">
         {/* Tab Pills */}
         <div className="flex gap-1 mb-8 rounded-xl overflow-hidden border border-white/10 w-fit">
           {TABS.map((tab) => (

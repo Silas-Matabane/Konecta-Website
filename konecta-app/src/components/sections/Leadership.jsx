@@ -8,7 +8,7 @@ export default function Leadership() {
   return (
     <section
       ref={ref}
-      className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden"
+      className="relative bg-konecta-black content-px py-section overflow-hidden"
       id="about"
     >
       {/* Ambient glow */}
@@ -45,11 +45,20 @@ export default function Leadership() {
           className={`transition-all duration-1000 delay-200 ${inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
         >
           <SectionEyebrow text="Leadership" />
-          <h2 className="section-title mt-4 mb-8">
-            Leadership With Deep
-            <br />
-            <span className="text-gradient-orange">Industry Expertise.</span>
-          </h2>
+          <h2 className="section-title mt-4 mb-2">{LEADERSHIP_DATA.name}</h2>
+          <p className="text-sm text-konecta-orange font-heading font-bold tracking-wide mb-1">
+            {LEADERSHIP_DATA.title}
+          </p>
+          <p className="text-xs text-white/50 tracking-wide mb-8">
+            {LEADERSHIP_DATA.tagline}
+          </p>
+
+          <p className="text-base text-white/75 leading-relaxed mb-4">
+            {LEADERSHIP_DATA.bio}
+          </p>
+          <p className="text-base text-white/75 leading-relaxed mb-8">
+            {LEADERSHIP_DATA.bioExtended}
+          </p>
 
           <blockquote className="glass-card p-6 rounded-xl mb-8 border-l-2 border-konecta-orange">
             <p className="text-lg text-konecta-white/90 italic leading-relaxed">
@@ -60,14 +69,24 @@ export default function Leadership() {
             </footer>
           </blockquote>
 
-          <p className="text-base text-white/75 leading-relaxed mb-8">
-            Konecta&apos;s leadership team combines decades of experience across
-            telecommunications, enterprise technology, and public sector
-            innovation. Through strong partnerships with global technology
-            leaders and direct engagement with African governments and
-            operators, the team brings a unique perspective on how digital
-            infrastructure can accelerate economic development.
-          </p>
+          {/* Recognition */}
+          {LEADERSHIP_DATA.recognition && (
+            <div>
+              <h4 className="font-heading text-xs font-bold uppercase tracking-widest text-konecta-white mb-4">
+                Awards & Recognition
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {LEADERSHIP_DATA.recognition.map((item) => (
+                  <span
+                    key={item}
+                    className="text-xs text-konecta-gold border border-konecta-gold/20 rounded-lg px-3 py-1.5 backdrop-blur-sm bg-konecta-gold/[0.03]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

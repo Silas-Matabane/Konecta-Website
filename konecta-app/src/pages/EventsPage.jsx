@@ -1,4 +1,4 @@
-﻿import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@components/common/SEO";
 import SectionEyebrow from "@components/common/SectionEyebrow";
@@ -12,7 +12,7 @@ import {
   EVENT_LOCATIONS,
 } from "@data/eventsData";
 
-/* ── helpers ── */
+/* -- helpers -- */
 function formatDate(iso) {
   return new Date(iso + "T00:00:00").toLocaleDateString("en-ZA", {
     day: "numeric",
@@ -26,9 +26,9 @@ function formatDateRange(start, end) {
   const s = new Date(start + "T00:00:00");
   const e = new Date(end + "T00:00:00");
   if (s.getMonth() === e.getMonth() && s.getFullYear() === e.getFullYear()) {
-    return `${s.getDate()} – ${e.getDate()} ${e.toLocaleDateString("en-ZA", { month: "short", year: "numeric" })}`;
+    return `${s.getDate()} � ${e.getDate()} ${e.toLocaleDateString("en-ZA", { month: "short", year: "numeric" })}`;
   }
-  return `${formatDate(start)} – ${formatDate(end)}`;
+  return `${formatDate(start)} � ${formatDate(end)}`;
 }
 
 function daysUntil(iso) {
@@ -37,7 +37,7 @@ function daysUntil(iso) {
   );
 }
 
-/* ── EventCard ── */
+/* -- EventCard -- */
 function EventCard({ event, index }) {
   const [ref, inView] = useInView({ threshold: 0.15 });
   const isUpcoming = event.status === "upcoming";
@@ -192,7 +192,7 @@ function EventCard({ event, index }) {
         {/* CTA */}
         <div className="mt-5 flex items-center gap-3">
           <span className="text-konecta-orange text-base font-heading font-bold group-hover:translate-x-1 transition-transform">
-            {isUpcoming ? "View Details & Tickets" : "View Recap"} →
+            {isUpcoming ? "View Details & Tickets" : "View Recap"} ?
           </span>
         </div>
       </div>
@@ -200,7 +200,7 @@ function EventCard({ event, index }) {
   );
 }
 
-/* ── Custom Dropdown (fully styled, no native <select>) ── */
+/* -- Custom Dropdown (fully styled, no native <select>) -- */
 function Dropdown({ value, onChange, options, className = "" }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
@@ -265,7 +265,7 @@ function Dropdown({ value, onChange, options, className = "" }) {
   );
 }
 
-/* ── Filter Bar ── */
+/* -- Filter Bar -- */
 function FilterBar({
   search,
   onSearch,
@@ -360,10 +360,10 @@ function FilterBar({
           value={sortBy}
           onChange={onSort}
           options={[
-            { value: "date-asc", label: "Date ↑ (Soonest)" },
-            { value: "date-desc", label: "Date ↓ (Latest)" },
-            { value: "name-asc", label: "Name A–Z" },
-            { value: "name-desc", label: "Name Z–A" },
+            { value: "date-asc", label: "Date ? (Soonest)" },
+            { value: "date-desc", label: "Date ? (Latest)" },
+            { value: "name-asc", label: "Name A�Z" },
+            { value: "name-desc", label: "Name Z�A" },
           ]}
           className="min-w-[160px]"
         />
@@ -376,7 +376,7 @@ function FilterBar({
   );
 }
 
-/* ── Main Page ── */
+/* -- Main Page -- */
 export default function EventsPage() {
   const [headerRef, headerInView] = useInView({ threshold: 0.1 });
   const [search, setSearch] = useState("");
@@ -443,7 +443,7 @@ export default function EventsPage() {
       {/* Hero header */}
       <section
         ref={headerRef}
-        className="relative px-6 lg:px-14 pt-40 pb-10 overflow-hidden"
+        className="relative content-px pt-40 pb-10 overflow-hidden"
       >
         <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-konecta-orange/[0.03] blur-[150px] rounded-full pointer-events-none" />
 
@@ -469,7 +469,7 @@ export default function EventsPage() {
       </section>
 
       {/* Filters + Grid */}
-      <section className="relative px-6 lg:px-14 pb-section">
+      <section className="relative content-px pb-section">
         <FilterBar
           search={search}
           onSearch={setSearch}

@@ -9,7 +9,7 @@ export default function PageHeader({
   const [ref, inView] = useInView({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="px-6 lg:px-14 pt-40 pb-12">
+    <section ref={ref} className="content-px pt-40 pb-12">
       <div
         className={`transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >

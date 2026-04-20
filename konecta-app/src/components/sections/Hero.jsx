@@ -4,12 +4,19 @@ import useInView from "@hooks/useInView";
 import useCountUp from "@hooks/useCountUp";
 import { HERO_STATS, HERO_IMAGE } from "@data/constants";
 
-function StatCounter({ end, suffix = "", label, icon }) {
+function StatCounter({ end, suffix = "", label, icon, text, highlight }) {
   const [ref, inView] = useInView({ threshold: 0.3 });
-  const count = useCountUp(end, inView, 2000);
+  const count = useCountUp(end || 0, inView, 2000);
 
   return (
-    <div ref={ref} className="glass-card p-6 lg:p-8 text-center group">
+    <div
+      ref={ref}
+      className={`p-6 lg:p-8 text-center group ${
+        highlight
+          ? "glass-card relative border-konecta-orange/40 bg-konecta-orange/[0.08] ring-1 ring-konecta-orange/20"
+          : "glass-card"
+      }`}
+    >
       <ThemedIcon
         name={icon}
         size={28}
@@ -17,14 +24,21 @@ function StatCounter({ end, suffix = "", label, icon }) {
       />
       <div
         className="font-heading font-extrabold text-konecta-white leading-none"
-        style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)" }}
+        style={{
+          fontSize: text
+            ? "clamp(1.4rem, 2.5vw, 2.5rem)"
+            : "clamp(2rem, 3.5vw, 3.5rem)",
+        }}
       >
         <span className="text-gradient-orange">
-          {count}
-          {suffix}
+          {text || `${count}${suffix}`}
         </span>
       </div>
-      <div className="text-xs text-konecta-muted mt-2 uppercase tracking-wider">
+      <div
+        className={`text-xs mt-2 uppercase tracking-wider ${
+          highlight ? "text-konecta-orange font-bold" : "text-konecta-muted"
+        }`}
+      >
         {label}
       </div>
     </div>
@@ -56,7 +70,7 @@ export default function Hero() {
       <div className="absolute bottom-1/3 left-[20%] w-[300px] h-[300px] bg-konecta-slate/8 rounded-full blur-[100px] animate-float-slow pointer-events-none" />
 
       {/* Main content */}
-      <div className="relative z-10 px-6 lg:px-14 pt-32 pb-10">
+      <div className="relative z-10 content-px pt-32 pb-10">
         {/* Eyebrow with glass pill */}
         <div
           className={`inline-flex items-center gap-3 mb-8 px-5 py-2.5 rounded-full transition-all duration-700 ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
@@ -68,8 +82,7 @@ export default function Hero() {
         >
           <div className="w-2 h-2 rounded-full bg-konecta-orange animate-pulse-dot" />
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-konecta-orange">
-            Africa&apos;s Leading Telecoms &amp; Digital Infrastructure
-            Consultancy
+            Est. 2017 &middot; Midrand, South Africa
           </span>
         </div>
 
@@ -78,30 +91,26 @@ export default function Hero() {
           className={`font-heading font-extrabold text-konecta-white leading-[0.95] tracking-tight max-w-5xl transition-all duration-1000 delay-200 ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)" }}
         >
-          We Build
+          Building Africa&apos;s
           <br />
-          Networks. We
-          <br />
-          Power <em className="not-italic text-gradient-orange">Data.</em>
+          Digital <em className="not-italic text-gradient-orange">Future.</em>
         </h1>
 
         {/* Sub-copy */}
         <p
           className={`text-base lg:text-lg text-white/80 mt-8 max-w-xl leading-relaxed transition-all duration-1000 delay-400 ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          Africa&apos;s digital economy is expanding rapidly, yet the
-          infrastructure required to support intelligent digital services
-          remains uneven. Konecta helps organisations close this gap — designing
-          and deploying telecommunications infrastructure while developing the
-          intelligent data platforms that run on top of it.
+          We are a Level 1 B-BBEE, 100% women-owned technology company
+          delivering AI platforms, digital infrastructure, and enterprise
+          technology solutions across South Africa and the continent.
         </p>
 
         {/* CTAs */}
         <div
           className={`flex gap-4 mt-10 flex-wrap transition-all duration-1000 delay-500 ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
-          <Link to="/platform" className="btn-primary">
-            Explore Our Platform
+          <Link to="/contact" className="btn-primary">
+            Request a Proposal
           </Link>
           <Link to="/contact" className="btn-secondary">
             Connect With Us
@@ -110,7 +119,7 @@ export default function Hero() {
       </div>
 
       {/* Stats strip — Glassmorphism cards */}
-      <div className="relative z-10 mt-auto px-6 lg:px-14 pb-12">
+      <div className="relative z-10 mt-auto content-px pb-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {HERO_STATS.map((stat) => (
             <StatCounter key={stat.label} {...stat} />

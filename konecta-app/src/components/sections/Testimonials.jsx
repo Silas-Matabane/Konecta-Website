@@ -33,7 +33,7 @@ export default function Testimonials() {
   const [ref, inView] = useInView({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden">
+    <section ref={ref} className="relative bg-konecta-black content-px py-section overflow-hidden">
       <div className="absolute top-0 right-1/3 w-[350px] h-[350px] bg-konecta-orange/[0.03] blur-[100px] rounded-full pointer-events-none" />
 
       <div className={`relative z-10 text-center mb-16 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

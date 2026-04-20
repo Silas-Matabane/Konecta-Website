@@ -84,7 +84,7 @@ function HeroSection({ article }) {
       </div>
 
       <div
-        className={`relative z-10 w-full px-6 lg:px-14 pb-14 pt-40 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        className={`relative z-10 w-full content-px pb-14 pt-40 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         <Link
           to="/insights"
@@ -531,7 +531,7 @@ function RelatedArticles({ articles }) {
   return (
     <section
       ref={ref}
-      className="bg-konecta-black px-6 lg:px-14 py-16 border-t border-white/5"
+      className="bg-konecta-black content-px py-16 border-t border-white/5"
     >
       <div
         className={`transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -592,7 +592,7 @@ function PrevNextNav({ prevArticle, nextArticle }) {
   if (!prevArticle && !nextArticle) return null;
 
   return (
-    <div className="bg-konecta-black px-6 lg:px-14 py-10 border-t border-white/5">
+    <div className="bg-konecta-black content-px py-10 border-t border-white/5">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
         {prevArticle ? (
           <Link
@@ -920,7 +920,7 @@ export default function ArticlePage() {
       <HeroSection article={article} />
 
       {/* Content + sidebar */}
-      <section className="bg-konecta-black px-6 lg:px-14 py-14">
+      <section className="bg-konecta-black content-px py-14">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 max-w-[1280px] mx-auto">
           <ArticleContent html={article.content} />
           <InfoSidebar
@@ -934,7 +934,7 @@ export default function ArticlePage() {
 
       {/* Tags bar */}
       {article.tags && article.tags.length > 0 && (
-        <div className="bg-konecta-black px-6 lg:px-14 pb-10">
+        <div className="bg-konecta-black content-px pb-10">
           <div className="flex flex-wrap items-center gap-2 max-w-[1280px] mx-auto">
             <span className="text-xs text-white/30 font-heading font-bold uppercase tracking-wider mr-2">
               Tags:

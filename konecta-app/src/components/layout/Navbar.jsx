@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { NAV_LINKS } from "@data/constants";
 
@@ -25,7 +25,7 @@ export default function Navbar() {
         scrolled ? "glass-nav border-b border-white/[0.06]" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center justify-between px-6 lg:px-14 py-5">
+      <div className="flex items-center justify-between content-px py-5">
         {/* Logo */}
         <Link
           to="/"
@@ -34,7 +34,7 @@ export default function Navbar() {
           KONECTA
         </Link>
 
-        {/* Desktop Nav Links â€” centered */}
+        {/* Desktop Nav Links — centered */}
         <ul className="hidden lg:flex gap-8 list-none absolute left-1/2 -translate-x-1/2">
           {NAV_LINKS.map((link) => (
             <li key={link.path}>
@@ -55,7 +55,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right â€” single CTA */}
+        {/* Right — single CTA */}
         <Link
           to="/contact"
           className="hidden lg:inline-block btn-primary text-xs !py-3 !px-6"
@@ -82,7 +82,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu — full screen glass overlay */}
+      {/* Mobile Menu � full screen glass overlay */}
       <div
         role="dialog"
         aria-modal="true"

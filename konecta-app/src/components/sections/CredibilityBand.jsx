@@ -1,10 +1,10 @@
-﻿import MicrosoftLogo from "@components/common/MicrosoftLogo";
+import MicrosoftLogo from "@components/common/MicrosoftLogo";
 import ThemedIcon from "@components/common/ThemedIcon";
 import { CREDIBILITY_ITEMS } from "@data/constants";
 
 export default function CredibilityBand() {
   return (
-    <div className="border-y border-konecta-border/30 bg-konecta-black/80 py-5 px-6 lg:px-14 overflow-x-auto">
+    <div className="border-y border-konecta-border/30 bg-konecta-black/80 py-5 content-px overflow-x-auto">
       <div className="flex items-center justify-between gap-6 min-w-max">
         {CREDIBILITY_ITEMS.map((item, i) => (
           <div key={item.title} className="contents">

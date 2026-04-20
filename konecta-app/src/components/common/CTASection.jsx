@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { COMPANY } from "@data/constants";
 import useInView from "@hooks/useInView";
 
@@ -14,7 +14,7 @@ export default function CTASection() {
       <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/[0.06] backdrop-blur-sm pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-40 h-40 rounded-full bg-white/[0.04] backdrop-blur-sm pointer-events-none" />
 
-      <div className="relative px-6 lg:px-14 py-section z-10">
+      <div className="relative content-px py-section z-10">
         <div
           className={`max-w-3xl transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >

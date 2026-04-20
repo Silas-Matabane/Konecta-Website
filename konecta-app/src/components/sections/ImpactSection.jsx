@@ -58,7 +58,7 @@ export default function ImpactSection() {
   return (
     <section
       ref={ref}
-      className="relative bg-[#0D0D0D] px-6 lg:px-14 py-section overflow-hidden"
+      className="relative bg-[#0D0D0D] content-px py-section overflow-hidden"
       id="impact"
     >
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-konecta-slate/[0.03] blur-[120px] rounded-full pointer-events-none" />

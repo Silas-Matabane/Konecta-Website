@@ -25,7 +25,7 @@ function HeroSection({ project }) {
       </div>
 
       <div
-        className={`relative z-10 w-full px-6 lg:px-14 pb-14 pt-40 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        className={`relative z-10 w-full content-px pb-14 pt-40 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         <Link
           to="/impact"
@@ -430,7 +430,7 @@ function RelatedProjects({ current }) {
   return (
     <section
       ref={ref}
-      className={`px-6 lg:px-14 pb-section transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+      className={`content-px pb-section transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
     >
       <h2 className="font-heading font-extrabold text-xl text-konecta-white mb-6">
         More Impact Projects
@@ -481,7 +481,7 @@ function RelatedProjects({ current }) {
 /* ── 404 ── */
 function ProjectNotFound() {
   return (
-    <section className="px-6 lg:px-14 pt-40 pb-section text-center">
+    <section className="content-px pt-40 pb-section text-center">
       <ThemedIcon name="link" size={48} className="mb-6 opacity-30" />
       <h1 className="font-heading font-extrabold text-3xl text-konecta-white mb-3">
         Project Not Found
@@ -517,7 +517,7 @@ export default function ImpactDetailPage() {
 
       <HeroSection project={project} />
 
-      <section className="px-6 lg:px-14 py-12 lg:py-16">
+      <section className="content-px py-12 lg:py-16">
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="flex-1 min-w-0">
             <DescriptionSection project={project} />

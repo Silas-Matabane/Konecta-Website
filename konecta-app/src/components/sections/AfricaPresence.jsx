@@ -18,7 +18,7 @@ export default function AfricaPresence() {
   const [ref, inView] = useInView({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden" id="presence">
+    <section ref={ref} className="relative bg-konecta-black content-px py-section overflow-hidden" id="presence">
       <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-konecta-orange/[0.03] blur-[120px] rounded-full pointer-events-none" />
 
       {/* Centered header */}

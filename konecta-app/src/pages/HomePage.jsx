@@ -22,7 +22,7 @@ export default function HomePage() {
       <Hero />
 
       {/* About Konecta band */}
-      <section className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden">
+      <section className="relative bg-konecta-black content-px py-section overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-konecta-orange/[0.05] blur-[160px] rounded-full pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-konecta-orange/20 bg-konecta-orange/[0.05] text-[0.7rem] font-bold uppercase tracking-[0.2em] text-konecta-orange">

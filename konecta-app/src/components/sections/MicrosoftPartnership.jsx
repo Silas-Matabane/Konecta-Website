@@ -10,7 +10,7 @@ export default function MicrosoftPartnership() {
   return (
     <section
       ref={ref}
-      className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden"
+      className="relative bg-konecta-black content-px py-section overflow-hidden"
       id="microsoft"
     >
       {/* Ambient blue glow */}

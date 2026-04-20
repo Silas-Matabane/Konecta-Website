@@ -84,7 +84,7 @@ export default function TeamSection() {
     <section
       ref={ref}
       id="team"
-      className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden"
+      className="relative bg-konecta-black content-px py-section overflow-hidden"
     >
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-konecta-orange/[0.03] blur-[120px] rounded-full pointer-events-none" />
 

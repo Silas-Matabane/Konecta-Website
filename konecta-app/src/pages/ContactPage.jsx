@@ -75,7 +75,7 @@ export default function ContactPage() {
       />
       <section
         ref={ref}
-        className="relative px-6 lg:px-14 pt-40 pb-section overflow-hidden"
+        className="relative content-px pt-40 pb-section overflow-hidden"
       >
         {/* Ambient glow */}
         <div className="absolute top-20 right-1/4 w-[500px] h-[500px] bg-konecta-orange/[0.03] blur-[150px] rounded-full pointer-events-none" />
@@ -101,9 +101,9 @@ export default function ContactPage() {
             className={`transition-all duration-700 delay-200 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
             <p className="text-base text-white/75 leading-relaxed mb-10 max-w-lg">
-              Whether you need a Microsoft Azure migration, a WiFi network with
-              data analytics, or strategic telecoms consulting — we&apos;re
-              ready to deliver.
+              Tell us about your challenge. We&apos;ll identify which of our
+              services is best placed to deliver, and follow up within{" "}
+              <span className="text-konecta-orange font-bold">48 hours</span>.
             </p>
 
             <div className="space-y-6 mb-12">

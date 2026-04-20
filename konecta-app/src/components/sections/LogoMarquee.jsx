@@ -45,7 +45,7 @@ function MarqueeRow({ items, reverse = false }) {
 export default function LogoMarquee() {
   return (
     <section className="py-16 bg-konecta-black">
-      <div className="px-6 lg:px-14 mb-10 text-center">
+      <div className="content-px mb-10 text-center">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/75">
           In Partnership With Africa&apos;s Leading Operators &amp; Global Tech
           Leaders

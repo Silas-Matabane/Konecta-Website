@@ -37,7 +37,7 @@ export default function PartnersSection() {
   return (
     <section
       ref={ref}
-      className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden"
+      className="relative bg-konecta-black content-px py-section overflow-hidden"
     >
       <div className="absolute bottom-1/4 right-0 w-[300px] h-[300px] bg-konecta-slate/[0.03] blur-[100px] rounded-full pointer-events-none" />
 

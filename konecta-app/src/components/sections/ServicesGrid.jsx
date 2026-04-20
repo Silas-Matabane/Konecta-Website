@@ -13,7 +13,7 @@ export default function ServicesGrid() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden"
+      className="relative bg-konecta-black content-px py-section overflow-hidden"
       id="services"
     >
       {/* Background accent */}
@@ -25,10 +25,15 @@ export default function ServicesGrid() {
       >
         <SectionEyebrow text="What We Do" />
         <h2 className="section-title mt-4 max-w-3xl">
-          Six Pillars of
+          Our
           <br />
-          <span className="text-gradient-orange">Telecoms Excellence</span>
+          <span className="text-gradient-orange">Services</span>
         </h2>
+        <p className="text-base text-white/60 mt-4 max-w-2xl">
+          From wireless connectivity to AI-powered platforms &mdash; we build,
+          deploy, and manage technology that empowers African businesses to
+          connect, grow, and compete.
+        </p>
       </div>
 
       {/* Numbered tab strip — glass style */}
@@ -69,6 +74,19 @@ export default function ServicesGrid() {
           <p className="text-base text-white/80 leading-relaxed mb-6">
             {active.description}
           </p>
+          {active.capabilities && (
+            <ul className="mb-6 space-y-2">
+              {active.capabilities.map((cap) => (
+                <li
+                  key={cap}
+                  className="flex items-start gap-2 text-sm text-white/70"
+                >
+                  <span className="text-konecta-orange mt-0.5">&#x2713;</span>
+                  {cap}
+                </li>
+              ))}
+            </ul>
+          )}
           <div className="flex flex-wrap gap-2 mb-8">
             {active.tags.map((tag) => (
               <span

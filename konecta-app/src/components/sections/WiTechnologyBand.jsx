@@ -31,7 +31,7 @@ export default function WiTechnologyBand() {
   return (
     <section
       ref={ref}
-      className="relative bg-konecta-black px-6 lg:px-14 py-section overflow-hidden"
+      className="relative bg-konecta-black content-px py-section overflow-hidden"
     >
       {/* Ambient gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-konecta-orange/[0.02] to-transparent pointer-events-none" />

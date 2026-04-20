@@ -91,6 +91,11 @@
 
 /* ===== REUSABLE COMPONENT CLASSES ===== */
 @layer components {
+  /* Global content padding — scales with viewport for consistent breathing room */
+  .content-px {
+    padding-left: clamp(1.5rem, 6vw, 10rem);
+    padding-right: clamp(1.5rem, 6vw, 10rem);
+  }
   /* Buttons â€” Glass-accented, premium feel */
   .btn-primary {
     @apply font-heading text-sm font-bold uppercase tracking-wider px-8 py-4 relative overflow-hidden;

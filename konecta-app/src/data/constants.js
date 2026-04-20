@@ -1,11 +1,12 @@
 export const COMPANY = {
   name: "Konecta",
-  fullName: "Konecta Group (Pty) Ltd",
+  fullName: "Konecta (Pty) Ltd",
   tagline: "Africa's Leading Telecoms & Digital Infrastructure Consultancy",
-  email: "marketing@konecta.co.za",
-  location: "Johannesburg, South Africa",
+  email: "yandisa@konecta.co.za",
+  phone: "+27 81 769 3033",
+  location: "152 14th Road, Noordwyk, Midrand, 1657",
   country: "South Africa",
-  registrationNote: "Registered in South Africa · CIPC Reg. No. [XXXXXXX]",
+  registrationNote: "All rights reserved",
   year: new Date().getFullYear(),
 };
 
@@ -23,7 +24,7 @@ export const PAGE_SEO = {
   services: {
     title: "Our Services",
     description:
-      "Six pillars of telecoms and technology excellence — from network deployment to AI adoption, driving measurable outcomes across Africa.",
+      "From wireless connectivity to AI-powered platforms — we build, deploy, and manage technology that empowers African businesses to connect, grow, and compete.",
   },
   microsoft: {
     title: "Microsoft Partnership",
@@ -76,37 +77,38 @@ export const OFFICES = [
 ];
 
 export const FOOTER_SERVICES = [
-  "Network Build & WiFi-as-a-Service",
-  "Big Data & Analytics Platforms",
-  "Value-Added Services",
-  "Microsoft Azure & AI",
-  "Managed IT Services",
-  "Telecoms Consulting",
+  "WiFi-as-a-Service",
+  "Software & AI Services",
+  "Managed IT & Digital Media",
+  "Business Consulting",
 ];
 
 export const FOOTER_EVENTS = [
-  { label: "CIO Konect Summit", to: "/events/cio-konect-summit-2026" },
+  { label: "CIO Konect Summit", to: "/events/cio-konect-summit-2025" },
   { label: "Municipal Indaba", to: "/events/municipal-indaba-2026" },
-  { label: "WiTechnology Forum", to: "/events/witechnology-forum-2026" },
+  { label: "WiTechnology Forum", to: "/events/witechnology-forum-2025" },
   { label: "All Events", to: "/events" },
   { label: "Sponsor an Event", to: "/contact" },
 ];
 
 export const FOOTER_COMPANY = [
-  { label: "About Konecta", to: "/about" },
-  { label: "Impact Projects", to: "/impact" },
-  { label: "Insights & News", to: "/insights" },
+  { label: "Use Cases", to: "/impact" },
+  { label: "Insights", to: "/insights" },
+  { label: "Partners & Clients", to: "/about" },
+  { label: "Leadership", to: "/about" },
+  { label: "Yandisa Sokhanyile", to: "/about" },
 ];
 
 export const BADGES = [
-  "Level 1 B-BBEE Certified",
-  "100% Women-Owned",
-  "Pan-African TMT Specialist",
+  "Level 1 B-BBEE Contributor",
+  "100% Women-Owned Enterprise",
+  "POPIA Compliant",
+  "Est. 2017 \u00b7 Midrand, South Africa",
 ];
 
 export const HERO_STATS = [
-  { end: 12, suffix: "+", label: "African Markets", icon: "🌍" },
-  { end: 50, suffix: "+", label: "Enterprise Clients", icon: "🏢" },
+  { text: "Level 1", label: "B-BBEE Certified", icon: "🏅", highlight: true },
+  { text: "Finalist", label: "Standard Bank Top Women", icon: "🏆" },
   { end: 3, suffix: "", label: "Industry Platforms", icon: "🎙️" },
   { end: 100, suffix: "%", label: "Women-Owned", icon: "♀️" },
 ];
@@ -116,17 +118,35 @@ export const HERO_IMAGE =
 
 export const LEADERSHIP_DATA = {
   image: "/images/speakers/yandisa-sokhanyile.jpg",
-  yearsExperience: "15+",
+  yearsExperience: "20+",
+  name: "Yandisa Sokhanyile",
+  title: "Founder & CEO, Konecta",
+  tagline:
+    "Telecoms & Digital Infrastructure Strategist \u00b7 Ecosystem Builder \u00b7 Purpose-Led Leader",
+  bio: "Yandisa Sokhanyile is a telecoms and digital infrastructure strategist, ecosystem builder, and purpose-led leader shaping Africa\u2019s next phase of connectivity and economic inclusion. She has spent over two decades building platforms at the intersection of telecommunications, technology, media, and talent development.",
+  bioExtended:
+    "Known for bridging boardroom strategy with heart-led leadership, Yandisa champions a future where infrastructure is not just about access, but about dignity, opportunity, and economic participation. Her work spans public-private partnerships, advisory roles to government, CIO engagement platforms, and pan-African initiatives designed to move Africa from consumption to ownership in the digital economy.",
   quote:
     "Konecta has evolved into a technology company focused on building the intelligent infrastructure that powers Africa\u2019s digital future.",
-  author: "Yandisa Sokhanyile, Founder & CEO, Konecta Group",
+  author: "Yandisa Sokhanyile, Founder & CEO, Konecta",
+  recognition: [
+    "Standard Bank Top Women Finalist",
+    "Inspiring Fifty Women in Tech 2019",
+    "Top 10 Tech Leaders to Watch \u2014 Insight Magazine",
+    "Top 40 Women by Mail & Guardian",
+    "Public Speaker \u00b7 Umhlobo Wenene FM",
+    "Featured Voice on Digital Inclusion & Women in Technology",
+  ],
 };
 
 export const CONTACT_SUBJECTS = [
-  "WiFi & Network Build",
-  "Microsoft Azure & AI",
-  "Telecoms Consulting",
-  "Event Sponsorship",
+  "WiFi-as-a-Service",
+  "Software & AI Services",
+  "Managed IT & Digital Media Services",
+  "Business Consulting",
+  "Tender / Proposal Response",
+  "Partnership Opportunity",
+  "Speaking / Media Enquiry",
   "General Enquiry",
 ];
 
@@ -172,15 +192,14 @@ export const CREDIBILITY_ITEMS = [
 ];
 
 export const TICKER_ITEMS = [
-  "Network Build & Deployment",
-  "Big Data Collection & Analytics",
-  "Value-Added Services Enablement",
-  "Microsoft Partner — Azure · Copilot · Dynamics",
-  "CIO Konect Annual Summit",
-  "Municipal Indaba",
-  "WiTechnology Forum",
   "WiFi-as-a-Service",
-  "Level 1 B-BBEE · 100% Women-Owned",
+  "Software Services",
+  "Managed IT Services",
+  "Business Consulting",
+  "Level 1 B-BBEE",
+  "100% Women-Owned",
+  "Microsoft Partner",
+  "AI Factory",
 ];
 
 export const COUNTRIES = [

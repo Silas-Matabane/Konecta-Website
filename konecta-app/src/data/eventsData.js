@@ -62,12 +62,13 @@ export const eventsDatabase = [
     mapUrl:
       "https://maps.google.com/maps?q=Esplanade%2C+22+Esplanade+St%2C+Quigney%2C+South+Africa+East+London+Eastern+Cape+5201+South+Africa",
 
-    image:
-      "https://municipalindaba.com/wp-content/uploads/2026/03/Banner-Municipal-Indaba.png",
+    image: "/images/municipal-indaba-2026/Banner%20Municipal%20Indaba.png",
     gallery: [
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
-      "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80",
+      "/images/municipla-indaba-2024/IMG_20240221_144613-scaled.jpeg",
+      "/images/municipla-indaba-2024/Indaba-Group-picture.jpg",
+      "/images/municipla-indaba-2024/KhathuMapula.jpeg",
     ],
+    galleryLabel: "Gallery — Municipal Indaba 2024 (Past Event)",
 
     description:
       "The Municipal Indaba 2026, hosted by Konecta, brings together key stakeholders across local government, the public and private sectors, civil society, and development partners to reimagine local governance through digital transformation and artificial intelligence.",
@@ -287,18 +288,20 @@ export const eventsDatabase = [
     time: "08:00 – 17:00 SAST",
     registrationDeadline: "2025-09-04",
 
-    venue: "Sandton Convention Centre",
+    venue: "Adapt IT Johannesburg Campus",
     city: "Johannesburg",
     country: "South Africa",
-    address: "161 Maude St, Sandton, 2196",
-    mapUrl: "https://maps.google.com/?q=Sandton+Convention+Centre",
+    address: "Adapt IT Johannesburg Campus",
+    mapUrl: "https://maps.google.com/?q=Adapt+IT+Johannesburg+Campus",
 
-    image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
+    image: "/images/cio-konect-2025/cover.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
-      "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80",
+      "/images/cio-konect-2025/gallery-1.jpg",
+      "/images/cio-konect-2025/gallery-2.jpg",
+      "/images/cio-konect-2025/gallery-3.jpg",
+      "/images/cio-konect-2025/gallery-4.jpg",
     ],
+    galleryLabel: "Event Recap — CIO Konect Summit 2025",
 
     description:
       "The 6th edition of CIO Konect Summit brought together 250+ CIOs and technology leaders under the theme 'Cloud, Cybersecurity & the African Enterprise'. The summit featured 25 speakers, 35 exhibitors, and the inaugural CIO Awards Africa.",
@@ -359,15 +362,19 @@ export const eventsDatabase = [
     time: "09:00 – 17:00 SAST",
     registrationDeadline: "2025-11-06",
 
-    venue: "CTICC",
-    city: "Cape Town",
+    venue: "Adapt IT Johannesburg Campus",
+    city: "Johannesburg",
     country: "South Africa",
-    address: "Convention Square, 1 Lower Long St, Cape Town, 8001",
-    mapUrl: "https://maps.google.com/?q=CTICC+Cape+Town",
+    address: "Adapt IT Johannesburg Campus",
+    mapUrl: "https://maps.google.com/?q=Adapt+IT+Johannesburg+Campus",
 
-    image:
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1200&q=80",
-    gallery: [],
+    image: "/images/witechnology-summit-2025/cover.jpg",
+    gallery: [
+      "/images/witechnology-summit-2025/gallery-1.jpg",
+      "/images/witechnology-summit-2025/gallery-2.jpg",
+      "/images/witechnology-summit-2025/gallery-3.jpg",
+    ],
+    galleryLabel: "Event Recap — WiTechnology Forum 2025",
 
     description:
       "The 3rd edition of WiTechnology brought together 450+ delegates from 8 African countries. The forum focused on 5G deployment strategies, fibre economics, and solving Africa's last-mile connectivity challenge.",
@@ -406,49 +413,52 @@ export const eventsDatabase = [
   },
 
   {
-    id: "municipal-indaba-2025",
-    slug: "municipal-indaba-2025",
-    name: "Municipal Indaba 2025",
+    id: "municipal-indaba-2024",
+    slug: "municipal-indaba-2024",
+    name: "Municipal Indaba 2024",
     shortName: "Municipal Indaba",
-    tagline: "Digital Service Delivery for Local Government",
+    tagline: "Digital Transformation for Local Government",
     category: "indaba",
     sector: "government",
     status: "past",
     featured: false,
     badge: "Government & Municipal",
 
-    dateStart: "2025-07-17",
-    dateEnd: "2025-07-18",
-    time: "08:30 – 16:30 SAST",
-    registrationDeadline: "2025-07-10",
+    dateStart: "2024-02-21",
+    dateEnd: "2024-02-22",
+    time: "08:30 – 15:30 SAST",
+    registrationDeadline: "2024-02-14",
 
-    venue: "Birchwood Hotel & OR Tambo Conference Centre",
+    venue: "Adapt IT Johannesburg Campus",
     city: "Johannesburg",
     country: "South Africa",
-    address: "1 Jones Rd, Boksburg, Gauteng, 1459",
-    mapUrl: "https://maps.google.com/?q=Birchwood+Hotel+OR+Tambo",
+    address: "Adapt IT Johannesburg Campus",
+    mapUrl: "https://maps.google.com/?q=Adapt+IT+Johannesburg+Campus",
 
-    image:
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200&q=80",
-    gallery: [],
+    image: "/images/municipla-indaba-2024/Indaba-Group-picture.jpg",
+    gallery: [
+      "/images/municipla-indaba-2024/IMG_20240221_144613-scaled.jpeg",
+      "/images/municipla-indaba-2024/Indaba-Group-picture.jpg",
+      "/images/municipla-indaba-2024/KhathuMapula.jpeg",
+    ],
+    galleryLabel: "Event Recap — Municipal Indaba 2024",
 
     description:
-      "The 2025 Municipal Indaba hosted 180+ government officials from 45+ municipalities, focusing on practical digital service delivery transformation, community WiFi deployment, and municipal cybersecurity.",
+      "The Municipal Indaba 2024, hosted by Konecta, brought together key stakeholders across local government, the public and private sectors, and development partners to explore digital transformation strategies for improved municipal service delivery.",
     longDescription:
-      "Municipal Indaba 2025 delivered tangible outcomes for local government technology leaders. The programme focused on practical implementation — moving beyond strategy documents to actual deployment case studies.\n\nKey outcomes included the launch of the Municipal Digital Readiness Index (a Konecta initiative tracking ICT maturity across SA municipalities), partnerships between 12 municipalities and technology vendors facilitated through structured matchmaking sessions, and a standing-room-only workshop on community WiFi business models.",
+      "Municipal Indaba 2024 focused on practical approaches to digitising local government operations and improving citizen engagement through technology. The event featured presentations and panel discussions on smart infrastructure, community WiFi deployment, digital platforms for connected government, and strategies for ensuring digital inclusion across municipalities.\n\nAs a Level 1 B-BBEE company, Konecta demonstrated its role in bridging the gap between government procurement requirements and world-class technology delivery.",
     highlights: [
-      "180+ officials from 45+ municipalities",
-      "Launch of Municipal Digital Readiness Index",
-      "12 municipality-vendor partnerships facilitated",
-      "Community WiFi workshop — standing room only",
+      "Digital transformation strategies for municipalities",
+      "Smart infrastructure & community WiFi discussions",
+      "Government-private sector partnership facilitation",
+      "Digital inclusion for underserved communities",
     ],
 
     speakers: [
       {
         name: "Yandisa Sokhanyile",
-        role: "CEO, Konecta Group",
-        image:
-          "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80",
+        role: "CEO, Konecta",
+        image: "/images/speakers/yandisa-sokhanyile.jpg",
       },
     ],
 
@@ -456,66 +466,9 @@ export const eventsDatabase = [
     tickets: [],
     ticketUrl: "",
 
-    capacity: "180+",
+    capacity: "150+",
     attendeeProfile: "Municipal Managers, Government CIOs, Councillors",
-    sponsors: ["SITA", "Microsoft", "Huawei"],
+    sponsors: ["Microsoft", "Huawei"],
     tags: ["eGovernment", "Municipal", "Digital Inclusion", "WiFi"],
-  },
-
-  {
-    id: "cio-konect-2024",
-    slug: "cio-konect-summit-2024",
-    name: "CIO Konect Summit 2024",
-    shortName: "CIO Konect",
-    tagline: "AI, Automation & the Digital Enterprise",
-    category: "summit",
-    sector: "cross-sector",
-    status: "past",
-    featured: false,
-    badge: "Flagship Annual Summit",
-
-    dateStart: "2024-09-19",
-    dateEnd: "2024-09-20",
-    time: "08:00 – 17:00 SAST",
-    registrationDeadline: "2024-09-12",
-
-    venue: "Sandton Convention Centre",
-    city: "Johannesburg",
-    country: "South Africa",
-    address: "161 Maude St, Sandton, 2196",
-    mapUrl: "https://maps.google.com/?q=Sandton+Convention+Centre",
-
-    image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
-    gallery: [],
-
-    description:
-      "The 5th edition of CIO Konect explored the intersection of AI, automation, and enterprise digital strategy. 200+ senior technology leaders gathered to chart the course for the intelligent enterprise.",
-    longDescription:
-      "CIO Konect 2024 was defined by the rapid emergence of generative AI and its implications for African enterprises. The summit explored how CIOs can responsibly adopt AI tools, automate workflows, and build the foundation for the intelligent enterprise.\n\nA partnership with Microsoft saw live demonstrations of Copilot for Microsoft 365 and Azure AI Studio, giving attendees hands-on experience with tools that would reshape enterprise productivity.",
-    highlights: [
-      "200+ senior technology leaders",
-      "Live Microsoft Copilot demonstrations",
-      "First AI-focused track at CIO Konect",
-      "Partnership with Microsoft on AI workshop",
-    ],
-
-    speakers: [
-      {
-        name: "Yandisa Sokhanyile",
-        role: "CEO, Konecta Group",
-        image:
-          "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80",
-      },
-    ],
-
-    agenda: [],
-    tickets: [],
-    ticketUrl: "",
-
-    capacity: "200+",
-    attendeeProfile: "CIOs, CTOs, IT Directors",
-    sponsors: ["Microsoft", "Vodacom Business", "AWS"],
-    tags: ["AI", "Automation", "Digital Transformation", "Enterprise"],
   },
 ];

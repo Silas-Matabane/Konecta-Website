@@ -307,8 +307,7 @@ export const articlesDatabase = [
       <h2>Next Steps</h2>
       <p>Following the successful Mission Week, the consortium will move to Phase 1 implementation — deploying foundational connectivity infrastructure and launching the first digital services. The Thembisa model is designed for replication across South African townships and beyond.</p>
     `,
-    featuredImage:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+    featuredImage: "/images/world-bank-thembisa/cover.png",
     category: "digital-transformation",
     tags: [
       "World Bank",
@@ -1736,11 +1735,184 @@ export function getAuthor(authorId) {
   return AUTHORS.find((a) => a.id === authorId) || AUTHORS[1];
 }
 
-/** Get all unique tags across all articles */
+// ── Curated tag groups (display label → original article tags) ──
+export const TAG_GROUPS = {
+  "AI & Data": [
+    "AI",
+    "Analytics",
+    "Data",
+    "Data Intelligence",
+    "Customer Insights",
+    "Edge Computing",
+    "Data Protection",
+  ],
+  "Cloud & Infrastructure": [
+    "Cloud",
+    "Azure",
+    "Infrastructure",
+    "Digital Infrastructure",
+    "SaaS",
+    "Migration",
+    "Scalability",
+    "5G",
+  ],
+  Cybersecurity: [
+    "Cybersecurity",
+    "Audit",
+    "Compliance",
+    "Security",
+    "Risk",
+    "Risk Management",
+    "Digital Trust",
+  ],
+  "Digital Transformation": [
+    "Digital Transformation",
+    "Innovation",
+    "Technology",
+    "Digital Platforms",
+    "Automation",
+    "ERP",
+    "Integration",
+  ],
+  "WiFi & Connectivity": [
+    "WiFi",
+    "Connectivity",
+    "Community WiFi",
+    "Community Networks",
+    "WaaS",
+    "Open Access Networks",
+  ],
+  "Software Development": [
+    "Software",
+    "API",
+    "App Development",
+    "Mobile Apps",
+    "Custom Software",
+    "Development",
+    "iOS & Android",
+    "Process",
+    "Launch",
+    "Mobile",
+  ],
+  "Digital Marketing": [
+    "Digital Marketing",
+    "SEO",
+    "PPC",
+    "Social Media",
+    "Content",
+    "Advertising",
+    "Brand",
+    "Brand Building",
+    "Video",
+    "Video Marketing",
+    "Engagement",
+    "Digital Media",
+    "Search",
+  ],
+  "Business & Strategy": [
+    "Business",
+    "Business Consulting",
+    "Business Strategy",
+    "Business Growth",
+    "Business Operations",
+    "Strategy",
+    "Cost Efficiency",
+    "Efficiency",
+    "Leadership",
+    "Enterprise",
+    "Sales",
+    "Revenue",
+    "Growth",
+    "Managed Services",
+    "IT Services",
+    "IT Strategy",
+  ],
+  "Government & Policy": [
+    "Government",
+    "GovTech",
+    "E-Government",
+    "Municipal",
+    "Policy",
+    "National Treasury",
+    "Department of Transport",
+    "Public-Private Partnership",
+    "Municipal ROI",
+  ],
+  Telecoms: ["Telecoms", "OTT", "Streaming", "Monetisation"],
+  "Financial Inclusion": [
+    "Financial Inclusion",
+    "Fintech",
+    "Mobile Money",
+    "Cash Dominance",
+    "E-Commerce",
+    "Digital Ticketing",
+    "Spaza Economy",
+    "Digital Finance",
+  ],
+  "Township & Community": [
+    "Township",
+    "Township Commerce",
+    "Township Connectivity",
+    "Township Economy",
+    "Township Digital Economy",
+    "Smart Township",
+    "Smart Cities",
+    "Thembisa",
+    "Alexandra",
+    "Local Ownership",
+    "Community Networks",
+  ],
+  "Skills & Empowerment": [
+    "Digital Skills",
+    "Empowerment",
+    "Youth",
+    "Women in Tech",
+    "Diversity",
+    "Women & Youth Focus",
+    "SMME Development",
+    "SMME Enablement",
+    "Small Business",
+    "Startups",
+    "Technopreneurship",
+    "UX for Inclusion",
+  ],
+  "Events & Partnerships": [
+    "Events",
+    "Event Management",
+    "Partnership",
+    "RSVP",
+    "Adapt IT",
+    "CIO",
+    "C-CIO Council",
+    "WiTechnology",
+  ],
+  "Africa & Impact": [
+    "Africa",
+    "Economic Development",
+    "DFI",
+    "DFI Alignment",
+    "DFI Funding",
+    "World Bank",
+    "G20",
+    "Digital Inclusion",
+    "Behaviour Change",
+    "Pilot",
+  ],
+};
+
+/** Get curated tag labels for display */
 export function getAllTags() {
-  const tags = new Set();
-  articlesDatabase.forEach((a) => a.tags?.forEach((t) => tags.add(t)));
-  return [...tags].sort();
+  return Object.keys(TAG_GROUPS).sort();
+}
+
+/** Expand curated tag labels back to original article tags for filtering */
+export function expandTags(curatedTags) {
+  const expanded = new Set();
+  curatedTags.forEach((label) => {
+    const group = TAG_GROUPS[label];
+    if (group) group.forEach((t) => expanded.add(t));
+  });
+  return expanded;
 }
 
 /** Get related articles (same category or overlapping tags, excluding current) */
