@@ -2,7 +2,7 @@ export const COMPANY = {
   name: "Konecta",
   fullName: "Konecta (Pty) Ltd",
   tagline: "Africa's Leading Telecoms & Digital Infrastructure Consultancy",
-  email: "yandisa@konecta.co.za",
+  email: "marketing@konecta.co.za",
   phone: "+27 81 769 3033",
   location: "152 14th Road, Noordwyk, Midrand, 1657",
   country: "South Africa",
