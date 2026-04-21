@@ -22,8 +22,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <div className="font-logo text-2xl font-extrabold tracking-tight mb-4">
-              KONEC<span className="text-konecta-orange">T</span>A
+            <div className="font-logo text-2xl font-extrabold tracking-tight mb-4 text-konecta-orange">
+              KONECTA
             </div>
             <p className="text-white/80 leading-relaxed mb-6 max-w-[280px]">
               Africa&apos;s AI-powered technology and digital infrastructure

@@ -16,7 +16,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="What We Do"
         title="Our Services"
-        description="Six pillars of telecoms and technology excellence u{2013} from network deployment to AI adoption, designed to drive measurable business outcomes across Africa."
+        description="Five pillars of telecoms and technology excellence — from network deployment to AI adoption, designed to drive measurable business outcomes across Africa."
       />
       <ServicesGrid />
       <KaiSection />

@@ -29,7 +29,7 @@ export default function KaiSection() {
   return (
     <section
       ref={ref}
-      className="relative bg-konecta-black content-px py-section overflow-hidden"
+      className="relative bg-konecta-dark-gray content-px py-section overflow-hidden"
       id="kai"
     >
       {/* Ambient glow */}

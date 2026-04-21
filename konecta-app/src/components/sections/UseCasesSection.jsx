@@ -12,7 +12,7 @@ export default function UseCasesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-konecta-black content-px py-section overflow-hidden"
+      className="relative bg-konecta-dark-gray content-px py-section overflow-hidden"
       id="use-cases"
     >
       {/* Background accent */}

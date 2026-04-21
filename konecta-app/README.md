@@ -1,13 +1,13 @@
 # Konecta Group — Corporate Website
 
-The official corporate website for **Konecta Group (Pty) Ltd**, Africa's leading telecoms and digital infrastructure consultancy. Built as a modern single-page application with a premium glassmorphism design system.
+The official corporate website for **Konecta Group (Pty) Ltd**, a Level 1 B-BBEE, 100% women-owned telecoms and digital infrastructure consultancy operating in the TMT (Technology, Media and Telecommunications) sector across Africa. Built as a modern single-page application with a premium glassmorphism design system.
 
 ## Tech Stack
 
 - **React 19** — UI framework
 - **Vite 6** — Build tool and dev server
 - **React Router 7** — Client-side routing
-- **Tailwind CSS 3** — Utility-first styling
+- **Tailwind CSS 3** — Utility-first styling with custom design tokens
 - **PostCSS + Autoprefixer** — CSS processing
 
 ## Prerequisites
@@ -62,70 +62,85 @@ npm run lint
 
 ```
 konecta-app/
-├── public/                     # Static assets
+├── public/                     # Static assets (images, fonts, case study HTML)
+│   ├── case-studies/           # HTML case study documents
+│   ├── fonts/                  # Custom Blur Medium font
+│   └── images/                 # All site imagery organised by category
 ├── src/
 │   ├── components/
 │   │   ├── common/             # Reusable UI components
+│   │   │   ├── Breadcrumbs.jsx       # Page breadcrumb navigation
 │   │   │   ├── CTASection.jsx        # Call-to-action banner
-│   │   │   ├── MicrosoftLogo.jsx     # Microsoft partner logo
+│   │   │   ├── FloatingNav.jsx       # Sticky floating navigation
+│   │   │   ├── MicrosoftLogo.jsx     # Microsoft partner 4-square logo
+│   │   │   ├── PageHeader.jsx        # Standard inner-page hero header
+│   │   │   ├── PageTransition.jsx    # Route transition wrapper
+│   │   │   ├── ScrollProgressBar.jsx # Reading progress indicator
 │   │   │   ├── ScrollToTop.jsx       # Scroll restoration on route change
-│   │   │   ├── SectionEyebrow.jsx    # Section label component
-│   │   │   └── Ticker.jsx            # Scrolling ticker band
+│   │   │   ├── SectionEyebrow.jsx    # Uppercase section label
+│   │   │   ├── SEO.jsx               # Page-level meta tags & Open Graph
+│   │   │   └── ThemedIcon.jsx        # SVG icon component (named keys)
 │   │   ├── layout/             # App shell
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Layout.jsx
 │   │   │   └── Navbar.jsx
-│   │   └── sections/           # Homepage & page sections
-│   │       ├── Hero.jsx              # Hero banner with animated counters
-│   │       ├── Pipeline.jsx          # 4-stage value chain
-│   │       ├── ServicesGrid.jsx      # 6 service pillars (tabbed)
-│   │       ├── KaiSection.jsx        # AI Infrastructure & Factory
-│   │       ├── MicrosoftPartnership.jsx  # Microsoft ecosystem
-│   │       ├── EventsSection.jsx     # Industry events
-│   │       ├── ImpactSection.jsx     # Case studies & impact
-│   │       ├── Leadership.jsx        # CEO & leadership
-│   │       ├── InsightsSection.jsx   # Blog / insights
-│   │       ├── AfricaPresence.jsx    # Pan-African footprint
-│   │       ├── CredibilityBand.jsx   # B-BBEE, Microsoft, women-owned
+│   │   └── sections/           # Page section components
+│   │       ├── Hero.jsx              # Full-screen hero with animated stat cards
+│   │       ├── ServicesGrid.jsx      # 5 service pillars (tabbed selector)
+│   │       ├── Pipeline.jsx          # 4-stage value chain (Build→Platform→Analytics→Revenue)
+│   │       ├── KaiSection.jsx        # AI Infrastructure & Factory spotlight
+│   │       ├── MicrosoftPartnership.jsx  # Microsoft ecosystem partnership
+│   │       ├── EventsSection.jsx     # Industry events (CIO Konect, Municipal Indaba, etc.)
+│   │       ├── UseCasesSection.jsx   # Tabbed real-world client use cases
+│   │       ├── IndustriesSection.jsx # Industries served (6 sectors)
+│   │       ├── Leadership.jsx        # CEO & leadership profile
 │   │       ├── LogoMarquee.jsx       # Partner logos marquee
-│   │       ├── PartnersSection.jsx   # Technology partners
-│   │       ├── Testimonials.jsx      # Client testimonials
-│   │       └── WiTechnologyBand.jsx  # WiTechnology promo band
+│   │       ├── PartnersSection.jsx   # Technology partner grid
+│   │       ├── Testimonials.jsx      # Client testimonials grid
+│   │       └── InsightsSection.jsx   # Latest insights & articles
 │   ├── data/                   # Centralised content & data
-│   │   ├── constants.js              # Company info, stats, nav links
-│   │   ├── services.js               # Services, pipeline stages, Microsoft solutions
-│   │   ├── events.js                 # Event listings
-│   │   ├── insights.js               # Blog posts & case studies
+│   │   ├── constants.js              # HERO_STATS, badges, PAGE_SEO, nav links, leadership data
+│   │   ├── services.js               # Services array, pipelineStages, microsoftSolutions, kaiFeatures
+│   │   ├── events.js / eventsData.js # Event listings
+│   │   ├── blogData.js / insights.js # Blog posts & insights
+│   │   ├── useCases.js               # Client use cases
+│   │   ├── impactData.js             # Impact stats
 │   │   ├── partners.js               # Technology partner logos
-│   │   └── testimonials.js           # Client quotes
+│   │   ├── testimonials.js           # Client quotes
+│   │   └── wifiPlatform.js           # WiFi platform feature data
 │   ├── hooks/                  # Custom React hooks
 │   │   ├── useClock.js               # Real-time clock
-│   │   ├── useCountUp.js            # Animated number counter
-│   │   └── useInView.js             # Intersection Observer hook
+│   │   ├── useCountUp.js             # Animated number counter (scroll-triggered)
+│   │   └── useInView.js              # IntersectionObserver hook for scroll animations
 │   ├── pages/                  # Route-level page components
-│   │   ├── HomePage.jsx
-│   │   ├── PlatformPage.jsx
-│   │   ├── ServicesPage.jsx
-│   │   ├── MicrosoftPage.jsx
-│   │   ├── EventsPage.jsx
-│   │   ├── ImpactPage.jsx
-│   │   ├── InsightsPage.jsx
-│   │   ├── AboutPage.jsx
-│   │   └── ContactPage.jsx
+│   │   ├── HomePage.jsx              # Main landing page
+│   │   ├── AboutPage.jsx             # Company profile
+│   │   ├── ServicesPage.jsx          # Services overview + AI Factory
+│   │   ├── PlatformPage.jsx          # Intelligence platform detail
+│   │   ├── MicrosoftPage.jsx         # Microsoft partnership detail
+│   │   ├── WifiPlatformPage.jsx      # WiFi-as-a-Service platform
+│   │   ├── AcademyPage.jsx           # Konecta Academy
+│   │   ├── EventsPage.jsx            # Events listing & detail
+│   │   ├── EventDetailPage.jsx       # Single event page
+│   │   ├── ImpactPage.jsx            # Impact & case studies
+│   │   ├── ImpactDetailPage.jsx      # Single impact story
+│   │   ├── InsightsPage.jsx          # Blog & articles
+│   │   ├── ArticlePage.jsx           # Single article
+│   │   └── ContactPage.jsx           # Contact form & details
+│   ├── css/
+│   │   └── wifi-platform.css         # WiFi platform page custom styles
 │   ├── App.jsx                 # Router & route definitions
 │   ├── main.jsx                # Application entry point
-│   └── index.css               # Tailwind directives & global styles
+│   └── index.css               # Tailwind directives, design tokens & global styles
 ├── index.html
 ├── vite.config.js              # Vite config with path aliases
-├── tailwind.config.js          # Tailwind theme (Konecta colours, fonts)
+├── tailwind.config.js          # Tailwind theme (Konecta colours, fonts, animations)
 ├── postcss.config.js
 ├── eslint.config.js
 └── package.json
 ```
 
 ## Path Aliases
-
-The project uses Vite path aliases for clean imports:
 
 | Alias         | Path              |
 | ------------- | ----------------- |
@@ -138,27 +153,98 @@ The project uses Vite path aliases for clean imports:
 
 ## Design System
 
-The site uses a custom glassmorphism design system built on Tailwind CSS:
+The site uses a custom glassmorphism design system built on Tailwind CSS.
 
-- **Colour palette** — `konecta-black`, `konecta-orange`, `konecta-blue`, `konecta-gold`, `konecta-white`, `konecta-muted`
-- **Typography** — Syne (headings), Inter (body)
-- **Glass cards** — `glass-card`, `glass-card-orange`, `glass-card-blue` utility classes
-- **Gradient text** — `text-gradient-orange`, `text-gradient-blue`
-- **Animations** — `animate-float`, `animate-float-slow`, `animate-pulse-dot`, `animate-fade-in`
+### Colour Tokens
 
-## Key Sections
+| Token                  | Value     | Usage                            |
+| ---------------------- | --------- | -------------------------------- |
+| `konecta-black`        | `#1E252C` | Primary dark background          |
+| `konecta-dark-gray`    | `#161C22` | Alternating section background   |
+| `konecta-mid-gray`     | `#1A2029` | Mid-depth panels                 |
+| `konecta-orange`       | `#F48120` | Primary brand accent             |
+| `konecta-orange-light` | `#FFA04D` | Hover states                     |
+| `konecta-white`        | `#F5F2EC` | Primary text / light backgrounds |
+| `konecta-muted`        | `#C4C9CC` | Secondary / muted text           |
 
-| Section               | Description                                                    |
-| --------------------- | -------------------------------------------------------------- |
-| **Hero**              | Full-screen banner with animated stat counters                 |
-| **Pipeline**          | 4-stage model: Build → Platform → Analytics → Value Creation   |
-| **Services**          | 6 pillars: WiFi, Managed IT, AI, Platform Dev, Consulting, OTT |
-| **AI Infrastructure** | Enterprise AI Factory practice                                 |
-| **Microsoft**         | Azure, Copilot, M365, Dynamics, Security partnership           |
-| **Events**            | CIO Konect, Municipal Indaba, WiTechnology                     |
-| **Impact**            | Case studies with measurable results                           |
-| **Leadership**        | CEO Yandisa Sokhanyile and executive team                      |
+### Typography
+
+- **Blur** — Custom display font (logo wordmark)
+- **Inter** — Headings (`font-heading`)
+- **Catamaran** — Body text
+
+### Utility Classes
+
+| Class                  | Purpose                                     |
+| ---------------------- | ------------------------------------------- |
+| `glass-card`           | Semi-transparent glass panel with border    |
+| `glass-card-orange`    | Orange-tinted glass card                    |
+| `glass-card-blue`      | Blue-tinted glass card (Microsoft sections) |
+| `text-gradient-orange` | Orange gradient text                        |
+| `text-gradient-blue`   | Blue gradient text                          |
+| `btn-primary`          | Solid orange CTA button                     |
+| `btn-secondary`        | Ghost button                                |
+| `content-px`           | Responsive horizontal padding (clamp-based) |
+| `py-section`           | Responsive vertical section padding         |
+| `section-title`        | Responsive section heading size             |
+
+### Section Background Alternation
+
+Sections use two alternating backgrounds to visually separate content:
+
+- `bg-konecta-black` (#1E252C) — primary sections
+- `bg-konecta-dark-gray` (#161C22) — alternating sections (MicrosoftPartnership, UseCasesSection, Leadership, InsightsSection, KaiSection)
+- `bg-[#0D0D0D]` — Pipeline section (deep contrast accent)
+
+## Pages & Routes
+
+| Route             | Page             | Description                        |
+| ----------------- | ---------------- | ---------------------------------- |
+| `/`               | HomePage         | Landing page with all key sections |
+| `/about`          | AboutPage        | Company overview and values        |
+| `/services`       | ServicesPage     | Five service pillars + AI Factory  |
+| `/platform`       | PlatformPage     | Intelligence platform detail       |
+| `/microsoft`      | MicrosoftPage    | Microsoft partnership              |
+| `/wifi-platform`  | WifiPlatformPage | WiFi-as-a-Service                  |
+| `/academy`        | AcademyPage      | Konecta Academy                    |
+| `/events`         | EventsPage       | Events listing                     |
+| `/events/:id`     | EventDetailPage  | Single event detail                |
+| `/impact`         | ImpactPage       | Impact & case studies              |
+| `/impact/:id`     | ImpactDetailPage | Single impact story                |
+| `/insights`       | InsightsPage     | Blog & articles                    |
+| `/insights/:slug` | ArticlePage      | Single article                     |
+| `/contact`        | ContactPage      | Contact form & details             |
+
+## Services
+
+| #   | Service                     | Description                                                      |
+| --- | --------------------------- | ---------------------------------------------------------------- |
+| 1   | WiFi-as-a-Service           | Managed public Wi-Fi with analytics, monetisation & guest CX     |
+| 2   | Software & Digital Services | Custom platform development, apps & digital transformation       |
+| 3   | Managed IT                  | End-to-end IT management, cloud, infrastructure & support        |
+| 4   | Business Consulting         | TMT strategy, market entry, and enterprise advisory              |
+| 5   | AI Infrastructure & Factory | Production-grade AI deployment and intelligent data environments |
+
+## Key Data Files
+
+All content is centralised in `src/data/` for easy updates without touching component code:
+
+- **`constants.js`** — Edit `HERO_STATS` to update hero stat cards. Edit `PAGE_SEO` for meta tags per route. Edit `LEADERSHIP_DATA` for leadership section content.
+- **`services.js`** — Edit `services` array for the ServicesGrid tabs. Edit `pipelineStages` for the Pipeline section. Edit `kaiFeatures` for AI Factory cards.
+- **`events.js`** — Add/edit events shown on the homepage EventsSection and EventsPage.
+- **`insights.js` / `blogData.js`** — Add/edit insights and blog posts.
+- **`useCases.js`** — Add/edit the use case tabs on the homepage.
+- **`testimonials.js`** — Edit client testimonials.
+- **`partners.js`** — Edit the partner logo marquee.
 
 ## License
 
 Proprietary — Konecta Group (Pty) Ltd. All rights reserved.
+
+├── postcss.config.js
+├── eslint.config.js
+└── package.json
+
+```
+
+```
