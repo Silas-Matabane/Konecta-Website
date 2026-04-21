@@ -95,12 +95,14 @@ export default function Hero() {
 
         {/* Hero headline */}
         <h1
-          className={`font-heading font-extrabold text-konecta-white leading-[0.95] tracking-tight max-w-5xl transition-all duration-1000 delay-200 ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          className={`font-syne font-extrabold text-konecta-white leading-[0.95] tracking-tight max-w-5xl transition-all duration-1000 delay-200 ${heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)" }}
         >
-          Building Africa&apos;s
+          We Build
           <br />
-          Digital <em className="not-italic text-gradient-orange">Future.</em>
+          Networks. We
+          <br />
+          Power <em className="not-italic text-gradient-orange">Data.</em>
         </h1>
 
         {/* Sub-copy */}
