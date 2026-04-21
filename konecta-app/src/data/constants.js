@@ -107,10 +107,15 @@ export const BADGES = [
 ];
 
 export const HERO_STATS = [
-  { text: "Level 1", label: "B-BBEE Certified", icon: "🏅", highlight: true },
-  { text: "Finalist", label: "Standard Bank Top Women", icon: "🏆" },
-  { end: 3, suffix: "", label: "Industry Platforms", icon: "🎙️" },
-  { end: 100, suffix: "%", label: "Women-Owned", icon: "♀️" },
+  {
+    text: "Level 1",
+    label: "B-BBEE Certified",
+    icon: "trophy",
+    highlight: true,
+  },
+  { text: "Partner", label: "Microsoft", icon: "microsoft" },
+  { text: "TMT", label: "Technology · Media · Telecom", icon: "satellite" },
+  { end: 100, suffix: "%", label: "Women-Owned", icon: "female" },
 ];
 
 export const HERO_IMAGE =

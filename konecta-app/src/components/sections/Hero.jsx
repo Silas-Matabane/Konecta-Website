@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ThemedIcon from "@components/common/ThemedIcon";
+import MicrosoftLogo from "@components/common/MicrosoftLogo";
 import useInView from "@hooks/useInView";
 import useCountUp from "@hooks/useCountUp";
 import { HERO_STATS, HERO_IMAGE } from "@data/constants";
@@ -17,11 +18,17 @@ function StatCounter({ end, suffix = "", label, icon, text, highlight }) {
           : "glass-card"
       }`}
     >
-      <ThemedIcon
-        name={icon}
-        size={28}
-        className="mb-3 opacity-60 group-hover:opacity-100 transition-opacity"
-      />
+      {icon === "microsoft" ? (
+        <div className="mb-3 opacity-60 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <MicrosoftLogo size={28} />
+        </div>
+      ) : (
+        <ThemedIcon
+          name={icon}
+          size={28}
+          className="mb-3 opacity-60 group-hover:opacity-100 transition-opacity"
+        />
+      )}
       <div
         className="font-heading font-extrabold text-konecta-white leading-none"
         style={{
