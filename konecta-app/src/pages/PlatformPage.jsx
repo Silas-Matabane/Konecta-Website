@@ -15,8 +15,7 @@ export default function PlatformPage() {
       />
       <PageHeader
         eyebrow="Our Platform"
-        title="Network &rarr; Platform &rarr;<br />Data &rarr; Revenue"
-        description="Konecta's end-to-end value chain transforms raw connectivity infrastructure into intelligent platforms that generate big data, analytics, and value-added services."
+        title="From connectivity to intelligent platforms — driving big data, analytics, and value-added services."
       />
       <Pipeline />
       <KaiSection />

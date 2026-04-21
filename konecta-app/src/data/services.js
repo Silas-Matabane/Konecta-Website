@@ -95,6 +95,25 @@ export const services = [
       "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
     featured: false,
   },
+  {
+    id: 5,
+    number: "05",
+    icon: "🤖",
+    title: "AI Infrastructure & Factory",
+    description:
+      "Artificial intelligence will redefine how organisations operate across every sector. Konecta's AI Infrastructure & Factory practice enables African enterprises and public sector organisations to deploy production-grade AI capabilities — ensuring AI adoption moves beyond experimentation into real operational deployment.",
+    tags: ["Production-Grade AI", "AI Factory", "Enterprise AI", "Azure AI"],
+    capabilities: [
+      "Production-Grade AI Deployment",
+      "Network Infrastructure & Data Environments",
+      "Enterprise AI Infrastructure & Cloud Platforms",
+      "Cybersecurity Architecture",
+      "Fully Integrated AI Ecosystem",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
+    featured: false,
+  },
 ];
 
 export const pipelineStages = [

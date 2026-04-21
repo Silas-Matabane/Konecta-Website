@@ -1,4 +1,5 @@
 ﻿import ServicesGrid from "@components/sections/ServicesGrid";
+import KaiSection from "@components/sections/KaiSection";
 import CTASection from "@components/common/CTASection";
 import PageHeader from "@components/common/PageHeader";
 import SEO from "@components/common/SEO";
@@ -18,6 +19,7 @@ export default function ServicesPage() {
         description="Six pillars of telecoms and technology excellence u{2013} from network deployment to AI adoption, designed to drive measurable business outcomes across Africa."
       />
       <ServicesGrid />
+      <KaiSection />
       <CTASection />
     </>
   );
