@@ -5,9 +5,9 @@ import Pipeline from "@components/sections/Pipeline";
 import MicrosoftPartnership from "@components/sections/MicrosoftPartnership";
 import KaiSection from "@components/sections/KaiSection";
 import EventsSection from "@components/sections/EventsSection";
-import ImpactSection from "@components/sections/ImpactSection";
+import UseCasesSection from "@components/sections/UseCasesSection";
+import IndustriesSection from "@components/sections/IndustriesSection";
 import Leadership from "@components/sections/Leadership";
-import WiTechnologyBand from "@components/sections/WiTechnologyBand";
 import Testimonials from "@components/sections/Testimonials";
 import InsightsSection from "@components/sections/InsightsSection";
 import PartnersSection from "@components/sections/PartnersSection";
@@ -82,8 +82,8 @@ export default function HomePage() {
       <MicrosoftPartnership />
       <KaiSection />
       <EventsSection />
-      <WiTechnologyBand />
-      <ImpactSection />
+      <UseCasesSection />
+      <IndustriesSection />
       <Leadership />
       <LogoMarquee />
       <Testimonials />

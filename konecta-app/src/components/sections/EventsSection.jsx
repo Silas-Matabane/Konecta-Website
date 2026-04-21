@@ -111,9 +111,11 @@ export default function EventsSection() {
 
       {/* Events grid */}
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-        {events.map((ev, i) => (
-          <EventCard key={ev.id} event={ev} index={i} />
-        ))}
+        {events
+          .filter((ev) => ev.id === "cio-konect")
+          .map((ev, i) => (
+            <EventCard key={ev.id} event={ev} index={i} />
+          ))}
       </div>
     </section>
   );
