@@ -26,9 +26,9 @@ function formatDateRange(start, end) {
   const s = new Date(start + "T00:00:00");
   const e = new Date(end + "T00:00:00");
   if (s.getMonth() === e.getMonth() && s.getFullYear() === e.getFullYear()) {
-    return `${s.getDate()} – ${e.getDate()} ${e.toLocaleDateString("en-ZA", { month: "short", year: "numeric" })}`;
+    return `${s.getDate()} â€“ ${e.getDate()} ${e.toLocaleDateString("en-ZA", { month: "short", year: "numeric" })}`;
   }
-  return `${formatDate(start)} – ${formatDate(end)}`;
+  return `${formatDate(start)} â€“ ${formatDate(end)}`;
 }
 
 function daysUntil(iso) {
@@ -362,8 +362,8 @@ function FilterBar({
           options={[
             { value: "date-asc", label: "Date ? (Soonest)" },
             { value: "date-desc", label: "Date ? (Latest)" },
-            { value: "name-asc", label: "Name A–Z" },
-            { value: "name-desc", label: "Name Z–A" },
+            { value: "name-asc", label: "Name Aï¿½Z" },
+            { value: "name-desc", label: "Name Zï¿½A" },
           ]}
           className="min-w-[160px]"
         />
